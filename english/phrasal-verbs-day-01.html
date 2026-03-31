@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phrasal Verbs That Aussies Actually Use — Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #1A1A2E;
+    --card: #16213E;
+    --card2: #0F3460;
+    --border: #2A3A5E;
+    --accent: #E94560;
+    --gold: #F2A93B;
+    --green: #48BB78;
+    --blue: #4FC3F7;
+    --purple: #BB86FC;
+    --pink: #FF6B9D;
+    --teal: #38D9A9;
+    --orange: #FB8C00;
+    --white: #F7F7F7;
+    --light: #C4CAD0;
+    --dim: #8892A4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+  }
+
+  .infographic { max-width: 880px; margin: 0 auto; padding: 0 40px 60px; }
+
+  .top-bar { height: 6px; background: linear-gradient(90deg, var(--accent), var(--gold), var(--green), var(--blue), var(--purple)); }
+
+  /* Header */
+  .header { padding: 48px 0 28px; }
+  .flags { font-size: 28px; letter-spacing: 6px; margin-bottom: 12px; }
+  .badge {
+    display: inline-block; padding: 5px 16px; border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .b-red { background: var(--accent); color: var(--white); }
+  .b-gold { background: var(--gold); color: #1A1A2E; }
+  .b-green { background: var(--green); color: #1A1A2E; }
+  .b-blue { background: var(--blue); color: #1A1A2E; }
+  .b-purple { background: var(--purple); color: #1A1A2E; }
+  .b-pink { background: var(--pink); color: #1A1A2E; }
+  .b-teal { background: var(--teal); color: #1A1A2E; }
+  .b-orange { background: var(--orange); color: #1A1A2E; }
+  .b-dim { background: var(--border); color: var(--light); }
+
+  .header h2 { font-size: 18px; font-weight: 400; color: var(--dim); margin-top: 16px; }
+  .header h1 { font-size: 40px; font-weight: 800; line-height: 1.15; margin-top: 4px; }
+  .header h1 span { color: var(--accent); }
+  .header .author { color: var(--dim); font-size: 15px; margin-top: 14px; }
+  .divider { border: none; height: 1px; background: var(--border); margin: 24px 0; }
+
+  /* Section */
+  .section { margin-bottom: 44px; }
+  .section-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .section-bar { width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; }
+
+  /* Phrasal verb card */
+  .pv-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    border-left: 5px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pv-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+  .pv-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
+  .pv-name { font-size: 26px; font-weight: 800; }
+  .pv-count { font-size: 12px; color: var(--dim); font-family: 'JetBrains Mono', monospace; }
+
+  /* Meaning row */
+  .meaning {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .meaning:last-child { border-bottom: none; }
+  .m-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+  .m-def { font-weight: 600; font-size: 14px; }
+  .m-example {
+    color: var(--light); font-size: 13px; font-style: italic; margin-top: 2px;
+  }
+  .m-example strong { font-style: normal; color: var(--white); }
+
+  /* Formula card */
+  .formula-box {
+    background: linear-gradient(135deg, #16213E, #0F3460);
+    border: 2px solid var(--gold);
+    border-radius: 18px;
+    padding: 32px;
+    text-align: center;
+  }
+  .formula-title { font-size: 24px; font-weight: 800; color: var(--gold); margin-bottom: 16px; }
+  .formula-display {
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 16px 0;
+    letter-spacing: 1px;
+  }
+  .formula-display .var { color: var(--gold); }
+  .formula-display .op { color: var(--dim); }
+  .formula-display .kw { color: var(--accent); }
+
+  /* Example chips */
+  .examples-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 16px; }
+  .ex-chip {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 18px;
+    text-align: center;
+    flex: 1; min-width: 200px;
+    transition: transform 0.2s;
+  }
+  .ex-chip:hover { transform: translateY(-2px); }
+  .ex-feeling { font-size: 12px; color: var(--dim); margin-bottom: 4px; }
+  .ex-verb { font-size: 16px; font-weight: 800; }
+  .ex-sentence { font-size: 12px; color: var(--light); font-style: italic; margin-top: 4px; }
+
+  /* Quick ref grid */
+  .ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ref-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 12px;
+    transition: transform 0.2s;
+  }
+  .ref-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+  .ref-verb { font-weight: 800; font-size: 14px; min-width: 100px; }
+  .ref-arrow { color: var(--dim); }
+  .ref-meaning { color: var(--light); font-size: 12.5px; }
+
+  /* Verdict */
+  .verdict {
+    background: linear-gradient(135deg, var(--accent), #C62355);
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: center;
+    margin-top: 44px;
+  }
+  .verdict h2 { font-size: 24px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+  .verdict p { color: rgba(255,255,255,0.85); font-size: 14px; }
+
+  .bottom-bar { height: 6px; background: linear-gradient(90deg, var(--accent), var(--gold), var(--green), var(--blue), var(--purple)); margin-top: 48px; }
+
+  @media (max-width: 640px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 28px; }
+    .ref-grid { grid-template-columns: 1fr; }
+    .formula-display { font-size: 14px; }
+    .examples-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="flags">&#127462;&#127482; &#127483;&#127475;</div>
+    <span class="badge b-red">AUSSIE ENGLISH</span>
+    <span class="badge b-dim" style="margin-left: 6px;">PHRASAL VERBS</span>
+    <h2>PHRASAL VERBS THAT</h2>
+    <h1>AUSSIES ACTUALLY USE <span>EVERY DAY</span></h1>
+    <p class="author">by Minh Qu&acirc;n &middot; Vietnamese-Australian English Teacher</p>
+    <hr class="divider">
+  </div>
+
+  <!-- GO OFF -->
+  <div class="section">
+    <div class="pv-card" style="border-left-color: var(--accent);">
+      <div class="pv-header">
+        <span class="pv-name" style="color: var(--accent);">GO OFF</span>
+        <span class="badge b-red">5 MEANINGS</span>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(233,69,96,0.15);">&#129472;</div>
+        <div>
+          <div class="m-def">Food goes bad / spoils</div>
+          <div class="m-example">"If you don't put the milk in the fridge, it will <strong>go off</strong>."</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(233,69,96,0.15);">&#9200;</div>
+        <div>
+          <div class="m-def">An alarm or bell rings</div>
+          <div class="m-example">"My alarm <strong>went off</strong> this morning and woke me up."</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(233,69,96,0.15);">&#128548;</div>
+        <div>
+          <div class="m-def">Someone loses their temper</div>
+          <div class="m-example">"My husband <strong>went off</strong> at me last night because dinner was late."</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(233,69,96,0.15);">&#128165;</div>
+        <div>
+          <div class="m-def">Something explodes</div>
+          <div class="m-example">"The bomb's about to <strong>go off</strong>!"</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(233,69,96,0.15);">&#127881;</div>
+        <div>
+          <div class="m-def">An event or party is really fun (informal)</div>
+          <div class="m-example">"The party is <strong>going off</strong>!" / "The wedding <strong>went off</strong> last night!"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECK OUT -->
+  <div class="section">
+    <div class="pv-card" style="border-left-color: var(--blue);">
+      <div class="pv-header">
+        <span class="pv-name" style="color: var(--blue);">CHECK OUT</span>
+        <span class="badge b-blue">4 MEANINGS</span>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(79,195,247,0.15);">&#127976;</div>
+        <div>
+          <div class="m-def">Leave a hotel</div>
+          <div class="m-example">"Let's <strong>check out</strong> of our hotel room."</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(79,195,247,0.15);">&#128218;</div>
+        <div>
+          <div class="m-def">Borrow books from a library</div>
+          <div class="m-example">"I <strong>checked out</strong> three books from the library yesterday."</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(79,195,247,0.15);">&#128064;</div>
+        <div>
+          <div class="m-def">Look at something cool</div>
+          <div class="m-example">"<strong>Check out</strong> that amazing sunset!"</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(79,195,247,0.15);">&#128525;</div>
+        <div>
+          <div class="m-def">Look at someone you find attractive</div>
+          <div class="m-example">"I saw you <strong>checking out</strong> that girl." / "Did you see those guys <strong>checking me out</strong>?"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRIKE OUT -->
+  <div class="section">
+    <div class="pv-card" style="border-left-color: var(--orange);">
+      <div class="pv-header">
+        <span class="pv-name" style="color: var(--orange);">STRIKE OUT</span>
+        <span class="badge b-orange">FROM BASEBALL</span>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(251,140,0,0.15);">&#9918;</div>
+        <div>
+          <div class="m-def">To fail — especially when trying to flirt or approach someone</div>
+          <div class="m-example">"I <strong>struck out</strong> with Jessica — I don't think she liked me."</div>
+        </div>
+      </div>
+      <p style="color: var(--dim); font-size: 13px; margin-top: 10px; padding-left: 46px;">Origin: In baseball, when the batter misses the ball 3 times = strike out (eliminated).</p>
+    </div>
+  </div>
+
+  <!-- PICK UP -->
+  <div class="section">
+    <div class="pv-card" style="border-left-color: var(--green);">
+      <div class="pv-header">
+        <span class="pv-name" style="color: var(--green);">PICK UP</span>
+        <span class="badge b-green">3+ MEANINGS</span>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(72,187,120,0.15);">&#128664;</div>
+        <div>
+          <div class="m-def">Give someone a ride / collect something</div>
+          <div class="m-example">"Can you <strong>pick me up</strong> at 5?"</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(72,187,120,0.15);">&#128200;</div>
+        <div>
+          <div class="m-def">Improve / increase / gain momentum</div>
+          <div class="m-example">"If you study more, your scores will <strong>pick up</strong>." / "My YouTube views are starting to <strong>pick up</strong>!"</div>
+        </div>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(72,187,120,0.15);">&#128536;</div>
+        <div>
+          <div class="m-def">Successfully flirt with someone (opposite of strike out)</div>
+          <div class="m-example">"He <strong>picked up</strong> that girl at the party."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GANG UP -->
+  <div class="section">
+    <div class="pv-card" style="border-left-color: var(--purple);">
+      <div class="pv-header">
+        <span class="pv-name" style="color: var(--purple);">GANG UP</span>
+        <span class="badge b-purple">SOCIAL</span>
+      </div>
+      <div class="meaning">
+        <div class="m-icon" style="background: rgba(187,134,252,0.15);">&#129309;</div>
+        <div>
+          <div class="m-def">Everyone teams up against one person</div>
+          <div class="m-example">"They <strong>ganged up</strong> on me." / "Let's <strong>gang up</strong> on Steve!"</div>
+        </div>
+      </div>
+      <p style="color: var(--dim); font-size: 13px; margin-top: 10px; padding-left: 46px;">Similar: "team up" (but without the negative connotation).</p>
+    </div>
+  </div>
+
+  <!-- THE FORMULA -->
+  <div class="section">
+    <h3 class="section-title">BONUS: THE "_____ OUT" FORMULA</h3>
+    <div class="section-bar" style="background: var(--gold);"></div>
+    <p style="color: var(--light); font-size: 14px; margin-bottom: 20px;">Create your own phrasal verbs to express being <strong>sick of something</strong>:</p>
+
+    <div class="formula-box">
+      <div class="formula-title">CREATE YOUR OWN PHRASAL VERB</div>
+      <div class="formula-display">
+        <span class="var">[Thing you're sick of]</span> <span class="op">+</span> <span class="kw">-ed / -d</span> <span class="op">+</span> <span class="kw">OUT</span>
+      </div>
+      <p style="color: var(--light); font-size: 13px;">When you do something too much and you're over it — slap "out" on it!</p>
+
+      <div class="examples-row">
+        <div class="ex-chip">
+          <div class="ex-feeling">Sick of working</div>
+          <div class="ex-verb" style="color: var(--accent);">WORKED OUT</div>
+          <div class="ex-sentence">"I'm so worked out today."</div>
+        </div>
+        <div class="ex-chip">
+          <div class="ex-feeling">Sick of burgers</div>
+          <div class="ex-verb" style="color: var(--gold);">BURGERED OUT</div>
+          <div class="ex-sentence">"We had burgers 3 days in a row — I'm burgered out."</div>
+        </div>
+        <div class="ex-chip">
+          <div class="ex-feeling">Sick of YouTube</div>
+          <div class="ex-verb" style="color: var(--blue);">YOUTUBED OUT</div>
+          <div class="ex-sentence">"Been watching all day — totally YouTubed out."</div>
+        </div>
+      </div>
+
+      <p style="color: var(--dim); font-size: 12px; margin-top: 16px;">&#9888; Very informal — use in friendly conversation only, not in writing tests!</p>
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE -->
+  <div class="section">
+    <h3 class="section-title">QUICK REFERENCE: ALL MEANINGS</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-verb" style="color: var(--accent);">go off</div>
+        <div class="ref-arrow">&rarr;</div>
+        <div class="ref-meaning">food spoils, alarm rings, lose temper, explode, party rocks</div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-verb" style="color: var(--blue);">check out</div>
+        <div class="ref-arrow">&rarr;</div>
+        <div class="ref-meaning">leave hotel, borrow, look at, find attractive</div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-verb" style="color: var(--orange);">strike out</div>
+        <div class="ref-arrow">&rarr;</div>
+        <div class="ref-meaning">fail (especially at flirting)</div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-verb" style="color: var(--green);">pick up</div>
+        <div class="ref-arrow">&rarr;</div>
+        <div class="ref-meaning">collect, improve, flirt successfully</div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-verb" style="color: var(--purple);">gang up</div>
+        <div class="ref-arrow">&rarr;</div>
+        <div class="ref-meaning">everyone against one person</div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-verb" style="color: var(--gold);">___ed out</div>
+        <div class="ref-arrow">&rarr;</div>
+        <div class="ref-meaning">sick of [thing] from doing it too much</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>PRACTICE: USE ONE IN A SENTENCE TODAY!</h2>
+    <p>Pick a phrasal verb from this list, write a sentence, and use it in conversation. Keep practicing, keep talking!</p>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>
