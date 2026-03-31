@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Levels of Claude Co-work — Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0D1117;
+    --card: #161B22;
+    --card2: #1C2128;
+    --border: #30363D;
+    --accent: #D2A8FF;
+    --accent-dim: #A371F7;
+    --blue: #58A6FF;
+    --green: #3FB950;
+    --orange: #F0883E;
+    --red: #F85149;
+    --yellow: #D29922;
+    --teal: #39D2C0;
+    --pink: #DB61A2;
+    --cyan: #56D4DD;
+    --white: #F0F6FC;
+    --light: #C9D1D9;
+    --dim: #8B949E;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+  }
+
+  .infographic { max-width: 900px; margin: 0 auto; padding: 0 40px 60px; }
+  .top-bar { height: 6px; background: linear-gradient(90deg, var(--accent), var(--blue), var(--green), var(--orange), var(--teal)); }
+
+  /* Header */
+  .header { padding: 48px 0 28px; }
+  .badge {
+    display: inline-block;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .b-purple { background: var(--accent); color: var(--bg); }
+  .b-blue { background: var(--blue); color: var(--bg); }
+  .b-green { background: var(--green); color: var(--bg); }
+  .b-orange { background: var(--orange); color: var(--bg); }
+  .b-teal { background: var(--teal); color: var(--bg); }
+  .b-dim { background: var(--border); color: var(--light); }
+
+  .header h2 { font-size: 20px; font-weight: 400; color: var(--dim); margin-top: 22px; letter-spacing: 0.5px; }
+  .header h1 { font-size: 40px; font-weight: 800; line-height: 1.1; margin-top: 6px; }
+  .header h1 span { color: var(--accent); }
+  .header .subtitle { color: var(--dim); font-size: 15px; margin-top: 14px; line-height: 1.5; }
+  .divider { border: none; height: 1px; background: var(--border); margin: 24px 0; }
+
+  /* Sections */
+  .section { margin-bottom: 44px; }
+  .section-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .section-bar { width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; }
+
+  /* Level Cards */
+  .level-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+    margin-bottom: 14px;
+    border-left: 5px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .level-card:hover { transform: translateY(-3px); }
+  .level-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+  }
+  .level-name {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .level-desc { font-size: 14px; color: var(--light); line-height: 1.5; }
+  .level-detail { font-size: 13px; color: var(--dim); margin-top: 10px; line-height: 1.5; }
+  .level-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 3px 12px;
+    border-radius: 10px;
+    background: var(--card2);
+    color: var(--light);
+    border: 1px solid var(--border);
+  }
+
+  /* Brain Files Grid */
+  .brain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .brain-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px;
+    border-top: 4px solid transparent;
+    transition: transform 0.2s;
+  }
+  .brain-card:hover { transform: translateY(-3px); }
+  .brain-icon { font-size: 24px; margin-bottom: 8px; }
+  .brain-name { font-size: 15px; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+  .brain-desc { font-size: 13px; color: var(--dim); margin-top: 6px; line-height: 1.4; }
+
+  /* Workflow Flow */
+  .flow-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .flow-step {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .flow-step:hover { transform: translateY(-3px); }
+  .flow-step::after {
+    content: '→';
+    position: absolute;
+    right: -13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dim);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .flow-step:last-child::after { display: none; }
+  .flow-step .fs-icon { font-size: 22px; }
+  .flow-step .fs-label { font-size: 12px; font-weight: 600; margin-top: 6px; color: var(--light); }
+
+  /* Connectors */
+  .connector-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .connector-chip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .connector-chip:hover { transform: translateY(-2px); border-color: var(--blue); }
+  .connector-chip .chip-icon { margin-right: 6px; }
+
+  /* Automation Examples */
+  .auto-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .auto-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .auto-card:hover { transform: translateY(-3px); border-color: var(--teal); }
+  .auto-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .auto-name { font-size: 16px; font-weight: 700; margin-top: 6px; }
+  .auto-desc { font-size: 13px; color: var(--dim); margin-top: 6px; line-height: 1.4; }
+
+  /* Takeaways */
+  .takeaways {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .takeaway {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: transform 0.2s;
+  }
+  .takeaway:hover { transform: translateY(-2px); }
+  .tk-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(210,168,255,0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .tk-text { font-size: 14px; color: var(--light); line-height: 1.4; }
+  .tk-text strong { color: var(--white); }
+
+  /* Footer */
+  .footer {
+    margin-top: 50px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--dim);
+    font-size: 13px;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 700px) {
+    .level-card { grid-template-columns: 1fr; }
+    .brain-grid { grid-template-columns: 1fr; }
+    .flow-row { grid-template-columns: repeat(2, 1fr); }
+    .flow-step::after { display: none; }
+    .auto-grid { grid-template-columns: 1fr; }
+    .takeaways { grid-template-columns: 1fr; }
+    .header h1 { font-size: 28px; }
+    .infographic { padding: 0 20px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="badge b-purple">Claude Co-work</span>
+    <span class="badge b-blue">Non-Technical</span>
+    <span class="badge b-dim">5 Levels</span>
+    <h1>5 Levels of <span>Claude Co-work</span><br>You Must Master</h1>
+    <p class="subtitle">From basic chatting to a fully automated AI employee that reads your files, connects your apps, and runs tasks while you sleep.</p>
+  </div>
+  <hr class="divider">
+
+  <!-- THE 5 LEVELS -->
+  <div class="section">
+    <h3 class="section-title">The 5 Levels</h3>
+    <div class="section-bar" style="background:var(--accent)"></div>
+
+    <div class="level-card" style="border-left-color:var(--accent)">
+      <div class="level-num" style="color:var(--accent)">1</div>
+      <div>
+        <div class="level-name" style="color:var(--accent)">Import</div>
+        <div class="level-desc">Transfer your memory and context from ChatGPT or Gemini to Claude in 60 seconds.</div>
+        <div class="level-detail">Use Anthropic's memory import page → copy prompt → paste in ChatGPT → get memory export → paste back in Claude. Done.</div>
+        <div class="level-tags">
+          <span class="tag">ChatGPT → Claude</span>
+          <span class="tag">60 seconds</span>
+          <span class="tag">Zero friction</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="border-left-color:var(--blue)">
+      <div class="level-num" style="color:var(--blue)">2</div>
+      <div>
+        <div class="level-name" style="color:var(--blue)">Foundation</div>
+        <div class="level-desc">Build the brain of your system — goals, company context, glossary, and operating instructions.</div>
+        <div class="level-detail">Write Goals MD, Claude MD, and Company MD files once. Co-work reads them every session. Self-learning system that improves over time.</div>
+        <div class="level-tags">
+          <span class="tag">Goals MD</span>
+          <span class="tag">Claude MD</span>
+          <span class="tag">Company MD</span>
+          <span class="tag">Self-learning</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="border-left-color:var(--green)">
+      <div class="level-num" style="color:var(--green)">3</div>
+      <div>
+        <div class="level-name" style="color:var(--green)">Workflows</div>
+        <div class="level-desc">Install pre-built plugins or create custom command-based workflows for any department.</div>
+        <div class="level-detail">One command triggers an entire multi-step process. Legal contract review in 2 min. Custom YouTube analytics plugin. Share plugins with your team.</div>
+        <div class="level-tags">
+          <span class="tag">/review-contract</span>
+          <span class="tag">/brief</span>
+          <span class="tag">Custom plugins</span>
+          <span class="tag">Team sharing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="border-left-color:var(--orange)">
+      <div class="level-num" style="color:var(--orange)">4</div>
+      <div>
+        <div class="level-name" style="color:var(--orange)">Ecosystem</div>
+        <div class="level-desc">Connect all your apps — Gmail, Notion, Slack, Canva, and 8,000+ more via Zapier MCP.</div>
+        <div class="level-detail">~38 native connectors + Zapier MCP for everything else. One prompt chains multiple apps together.</div>
+        <div class="level-tags">
+          <span class="tag">Gmail</span>
+          <span class="tag">Notion</span>
+          <span class="tag">Slack</span>
+          <span class="tag">Canva</span>
+          <span class="tag">Zapier MCP</span>
+          <span class="tag">8,000+ apps</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="border-left-color:var(--teal)">
+      <div class="level-num" style="color:var(--teal)">5</div>
+      <div>
+        <div class="level-name" style="color:var(--teal)">Automation</div>
+        <div class="level-desc">Schedule tasks to run automatically — daily, weekly, hourly, or any cadence. Your AI employee works while you sleep.</div>
+        <div class="level-detail">Morning briefs at 7 AM. Weekly reports on Mondays. Competitor dashboards at 8 AM. Self-improving after every run.</div>
+        <div class="level-tags">
+          <span class="tag">Scheduled tasks</span>
+          <span class="tag">Daily / Weekly / Hourly</span>
+          <span class="tag">Self-improving</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAIN FILES -->
+  <div class="section">
+    <h3 class="section-title">Level 2 Deep Dive — The Brain Files</h3>
+    <div class="section-bar" style="background:var(--blue)"></div>
+    <div class="brain-grid">
+      <div class="brain-card" style="border-top-color:var(--accent)">
+        <div class="brain-icon">🎯</div>
+        <div class="brain-name">goals.md</div>
+        <div class="brain-desc">North star, quarterly goals, weekly priorities, monthly focus, habit streaks</div>
+      </div>
+      <div class="brain-card" style="border-top-color:var(--blue)">
+        <div class="brain-icon">🧠</div>
+        <div class="brain-name">claude.md</div>
+        <div class="brain-desc">Operating instructions — the "kitchen bible" that self-updates after every session</div>
+      </div>
+      <div class="brain-card" style="border-top-color:var(--green)">
+        <div class="brain-icon">🏢</div>
+        <div class="brain-name">company.md</div>
+        <div class="brain-desc">Brand, business name, platforms, tech stack, team context</div>
+      </div>
+      <div class="brain-card" style="border-top-color:var(--orange)">
+        <div class="brain-icon">📖</div>
+        <div class="brain-name">glossary.md</div>
+        <div class="brain-desc">All the terms, acronyms, and jargon used in your business</div>
+      </div>
+      <div class="brain-card" style="border-top-color:var(--pink)">
+        <div class="brain-icon">👥</div>
+        <div class="brain-name">team.md</div>
+        <div class="brain-desc">Co-founder context, roles, responsibilities, communication style</div>
+      </div>
+      <div class="brain-card" style="border-top-color:var(--teal)">
+        <div class="brain-icon">📺</div>
+        <div class="brain-name">channel.md</div>
+        <div class="brain-desc">YouTube channel details, content pillars, audience info</div>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:13px;color:var(--dim)">Write these files once → Co-work reads them every session → self-learning system that improves over time.</p>
+  </div>
+
+  <!-- WORKFLOW EXAMPLE -->
+  <div class="section">
+    <h3 class="section-title">How a Workflow Works</h3>
+    <div class="section-bar" style="background:var(--green)"></div>
+    <div class="flow-row">
+      <div class="flow-step">
+        <div class="fs-icon">📄</div>
+        <div class="fs-label">Read Context File</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-icon">📧</div>
+        <div class="fs-label">Check Email & Calendar</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-icon">⚙️</div>
+        <div class="fs-label">Process & Summarize</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-icon">📋</div>
+        <div class="fs-label">Output: Daily Brief</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--dim)">One command (e.g., <code style="background:var(--card2);padding:2px 8px;border-radius:6px;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:12px">/brief</code>) triggers the entire multi-step workflow.</p>
+  </div>
+
+  <!-- CONNECTORS -->
+  <div class="section">
+    <h3 class="section-title">App Ecosystem — Connect Everything</h3>
+    <div class="section-bar" style="background:var(--orange)"></div>
+    <div class="connector-grid">
+      <div class="connector-chip"><span class="chip-icon">📧</span>Gmail</div>
+      <div class="connector-chip"><span class="chip-icon">📅</span>Google Calendar</div>
+      <div class="connector-chip"><span class="chip-icon">📝</span>Notion</div>
+      <div class="connector-chip"><span class="chip-icon">💬</span>Slack</div>
+      <div class="connector-chip"><span class="chip-icon">🎨</span>Canva</div>
+      <div class="connector-chip"><span class="chip-icon">📐</span>Figma</div>
+      <div class="connector-chip"><span class="chip-icon">📁</span>Google Drive</div>
+      <div class="connector-chip"><span class="chip-icon">📊</span>Airtable</div>
+      <div class="connector-chip"><span class="chip-icon">🎫</span>Zendesk</div>
+      <div class="connector-chip" style="border-color:var(--orange);color:var(--orange)"><span class="chip-icon">⚡</span>Zapier MCP → 8,000+ apps</div>
+    </div>
+    <p style="margin-top:14px;font-size:13px;color:var(--dim)">~38 native connectors built in. For everything else, connect via Zapier MCP server (zapier.com/mcp).</p>
+  </div>
+
+  <!-- AUTOMATION EXAMPLES -->
+  <div class="section">
+    <h3 class="section-title">Automation Examples — It Works While You Sleep</h3>
+    <div class="section-bar" style="background:var(--teal)"></div>
+    <div class="auto-grid">
+      <div class="auto-card">
+        <div class="auto-time">Daily @ 7:00 AM</div>
+        <div class="auto-name">Morning Brief</div>
+        <div class="auto-desc">Reads goals & task files → checks email & calendar → sends daily briefing summary</div>
+      </div>
+      <div class="auto-card">
+        <div class="auto-time">Daily @ 8:00 AM</div>
+        <div class="auto-name">Competitor Dashboard</div>
+        <div class="auto-desc">Scrapes YouTube competitors → generates HTML dashboard → posts to Slack</div>
+      </div>
+      <div class="auto-card">
+        <div class="auto-time">Weekly — Mondays</div>
+        <div class="auto-name">Weekly Report</div>
+        <div class="auto-desc">Pulls data → formats report → saves to Google Drive automatically</div>
+      </div>
+      <div class="auto-card">
+        <div class="auto-time">Daily @ 9:00 AM</div>
+        <div class="auto-name">Competitor Research</div>
+        <div class="auto-desc">Custom research task → analyzes trends → surfaces insights</div>
+      </div>
+    </div>
+    <p style="margin-top:14px;font-size:13px;color:var(--dim)">Requires: computer awake + Claude Desktop open. Self-improves by rewriting its own instructions after each run.</p>
+  </div>
+
+  <!-- KEY TAKEAWAYS -->
+  <div class="section">
+    <h3 class="section-title">Key Takeaways</h3>
+    <div class="section-bar" style="background:var(--accent)"></div>
+    <div class="takeaways">
+      <div class="takeaway">
+        <span class="tk-num">1</span>
+        <div class="tk-text"><strong>Not a chatbot</strong> — Co-work is an operating system for your AI employee</div>
+      </div>
+      <div class="takeaway">
+        <span class="tk-num">2</span>
+        <div class="tk-text"><strong>Import memory first</strong> — transfer ChatGPT context in 60 seconds</div>
+      </div>
+      <div class="takeaway">
+        <span class="tk-num">3</span>
+        <div class="tk-text"><strong>Build brain files</strong> — Goals + Claude + Company MD = personalized AI</div>
+      </div>
+      <div class="takeaway">
+        <span class="tk-num">4</span>
+        <div class="tk-text"><strong>Plugins = skill packs</strong> — one command triggers entire workflows</div>
+      </div>
+      <div class="takeaway">
+        <span class="tk-num">5</span>
+        <div class="tk-text"><strong>Connect everything</strong> — native connectors + Zapier MCP = 8,000+ apps</div>
+      </div>
+      <div class="takeaway">
+        <span class="tk-num">6</span>
+        <div class="tk-text"><strong>Automate what repeats</strong> — scheduled tasks run while you sleep</div>
+      </div>
+      <div class="takeaway">
+        <span class="tk-num">7</span>
+        <div class="tk-text"><strong>Self-improving system</strong> — rewrites instructions after every run</div>
+      </div>
+      <div class="takeaway">
+        <span class="tk-num">8</span>
+        <div class="tk-text"><strong>Share with your team</strong> — plugins are portable folders anyone can use</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+
+</div>
+</body>
+</html>
