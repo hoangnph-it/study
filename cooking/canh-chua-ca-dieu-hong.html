@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canh Chua Cá Diêu Hồng — Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FFF8F0;
+    --card: #FFFFFF;
+    --card2: #FFF3E6;
+    --border: #F0DCC8;
+    --accent: #D35400;
+    --red: #E74C3C;
+    --green: #27AE60;
+    --blue: #2980B9;
+    --gold: #F39C12;
+    --purple: #8E44AD;
+    --teal: #16A085;
+    --pink: #E84393;
+    --dark: #2C1810;
+    --text: #3D2914;
+    --light: #6B5744;
+    --dim: #9A8672;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.55;
+  }
+
+  .infographic { max-width: 880px; margin: 0 auto; padding: 0 40px 60px; }
+
+  .top-bar { height: 8px; background: linear-gradient(90deg, var(--red), var(--accent), var(--gold), var(--green)); }
+
+  /* Header */
+  .header { padding: 48px 0 24px; text-align: center; }
+  .header-emoji { font-size: 48px; margin-bottom: 8px; }
+  .badge {
+    display: inline-block; padding: 5px 16px; border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .b-red { background: var(--red); color: #fff; }
+  .b-accent { background: var(--accent); color: #fff; }
+  .b-green { background: var(--green); color: #fff; }
+  .b-blue { background: var(--blue); color: #fff; }
+  .b-gold { background: var(--gold); color: #2C1810; }
+  .b-purple { background: var(--purple); color: #fff; }
+  .b-teal { background: var(--teal); color: #fff; }
+  .b-dim { background: #E8D5C0; color: var(--light); }
+
+  .header h1 { font-size: 38px; font-weight: 800; line-height: 1.15; margin-top: 12px; color: var(--dark); }
+  .header h1 span { color: var(--accent); }
+  .header .sub { font-size: 18px; color: var(--accent); font-weight: 600; margin-top: 4px; }
+  .header .author { color: var(--dim); font-size: 14px; margin-top: 10px; }
+  .divider { border: none; height: 2px; background: var(--border); margin: 28px 0; }
+
+  /* Section */
+  .section { margin-bottom: 40px; }
+  .section-title { font-size: 20px; font-weight: 800; color: var(--dark); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+  .section-bar { width: 50px; height: 4px; border-radius: 2px; margin-bottom: 18px; }
+
+  /* Time overview */
+  .time-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+    margin-bottom: 32px;
+  }
+  .time-step {
+    background: var(--card); border-radius: 14px; padding: 16px;
+    text-align: center; border: 2px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .time-step:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .time-step .emoji { font-size: 28px; margin-bottom: 6px; }
+  .time-step .mins { font-size: 22px; font-weight: 800; color: var(--accent); }
+  .time-step .label { font-size: 11px; color: var(--dim); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+
+  /* Step card */
+  .step-card {
+    background: var(--card); border-radius: 16px; padding: 24px;
+    margin-bottom: 12px; border: 2px solid var(--border);
+    border-left: 6px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .step-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .step-header { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .step-num {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 18px; color: #fff; flex-shrink: 0;
+  }
+  .step-title { font-size: 17px; font-weight: 800; color: var(--dark); }
+  .step-time { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent); font-weight: 600; }
+  .step-desc { color: var(--light); font-size: 13.5px; line-height: 1.65; padding-left: 54px; }
+  .step-desc strong { color: var(--dark); }
+
+  /* Tip callout */
+  .tip-callout {
+    background: #FFF9E6; border: 2px solid var(--gold); border-radius: 12px;
+    padding: 14px 18px; margin-top: 10px; margin-left: 54px;
+    font-size: 13px; color: var(--light);
+  }
+  .tip-callout strong { color: var(--gold); }
+
+  /* Connector */
+  .connector { display: flex; justify-content: flex-start; padding-left: 58px; margin: -4px 0; }
+  .con-dots { display: flex; flex-direction: column; gap: 4px; padding: 4px 0; }
+  .con-dots span { width: 4px; height: 4px; border-radius: 50%; background: var(--border); }
+
+  /* Anti-fishy tips */
+  .tip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .tip-card {
+    background: var(--card); border-radius: 14px; padding: 20px;
+    border: 2px solid var(--border);
+    transition: transform 0.2s;
+  }
+  .tip-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+  .tip-card .tip-emoji { font-size: 28px; margin-bottom: 8px; }
+  .tip-card .tip-name { font-weight: 700; font-size: 15px; color: var(--dark); margin-bottom: 4px; }
+  .tip-card .tip-detail { color: var(--light); font-size: 13px; line-height: 1.55; }
+
+  /* Dipping sauce */
+  .sauce-box {
+    background: linear-gradient(135deg, #FFF3E6, #FFECD2);
+    border: 2.5px solid var(--accent);
+    border-radius: 18px;
+    padding: 28px;
+  }
+  .sauce-title { font-size: 22px; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+  .sauce-sub { font-size: 13px; color: var(--light); margin-bottom: 16px; }
+  .sauce-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .sauce-col h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .sauce-item { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 13px; color: var(--light); }
+  .sauce-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* Shopping list */
+  .shop-section { margin-bottom: 16px; }
+  .shop-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .shop-item {
+    background: var(--card); border-radius: 10px; padding: 12px 16px;
+    border: 1.5px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px;
+    transition: transform 0.15s;
+  }
+  .shop-item:hover { transform: translateX(3px); }
+  .shop-emoji { font-size: 18px; flex-shrink: 0; }
+  .shop-name { font-weight: 600; color: var(--dark); }
+  .shop-qty { color: var(--dim); font-size: 12px; }
+
+  /* Fish sauce tip */
+  .fs-tip {
+    background: #FFF3E6; border: 2px solid var(--gold); border-radius: 14px;
+    padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start;
+  }
+  .fs-icon { font-size: 32px; flex-shrink: 0; }
+  .fs-title { font-weight: 800; font-size: 15px; color: var(--gold); margin-bottom: 4px; }
+  .fs-text { color: var(--light); font-size: 13px; line-height: 1.55; }
+
+  /* Bottom */
+  .verdict {
+    background: linear-gradient(135deg, var(--accent), var(--red));
+    border-radius: 16px; padding: 28px 32px; text-align: center; margin-top: 40px;
+  }
+  .verdict h2 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .verdict p { color: rgba(255,255,255,0.85); font-size: 14px; }
+
+  .bottom-bar { height: 8px; background: linear-gradient(90deg, var(--red), var(--accent), var(--gold), var(--green)); margin-top: 48px; }
+
+  @media (max-width: 640px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 26px; }
+    .time-bar { grid-template-columns: repeat(2, 1fr); }
+    .tip-grid, .sauce-grid, .shop-grid { grid-template-columns: 1fr; }
+    .step-desc, .tip-callout { padding-left: 0; margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-emoji">&#127858;</div>
+    <span class="badge b-red">VIETNAMESE RECIPE</span>
+    <span class="badge b-gold" style="margin-left: 6px;">15 PH&Uacute;T</span>
+    <h1>CANH CHUA <span>C&Aacute; DI&Ecirc;U H&#7890;NG</span></h1>
+    <div class="sub">Sour Fish Soup — Single Serving</div>
+    <p class="author">by Master Of Cooking</p>
+    <hr class="divider">
+  </div>
+
+  <!-- TIME OVERVIEW -->
+  <div class="section">
+    <div class="time-bar">
+      <div class="time-step">
+        <div class="emoji">&#128293;</div>
+        <div class="mins">3-5'</div>
+        <div class="label">&#272;un n&#432;&#7899;c</div>
+      </div>
+      <div class="time-step">
+        <div class="emoji">&#128031;</div>
+        <div class="mins">5-7'</div>
+        <div class="label">N&#7845;u c&aacute;</div>
+      </div>
+      <div class="time-step">
+        <div class="emoji">&#127813;</div>
+        <div class="mins">3'</div>
+        <div class="label">Rau & Me</div>
+      </div>
+      <div class="time-step">
+        <div class="emoji">&#127807;</div>
+        <div class="mins">1-2'</div>
+        <div class="label">N&ecirc;m n&#7871;m</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANTI-FISHY TIPS -->
+  <div class="section">
+    <div class="section-title">&#128161; M&#7865;o Kh&#7917; M&ugrave;i Tanh C&aacute;</div>
+    <div class="section-bar" style="background: var(--gold);"></div>
+
+    <div class="tip-grid">
+      <div class="tip-card">
+        <div class="tip-emoji">&#129476;</div>
+        <div class="tip-name">H&agrave;nh T&iacute;m &#272;&#7853;p D&#7853;p</div>
+        <div class="tip-detail">N&#432;&#7899;ng s&#417; ho&#7863;c &#273;&#7853;p d&#7853;p 1-2 c&#7911; h&agrave;nh t&iacute;m, th&#7843; v&agrave;o n&#7891;i n&#432;&#7899;c t&#7915; l&uacute;c l&#7841;nh. Tinh d&#7847;u h&agrave;nh kh&#7917; tanh c&#7921;c t&#7889;t v&agrave; l&agrave;m n&#432;&#7899;c d&ugrave;ng ng&#7885;t thanh t&#7921; nhi&ecirc;n.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-emoji">&#127807;</div>
+        <div class="tip-name">T&#259;ng C&#432;&#7901;ng Rau Th&#417;m</div>
+        <div class="tip-detail">Cho nhi&#7873;u <strong>ng&ograve; gai</strong> (m&ugrave;i t&agrave;u) v&agrave; <strong>ng&ograve; om</strong> (rau ng&#7893;). Tinh d&#7847;u trong c&aacute;c lo&#7841;i rau n&agrave;y &#273;&#7911; s&#7913;c l&#7845;n &aacute;t m&ugrave;i tanh.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4-STEP PROCESS -->
+  <div class="section">
+    <div class="section-title">&#128293; Quy Tr&igrave;nh N&#7845;u 15 Ph&uacute;t</div>
+    <div class="section-bar" style="background: var(--accent);"></div>
+
+    <!-- Step 1 -->
+    <div class="step-card" style="border-left-color: var(--red);">
+      <div class="step-header">
+        <div class="step-num" style="background: var(--red);">1</div>
+        <div>
+          <div class="step-title">&#272;un S&ocirc;i N&#432;&#7899;c + H&agrave;nh T&iacute;m</div>
+          <div class="step-time">3 - 5 ph&uacute;t</div>
+        </div>
+      </div>
+      <div class="step-desc">&#272;un l&#7917;a l&#7899;n cho n&#432;&#7899;c s&ocirc;i b&ugrave;ng. <strong>H&agrave;nh t&iacute;m &#273;&#7853;p d&#7853;p th&#7843; v&agrave;o ngay t&#7915; &#273;&#7847;u n&#432;&#7899;c l&#7841;nh</strong> &#273;&#7875; tinh d&#7847;u h&agrave;nh ti&#7871;t ra, kh&#7917; m&ugrave;i t&#7889;t h&#417;n.</div>
+    </div>
+
+    <div class="connector"><div class="con-dots"><span></span><span></span><span></span></div></div>
+
+    <!-- Step 2 -->
+    <div class="step-card" style="border-left-color: var(--accent);">
+      <div class="step-header">
+        <div class="step-num" style="background: var(--accent);">2</div>
+        <div>
+          <div class="step-title">Th&#7843; C&aacute; V&agrave;o N&#7845;u Ch&iacute;n</div>
+          <div class="step-time">5 - 7 ph&uacute;t</div>
+        </div>
+      </div>
+      <div class="step-desc"><strong>N&#432;&#7899;c th&#7853;t s&ocirc;i m&#7899;i th&#7843; c&aacute;</strong> (&#273;&#7875; kh&oacute;a m&#7863;t c&aacute;, kh&ocirc;ng b&#7883; tanh). H&#7841; l&#7917;a trung b&igrave;nh. C&aacute; ch&iacute;n khi th&#7883;t chuy&#7875;n <strong>tr&#7855;ng &#273;&#7909;c v&agrave; t&aacute;ch nh&#7865;</strong> (~5 ph&uacute;t). &#272;&#7915;ng n&#7845;u qu&aacute; l&acirc;u — c&aacute; s&#7869; n&aacute;t v&agrave; kh&ocirc;.</div>
+      <div class="tip-callout"><strong>&#9888;&#65039; L&#432;u &yacute;:</strong> V&#7899;t b&#7885;t li&ecirc;n t&#7909;c &#273;&#7875; n&#432;&#7899;c trong!</div>
+    </div>
+
+    <div class="connector"><div class="con-dots"><span></span><span></span><span></span></div></div>
+
+    <!-- Step 3 -->
+    <div class="step-card" style="border-left-color: var(--gold);">
+      <div class="step-header">
+        <div class="step-num" style="background: var(--gold);">3</div>
+        <div>
+          <div class="step-title">C&agrave; Chua, D&#7913;a, N&#432;&#7899;c C&#7889;t Me</div>
+          <div class="step-time">3 ph&uacute;t</div>
+        </div>
+      </div>
+      <div class="step-desc">Th&#7843; <strong>d&#7913;a &amp; c&agrave; chua</strong> v&agrave;o (c&agrave; chua ch&#7881; c&#7847;n ch&iacute;n m&#7873;m v&#7915;a, gi&#7919; vitamin). &#272;&#7893; <strong>n&#432;&#7899;c c&#7889;t me</strong> &#273;&#7875; h&ograve;a quy&#7879;n v&#7883; chua. &#272;&#7853;u b&#7855;p / b&#7841;c h&agrave; th&#7843; &#7903; ph&uacute;t cu&#7889;i (th&ecirc;m 1 ph&uacute;t).</div>
+    </div>
+
+    <div class="connector"><div class="con-dots"><span></span><span></span><span></span></div></div>
+
+    <!-- Step 4 -->
+    <div class="step-card" style="border-left-color: var(--green);">
+      <div class="step-header">
+        <div class="step-num" style="background: var(--green);">4</div>
+        <div>
+          <div class="step-title">T&#7855;t B&#7871;p — N&ecirc;m N&#7871;m & Rau Th&#417;m</div>
+          <div class="step-time">1 - 2 ph&uacute;t</div>
+        </div>
+      </div>
+      <div class="step-desc"><strong>T&#7855;t b&#7871;p r&#7891;i m&#7899;i n&ecirc;m n&#432;&#7899;c m&#7855;m</strong> (gi&#7919; m&ugrave;i th&#417;m, kh&ocirc;ng ch&aacute;t). Cho <strong>gi&aacute; &#273;&#7895;, ng&ograve; gai, ng&ograve; om, &#7899;t</strong> v&agrave;o. Nhi&#7879;t &#273;&#7897; c&ograve;n l&#7841;i &#273;&#7911; l&agrave;m t&aacute;i rau v&agrave; d&#7853;y m&ugrave;i th&#417;m m&agrave; kh&ocirc;ng nh&#361;n/v&agrave;ng.</div>
+    </div>
+  </div>
+
+  <!-- DIPPING SAUCE -->
+  <div class="section">
+    <div class="section-title">&#129379; N&#432;&#7899;c M&#7855;m T&#7887;i &#7898;t</div>
+    <div class="section-bar" style="background: var(--accent);"></div>
+
+    <div class="sauce-box">
+      <div class="sauce-title">N&#432;&#7899;c Ch&#7845;m T&#7887;i &#7898;t</div>
+      <div class="sauce-sub">&#272;&#7875; &aacute;t ho&agrave;n to&agrave;n m&ugrave;i tanh c&#7911;a c&aacute; lu&#7897;c (kh&ocirc;ng chi&ecirc;n)</div>
+
+      <div class="sauce-grid">
+        <div class="sauce-col">
+          <h4>&#129387; Nguy&ecirc;n Li&#7879;u</h4>
+          <div class="sauce-item"><div class="sauce-dot" style="background: var(--accent);"></div>N&#432;&#7899;c m&#7855;m ngon: 3 th&igrave;a canh</div>
+          <div class="sauce-item"><div class="sauce-dot" style="background: var(--gold);"></div>T&#7887;i: 2-3 t&eacute;p (b&#259;m nhuy&#7877;n)</div>
+          <div class="sauce-item"><div class="sauce-dot" style="background: var(--red);"></div>&#7898;t: 1-2 tr&aacute;i (b&#259;m nhuy&#7877;n)</div>
+          <div class="sauce-item"><div class="sauce-dot" style="background: var(--dim);"></div>&#272;&#432;&#7901;ng / B&#7897;t ng&#7885;t: 1 x&iacute;u</div>
+        </div>
+        <div class="sauce-col">
+          <h4>&#128296; C&aacute;ch L&agrave;m</h4>
+          <div class="sauce-item"><div class="sauce-dot" style="background: var(--green);"></div>T&#7887;i + &#7899;t b&#259;m nhuy&#7877;n (gi&atilde; n&aacute;t c&agrave;ng ngon)</div>
+          <div class="sauce-item"><div class="sauce-dot" style="background: var(--green);"></div>Th&ecirc;m 1 x&iacute;u &#273;&#432;&#7901;ng &#273;&#7875; "m&#7873;m" v&#7883; m&#7863;n</div>
+          <div class="sauce-item"><div class="sauce-dot" style="background: var(--green);"></div>&#272;&#7893; n&#432;&#7899;c m&#7855;m khu&#7845;y &#273;&#7873;u</div>
+          <div class="sauce-item"><div class="sauce-dot" style="background: var(--green);"></div>T&#7887;i &#7899;t n&#7893;i l&ecirc;n tr&ecirc;n — ch&#7845;m c&aacute; "d&iacute;nh" ngay!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FISH SAUCE TIP -->
+  <div class="section">
+    <div class="fs-tip">
+      <div class="fs-icon">&#128161;</div>
+      <div>
+        <div class="fs-title">M&#7865;o Ch&#7885;n N&#432;&#7899;c M&#7855;m — Master Of Cooking</div>
+        <div class="fs-text">D&ugrave;ng <strong>n&#432;&#7899;c m&#7855;m nh&#297;</strong> (n&#432;&#7899;c m&#7855;m c&#7889;t) c&oacute; &#273;&#7897; &#273;&#7841;m <strong>30-40 &#273;&#7897;</strong>. Kh&ocirc;ng d&ugrave;ng n&#432;&#7899;c m&#7855;m c&ocirc;ng nghi&#7879;p (&#273;&atilde; pha lo&atilde;ng, nhi&#7873;u h&#432;&#417;ng li&#7879;u) — v&#7883; s&#7869; nh&#7841;t nh&#7869;o!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOPPING LIST -->
+  <div class="section">
+    <div class="section-title">&#128722; Shopping List</div>
+    <div class="section-bar" style="background: var(--green);"></div>
+
+    <!-- Protein & Veg -->
+    <div class="shop-section">
+      <div class="shop-title"><span class="badge b-red" style="font-size:10px;">1</span> Protein & Rau C&#7911;</div>
+      <div class="shop-grid">
+        <div class="shop-item"><span class="shop-emoji">&#128031;</span><div><div class="shop-name">C&aacute; di&ecirc;u h&#7891;ng</div><div class="shop-qty">1-2 kh&#7913;a (150-200g)</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#127813;</span><div><div class="shop-name">C&agrave; chua</div><div class="shop-qty">1 qu&#7843; l&#7899;n / 2 nh&#7887;</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#127821;</span><div><div class="shop-name">D&#7913;a (Th&#417;m)</div><div class="shop-qty">1 mi&#7871;ng nh&#7887;</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#129382;</span><div><div class="shop-name">&#272;&#7853;u b&#7855;p</div><div class="shop-qty">2-3 tr&aacute;i</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#127811;</span><div><div class="shop-name">B&#7841;c h&agrave; (D&#7885;c m&ugrave;ng)</div><div class="shop-qty">1 nh&aacute;nh (kh&ocirc;ng b&#7855;t bu&#7897;c)</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#127793;</span><div><div class="shop-name">Gi&aacute; &#273;&#7895;</div><div class="shop-qty">1 n&#7855;m nh&#7887;</div></div></div>
+      </div>
+    </div>
+
+    <!-- Sour & Anti-fishy -->
+    <div class="shop-section">
+      <div class="shop-title"><span class="badge b-gold" style="font-size:10px;">2</span> Gia V&#7883; T&#7841;o Chua & Kh&#7917; Tanh</div>
+      <div class="shop-grid">
+        <div class="shop-item"><span class="shop-emoji">&#129473;</span><div><div class="shop-name">Me chua / C&#7889;t me</div><div class="shop-qty">1 th&igrave;a c&agrave; ph&ecirc;</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#129476;</span><div><div class="shop-name">H&agrave;nh t&iacute;m</div><div class="shop-qty">2 c&#7911;</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#127807;</span><div><div class="shop-name">Ng&ograve; gai + Ng&ograve; om</div><div class="shop-qty">1 m&#7899; h&#7895;n h&#7907;p</div></div></div>
+      </div>
+    </div>
+
+    <!-- Seasoning -->
+    <div class="shop-section">
+      <div class="shop-title"><span class="badge b-green" style="font-size:10px;">3</span> Gia V&#7883; & N&#432;&#7899;c Ch&#7845;m</div>
+      <div class="shop-grid">
+        <div class="shop-item"><span class="shop-emoji">&#127798;</span><div><div class="shop-name">&#7898;t hi&#7875;m</div><div class="shop-qty">2-3 tr&aacute;i</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#129379;</span><div><div class="shop-name">N&#432;&#7899;c m&#7855;m ngon</div><div class="shop-qty">4-5 th&igrave;a canh</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#129383;</span><div><div class="shop-name">&#272;&#432;&#7901;ng</div><div class="shop-qty">&#272;&#432;&#7901;ng c&aacute;t / ph&egrave;n</div></div></div>
+        <div class="shop-item"><span class="shop-emoji">&#129474;</span><div><div class="shop-name">Mu&#7889;i</div><div class="shop-qty">Mu&#7889;i &#259;n</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>&#127858; CANH CHUA TRONG 15 PH&Uacute;T — &#272;&#416;N GI&#7842;N, NGON, L&Agrave;NH!</h2>
+    <p>B&iacute; quy&#7871;t: H&agrave;nh t&iacute;m kh&#7917; tanh + N&#432;&#7899;c m&#7855;m nh&#297; + Rau th&#417;m t&#432;&#417;i = Ho&agrave;n h&#7843;o!</p>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>

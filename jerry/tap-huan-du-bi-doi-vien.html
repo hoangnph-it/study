@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tập Huấn Lớp Dự Bị Đội Viên — Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FDF8F0;
+    --card: #FFFFFF;
+    --card-alt: #FFF8EE;
+    --border: #E8D5B8;
+    --red: #D32F2F;
+    --red-light: #FFEBEE;
+    --red-dark: #B71C1C;
+    --gold: #F9A825;
+    --gold-light: #FFF8E1;
+    --green: #2E7D32;
+    --green-light: #E8F5E9;
+    --green-dark: #1B5E20;
+    --blue: #1565C0;
+    --blue-light: #E3F2FD;
+    --orange: #E65100;
+    --orange-light: #FFF3E0;
+    --brown: #5D4037;
+    --dark: #1A1A2E;
+    --text: #2C2C2C;
+    --text-light: #555;
+    --dim: #888;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    line-height: 1.6;
+  }
+
+  .infographic { max-width: 920px; margin: 0 auto; padding: 0 32px 60px; }
+
+  /* Top Banner */
+  .top-banner {
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    padding: 40px 32px 32px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .top-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--gold), var(--red), var(--gold));
+  }
+  .banner-badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .banner-star { font-size: 36px; margin-bottom: 8px; }
+  .top-banner h1 { font-size: 34px; font-weight: 900; line-height: 1.2; margin-top: 8px; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .top-banner h1 span { color: var(--gold); }
+  .top-banner .sub { font-size: 14px; margin-top: 12px; opacity: 0.9; line-height: 1.5; }
+  .top-banner .org { font-size: 13px; margin-top: 16px; opacity: 0.8; font-style: italic; }
+
+  /* Section */
+  .section { margin-top: 36px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .section-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Info Card */
+  .info-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    margin-bottom: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .info-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+
+  /* Profile Card */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .profile-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--red-light);
+    border-radius: 10px;
+  }
+  .profile-item .label { font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.3px; }
+  .profile-item .value { font-size: 14px; font-weight: 600; color: var(--text); margin-top: 2px; }
+  .profile-item .icon-p { font-size: 18px; margin-top: 2px; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 36px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--red), var(--gold), var(--green));
+    border-radius: 2px;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 18px;
+    padding: 18px 20px;
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s;
+  }
+  .tl-item:hover { transform: translateX(4px); }
+  .tl-dot {
+    position: absolute;
+    left: -29px; top: 20px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--red);
+  }
+  .tl-year {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .tl-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .tl-desc { font-size: 13px; color: var(--text-light); line-height: 1.5; }
+
+  /* Name Change Timeline */
+  .name-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .name-chip {
+    background: var(--gold-light);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brown);
+    text-align: center;
+  }
+  .name-chip .nc-year {
+    font-size: 11px;
+    color: var(--dim);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .name-arrow { color: var(--red); font-size: 18px; font-weight: 800; }
+
+  /* Members */
+  .members-list { list-style: none; }
+  .members-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0e8dc;
+    font-size: 15px;
+  }
+  .members-list li:last-child { border-bottom: none; }
+  .m-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; color: #fff;
+    flex-shrink: 0;
+  }
+  .m-name { font-weight: 700; }
+  .m-alias { color: var(--dim); font-style: italic; }
+  .m-badge {
+    margin-left: auto;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* 3-Column Cards */
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .col-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 22px 18px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .col-card:hover { transform: translateY(-3px); }
+  .col-card .cc-icon { font-size: 32px; margin-bottom: 10px; }
+  .col-card .cc-title { font-size: 14px; font-weight: 700; line-height: 1.4; }
+  .col-card .cc-desc { font-size: 12px; color: var(--text-light); margin-top: 6px; line-height: 1.4; }
+
+  /* Two Column */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .duty-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 22px;
+    border-top: 4px solid transparent;
+  }
+  .duty-card h4 { font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
+  .duty-card ul { list-style: none; padding: 0; }
+  .duty-card li {
+    font-size: 13px;
+    color: var(--text-light);
+    padding: 8px 0;
+    border-bottom: 1px solid #f0ebe0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .duty-card li:last-child { border-bottom: none; }
+  .duty-card li .bullet { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+
+  /* Symbol Card */
+  .symbol-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+    align-items: start;
+    transition: transform 0.2s;
+  }
+  .symbol-card:hover { transform: translateY(-2px); }
+  .symbol-visual {
+    width: 80px; height: 80px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px;
+  }
+  .symbol-card h4 { font-size: 17px; font-weight: 800; margin-bottom: 6px; }
+  .symbol-card .sym-spec { font-size: 13px; color: var(--text-light); line-height: 1.5; margin-bottom: 8px; }
+  .symbol-card .sym-meaning {
+    font-size: 13px;
+    color: var(--text);
+    background: #FFF8E1;
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* Doi Vien Box */
+  .dv-box {
+    background: linear-gradient(135deg, var(--green-light), #F1F8E9);
+    border-radius: 14px;
+    padding: 22px 24px;
+    border: 1px solid #C8E6C9;
+  }
+  .dv-box h4 { font-size: 16px; font-weight: 800; color: var(--green-dark); margin-bottom: 10px; }
+  .dv-box p { font-size: 14px; color: var(--text); line-height: 1.6; }
+  .dv-conditions {
+    margin-top: 12px;
+    list-style: none;
+    padding: 0;
+  }
+  .dv-conditions li {
+    font-size: 13px;
+    padding: 6px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: var(--text-light);
+  }
+  .dv-conditions li .check { color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+  /* Song Card */
+  .song-card {
+    background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #FFE0B2;
+    text-align: center;
+  }
+  .song-card .song-title { font-size: 22px; font-weight: 900; color: var(--red); }
+  .song-card .song-sub { font-size: 15px; font-weight: 600; color: var(--brown); margin-top: 4px; }
+  .song-card .song-author { font-size: 13px; color: var(--dim); margin-top: 6px; font-style: italic; }
+
+  /* Slogan */
+  .slogan-card {
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    color: #fff;
+    margin-top: 12px;
+  }
+  .slogan-card .slogan-label { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; margin-bottom: 10px; }
+  .slogan-card .slogan-text { font-size: 22px; font-weight: 900; line-height: 1.4; }
+  .slogan-card .slogan-text span { color: var(--gold); }
+
+  /* Footer */
+  .footer {
+    margin-top: 40px;
+    padding: 24px 0;
+    border-top: 2px solid var(--border);
+    text-align: center;
+    color: var(--dim);
+    font-size: 13px;
+  }
+
+  @media (max-width: 700px) {
+    .profile-grid, .three-col, .two-col { grid-template-columns: 1fr; }
+    .symbol-card { grid-template-columns: 1fr; text-align: center; }
+    .symbol-visual { margin: 0 auto; }
+    .name-flow { flex-direction: column; }
+    .top-banner h1 { font-size: 24px; }
+    .infographic { padding: 0 16px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="top-banner">
+  <div class="banner-star">⭐</div>
+  <span class="banner-badge">Hội Đồng Đội Phường Tân Hòa — Liên Đội Hùng Vương</span>
+  <h1>TẬP HUẤN LỚP <span>DỰ BỊ ĐỘI VIÊN</span></h1>
+  <p class="sub">
+    Chào mừng kỷ niệm <strong>95 năm</strong> Ngày thành lập Đoàn TNCS Hồ Chí Minh (26/03/1931 – 26/03/2026)<br>
+    Chào mừng kỷ niệm <strong>85 năm</strong> Ngày thành lập Đội TNTP Hồ Chí Minh (15/05/1941 – 15/05/2026)
+  </p>
+  <p class="org">Tân Hòa, ngày 10 tháng 03 năm 2026</p>
+</div>
+
+<div class="infographic">
+
+  <!-- SƠ LƯỢC VỀ BÁC HỒ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--red-light);color:var(--red)">🌟</div>
+      <h3 class="section-title" style="color:var(--red)">Sơ Lược Về Bác Hồ</h3>
+    </div>
+    <div class="info-card">
+      <div class="profile-grid">
+        <div class="profile-item">
+          <span class="icon-p">📛</span>
+          <div><div class="label">Tên khai sinh</div><div class="value">Nguyễn Sinh Cung</div></div>
+        </div>
+        <div class="profile-item">
+          <span class="icon-p">✒️</span>
+          <div><div class="label">Bút danh khác</div><div class="value">Nguyễn Tất Thành, Văn Ba, Nguyễn Ái Quốc, Lý Thụy, Hồ Chí Minh</div></div>
+        </div>
+        <div class="profile-item">
+          <span class="icon-p">🎂</span>
+          <div><div class="label">Sinh ngày</div><div class="value">19/05/1890</div></div>
+        </div>
+        <div class="profile-item">
+          <span class="icon-p">🏠</span>
+          <div><div class="label">Quê quán</div><div class="value">Xã Kim Liên, huyện Nam Đàn, tỉnh Nghệ An</div></div>
+        </div>
+        <div class="profile-item">
+          <span class="icon-p">🕊️</span>
+          <div><div class="label">Mất ngày</div><div class="value">02/09/1969</div></div>
+        </div>
+        <div class="profile-item">
+          <span class="icon-p">⭐</span>
+          <div><div class="label">Vai trò</div><div class="value">Lãnh tụ cách mạng Việt Nam</div></div>
+        </div>
+      </div>
+      <div style="margin-top:16px; padding:14px 18px; background:var(--gold-light); border-radius:12px; border-left:4px solid var(--gold);">
+        <p style="font-size:13px; color:var(--text-light); line-height:1.6;">
+          <strong>Năm 1911:</strong> Rời bến Nhà Rồng ra đi tìm đường cứu nước · Đi qua nhiều nước ở châu Âu, châu Mỹ, châu Phi, tìm hiểu con đường giải phóng dân tộc · <strong>1930:</strong> Thành lập Đảng Cộng sản Việt Nam · Lãnh đạo Cách mạng Tháng Tám 1945 · Khai sinh nước Việt Nam Dân chủ Cộng hòa
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CÁC CỘT MỐC THỜI GIAN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--gold-light);color:var(--orange)">📅</div>
+      <h3 class="section-title" style="color:var(--orange)">Các Cột Mốc Thời Gian Thành Lập Đội</h3>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--red)"></div>
+        <div class="tl-year" style="color:var(--red)">1911 — Bác Hồ ra đi tìm đường cứu nước</div>
+        <div class="tl-desc">Ngày 05/06/1911, người thanh niên yêu nước Nguyễn Tất Thành đổi tên là anh Ba, rời bến cảng Nhà Rồng với công việc phụ bếp trên tàu Đô đốc Latouche-Tréville ra nước ngoài hoạt động cách mạng.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--red-dark)"></div>
+        <div class="tl-year" style="color:var(--red-dark)">1930 — Đảng Cộng Sản Việt Nam thành lập</div>
+        <div class="tl-desc">Từ ngày 3–7/02/1930, tại bán đảo Cửu Long (Hương Cảng, Trung Quốc), dưới sự chủ trì của đồng chí Nguyễn Ái Quốc, Hội nghị hợp nhất các tổ chức Cộng sản thành một Đảng duy nhất — Đảng Cộng sản Việt Nam. Đây là bước ngoặt vĩ đại trong lịch sử cách mạng nước ta.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--orange)"></div>
+        <div class="tl-year" style="color:var(--orange)">1936–1939 — Phong trào Dân chủ</div>
+        <div class="tl-desc">Tập dợt cuộc tổng khởi nghĩa · Khởi nghĩa chống phát xít · Báo Dân chúng được phát hành. Đây là giai đoạn chuẩn bị quan trọng cho cuộc Cách mạng Tháng Tám sau này.</div>
+      </div>
+
+      <div class="tl-item" style="border: 2px solid var(--red); background: var(--red-light);">
+        <div class="tl-dot" style="background:var(--gold); box-shadow: 0 0 0 2px var(--gold);"></div>
+        <div class="tl-year" style="color:var(--red)">⭐ 15/05/1941 — Đội Thiếu Niên Tiền Phong Hồ Chí Minh ra đời</div>
+        <div class="tl-title" style="color:var(--red-dark)">Sự kiện trọng đại</div>
+        <div class="tl-desc">Tháng 2/1941, lãnh tụ Nguyễn Ái Quốc bí mật về nước ở vùng Pác Bó (Cao Bằng). Tháng 5/1941, Hội nghị lần thứ 8 của Trung ương Đảng chủ trương thành lập Việt Nam Độc lập Đồng minh (Việt Minh).</div>
+        <div class="tl-desc" style="margin-top:8px"><strong>Ngày 15/05/1941</strong>, tại thôn Nà Mạ, xã Trường Hà, huyện Hà Quảng, tỉnh Cao Bằng — <strong>Hội Nhi đồng Cứu quốc</strong> được thành lập. Đây chính là tiền thân của Đội TNTP Hồ Chí Minh ngày nay. Từ 5 đội viên đầu tiên, đến trước Cách mạng Tháng Tám, tổ chức Đội đã được xây dựng rộng khắp trong cả nước.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 ĐỘI VIÊN ĐẦU TIÊN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--green-light);color:var(--green)">👦</div>
+      <h3 class="section-title" style="color:var(--green)">5 Đội Viên Đầu Tiên Của Đội</h3>
+    </div>
+    <div class="info-card" style="padding:16px 20px">
+      <ul class="members-list">
+        <li>
+          <span class="m-num" style="background:var(--red)">1</span>
+          <div><span class="m-name">Nông Văn Dền</span> <span class="m-alias">(tức Kim Đồng)</span></div>
+          <span class="m-badge" style="background:var(--gold-light);color:var(--orange);border:1px solid var(--gold)">Đội trưởng</span>
+        </li>
+        <li>
+          <span class="m-num" style="background:var(--orange)">2</span>
+          <div><span class="m-name">Nông Văn Thàn</span> <span class="m-alias">(tức Cao Sơn)</span></div>
+        </li>
+        <li>
+          <span class="m-num" style="background:var(--green)">3</span>
+          <div><span class="m-name">Lý Văn Tịnh</span> <span class="m-alias">(tức Thanh Minh)</span></div>
+        </li>
+        <li>
+          <span class="m-num" style="background:var(--blue)">4</span>
+          <div><span class="m-name">Lý Thị Nì</span> <span class="m-alias">(tức Thủy Tiên)</span></div>
+        </li>
+        <li>
+          <span class="m-num" style="background:var(--brown)">5</span>
+          <div><span class="m-name">Lý Thị Xậu</span> <span class="m-alias">(tức Thanh Thủy)</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- QUÁ TRÌNH ĐỔI TÊN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--blue-light);color:var(--blue)">🔄</div>
+      <h3 class="section-title" style="color:var(--blue)">Đội Đã Có Nhiều Lần Đổi Tên</h3>
+    </div>
+    <div class="info-card">
+      <p style="font-size:13px; color:var(--text-light); margin-bottom:16px; font-style:italic;">Từ ngày thành lập đến nay, theo sự nghiệp cách mạng của Đảng và được Đoàn phụ trách, Đội càng ngày càng phát triển.</p>
+      <div class="name-flow">
+        <div class="name-chip"><span class="nc-year">1941</span>Đội Nhi đồng Cứu quốc</div>
+        <span class="name-arrow">→</span>
+        <div class="name-chip"><span class="nc-year">1949</span>Đội Thiếu nhi Tháng Tám</div>
+        <span class="name-arrow">→</span>
+        <div class="name-chip"><span class="nc-year">02/1950</span>Đội Nhi đồng Tháng Tám<br>+ Đội Thiếu niên Tiền phong</div>
+        <span class="name-arrow">→</span>
+        <div class="name-chip"><span class="nc-year">03/1951</span>Đội Thiếu nhi Tháng Tám</div>
+        <span class="name-arrow">→</span>
+        <div class="name-chip"><span class="nc-year">04/11/1956</span>Đội Thiếu niên Tiền phong Việt Nam</div>
+        <span class="name-arrow">→</span>
+        <div class="name-chip" style="background:var(--red-light);border-color:var(--red);color:var(--red-dark)"><span class="nc-year">1970 – nay</span><strong>Đội Thiếu niên Tiền phong Hồ Chí Minh</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ĐỘI TNTP HCM LÀ GÌ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--green-light);color:var(--green-dark)">📖</div>
+      <h3 class="section-title" style="color:var(--green-dark)">Đội Thiếu Niên Tiền Phong Hồ Chí Minh</h3>
+    </div>
+    <div class="info-card" style="background:var(--green-light); border-color:#C8E6C9;">
+      <p style="font-size:14px; line-height:1.7; color:var(--text);">
+        Đội TNTP Hồ Chí Minh là tổ chức của thiếu nhi Việt Nam do Đảng Cộng sản Việt Nam và Chủ tịch Hồ Chí Minh sáng lập, Đoàn Thanh niên Cộng sản Hồ Chí Minh phụ trách.
+      </p>
+      <p style="font-size:14px; line-height:1.7; color:var(--text); margin-top:10px;">
+        Đội TNTP Hồ Chí Minh là trường học giáo dục thiếu nhi Việt Nam trong và ngoài nhà trường, là đội dự bị của Đoàn TNCS Hồ Chí Minh; lực lượng nòng cốt trong các phong trào thiếu nhi.
+      </p>
+      <p style="font-size:14px; line-height:1.7; color:var(--text); margin-top:10px;">
+        Đội lấy 5 điều Bác Hồ dạy thiếu niên, nhi đồng làm mục tiêu phấn đấu rèn luyện cho đội viên, giúp đỡ thiếu nhi trong học tập, hoạt động, vui chơi, thực hiện quyền và bổn phận theo Công ước Liên hiệp quốc về Quyền Trẻ em, Luật Trẻ em.
+      </p>
+    </div>
+  </div>
+
+  <!-- ĐỘI VIÊN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--orange-light);color:var(--orange)">🎒</div>
+      <h3 class="section-title" style="color:var(--orange)">Đội Viên</h3>
+    </div>
+    <div class="dv-box">
+      <h4>Định nghĩa</h4>
+      <p>Đội viên Đội TNTP Hồ Chí Minh là thiếu niên Việt Nam từ <strong>9 đến hết 15 tuổi</strong>, thực hiện tốt 5 điều Bác Hồ dạy, phấn đấu học tập, rèn luyện và tu dưỡng để trở thành đoàn viên Đoàn TNCS Hồ Chí Minh.</p>
+      <h4 style="margin-top:16px">Điều kiện kết nạp</h4>
+      <ul class="dv-conditions">
+        <li><span class="check">✓</span> Thừa nhận Điều lệ Đội Thiếu niên Tiền phong Hồ Chí Minh</li>
+        <li><span class="check">✓</span> Tự nguyện xin vào Đội Thiếu niên Tiền phong Hồ Chí Minh</li>
+        <li><span class="check">✓</span> Được quá nửa số đội viên trong chi đội đồng ý</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LỜI HỨA CỦA ĐỘI VIÊN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--red-light);color:var(--red)">🤝</div>
+      <h3 class="section-title" style="color:var(--red)">Lời Hứa Của Đội Viên</h3>
+    </div>
+    <div class="three-col">
+      <div class="col-card" style="border-top:4px solid var(--red); background:var(--red-light);">
+        <div class="cc-icon">⭐</div>
+        <div class="cc-title" style="color:var(--red-dark)">Thực hiện tốt 5 điều Bác Hồ dạy thiếu niên, nhi đồng</div>
+      </div>
+      <div class="col-card" style="border-top:4px solid var(--green); background:var(--green-light);">
+        <div class="cc-icon">📜</div>
+        <div class="cc-title" style="color:var(--green-dark)">Tuân theo Điều lệ Đội Thiếu niên Tiền phong Hồ Chí Minh</div>
+      </div>
+      <div class="col-card" style="border-top:4px solid var(--blue); background:var(--blue-light);">
+        <div class="cc-icon">🛡️</div>
+        <div class="cc-title" style="color:var(--blue)">Giữ gìn danh dự Đội Thiếu niên Tiền phong Hồ Chí Minh</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUYỀN VÀ NHIỆM VỤ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--blue-light);color:var(--blue)">⚖️</div>
+      <h3 class="section-title" style="color:var(--blue)">Quyền & Nhiệm Vụ Của Đội Viên</h3>
+    </div>
+    <div class="two-col">
+      <div class="duty-card" style="border-top-color:var(--green); border:1px solid #C8E6C9; background:var(--green-light);">
+        <h4 style="color:var(--green-dark)">✅ Quyền của Đội Viên</h4>
+        <ul>
+          <li><span class="bullet">1.</span> Được Đội Thiếu niên Tiền phong Hồ Chí Minh và Đoàn Thanh niên Cộng sản Hồ Chí Minh giúp đỡ phát huy năng lực trong học tập, hoạt động, vui chơi, công tác xã hội</li>
+          <li><span class="bullet">2.</span> Được Đội bảo vệ quyền lợi hợp pháp theo Công ước Liên hiệp quốc, chính sách, pháp luật và Điều lệ Đội</li>
+          <li><span class="bullet">3.</span> Được bàn bạc, biểu quyết và đề cử các công việc của Đội; được ứng cử và bầu vào Ban Chỉ huy đội, chi đội</li>
+        </ul>
+      </div>
+      <div class="duty-card" style="border-top-color:var(--orange); border:1px solid #FFE0B2; background:var(--orange-light);">
+        <h4 style="color:var(--orange)">📋 Nhiệm Vụ của Đội Viên</h4>
+        <ul>
+          <li><span class="bullet">1.</span> Thực hiện Điều lệ, Nghị quyết Đội; Chương trình rèn luyện đội viên</li>
+          <li><span class="bullet">2.</span> Thực hiện 5 điều Bác Hồ dạy để trở thành con ngoan, trò giỏi, đội viên tốt. Chào ngoan Bác Hồ; đoàn viên Đoàn TNCS Hồ Chí Minh</li>
+          <li><span class="bullet">3.</span> Làm gương tốt cho thiếu niên, nhi đồng; giúp đỡ thiếu nhi và chỉ dẫn để phấn đấu vào Đội TNTP Hồ Chí Minh. Tích cực tham gia công tác Nhi đồng</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIỂU TƯỢNG CỦA ĐỘI -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--gold-light);color:var(--orange)">🏳️</div>
+      <h3 class="section-title" style="color:var(--orange)">Các Biểu Tượng Của Đội</h3>
+    </div>
+
+    <!-- Cờ Đội -->
+    <div class="symbol-card">
+      <div class="symbol-visual" style="background:var(--red); border-radius:8px; position:relative;">
+        <span style="font-size:28px;">🚩</span>
+      </div>
+      <div>
+        <h4 style="color:var(--red)">Cờ Đội</h4>
+        <div class="sym-spec">Nền đỏ, hình chữ nhật, chiều rộng bằng 2/3 chiều dài. Ở giữa có hình huy hiệu Đội, đường kính huy hiệu bằng 2/5 chiều rộng cờ.</div>
+        <div class="sym-meaning"><strong>Ý nghĩa:</strong> Tượng trưng cho truyền thống cách mạng, truyền thống Đội, tượng trưng cho lòng yêu Tổ quốc, niềm vinh dự và tự hào của Đội. Dưới cờ Đội hàng ngũ sẽ chỉnh tề hơn, thúc giục đội viên tiến lên.</div>
+      </div>
+    </div>
+
+    <!-- Huy Hiệu Đội -->
+    <div class="symbol-card">
+      <div class="symbol-visual" style="background:var(--green-light);">
+        <span style="font-size:36px;">🔰</span>
+      </div>
+      <div>
+        <h4 style="color:var(--green-dark)">Huy Hiệu Đội</h4>
+        <div class="sym-spec">Huy hiệu Đội TNTP Hồ Chí Minh hình tròn, ở trong có hình măng non trên nền cờ đỏ sao vàng, ở dưới có băng chữ "Sẵn sàng". Tác giả: Lương Xuân Nhị.</div>
+        <div class="sym-meaning"><strong>Ý nghĩa:</strong> Nền đỏ sao vàng là cờ Tổ quốc. Măng non tượng trưng cho lứa tuổi thiếu niên — thế hệ tương lai của dân tộc Việt Nam anh hùng. Băng chữ "Sẵn sàng" là khẩu hiệu hành động của Đội TNTP Hồ Chí Minh.</div>
+        <div style="margin-top:10px; font-size:12px; color:var(--text-light); line-height:1.5;">
+          • Đeo huy hiệu Đội nhắc nhở đội viên học tập và rèn luyện để tiến lên<br>
+          • Đội viên từ 14–15 tuổi có thể đeo Huy hiệu Đội thay cho Khăn quàng đỏ<br>
+          • Huy hiệu Đội đeo ở ngực áo bên trái
+        </div>
+      </div>
+    </div>
+
+    <!-- Khăn Quàng -->
+    <div class="symbol-card">
+      <div class="symbol-visual" style="background:var(--red-light);">
+        <span style="font-size:36px;">🎀</span>
+      </div>
+      <div>
+        <h4 style="color:var(--red)">Khăn Quàng</h4>
+        <div class="sym-spec">Khăn quàng bằng vải màu đỏ (gọi là Khăn quàng đỏ), hình tam giác cân, có đường cao bằng 1/4 cạnh đáy. Kích thước tối thiểu: đường cao 0,25m, cạnh đáy 1,00m.</div>
+        <div class="sym-meaning"><strong>Ý nghĩa:</strong> Khăn Quàng Đỏ là một phần của cờ Tổ quốc, màu đỏ tượng trưng cho lý tưởng cách mạng. Đeo khăn quàng đỏ, đội viên Đội TNTP Hồ Chí Minh tự hào về Tổ quốc, về Đảng Cộng sản Việt Nam, về Bác Hồ vĩ đại, về nhân dân Việt Nam anh hùng và nguyện phấn đấu để trở thành Đoàn viên Đoàn TNCS Hồ Chí Minh.</div>
+        <div style="margin-top:10px; font-size:12px; color:var(--text-light); line-height:1.5;">
+          • <strong>Đội viên</strong> đeo khăn quàng đỏ khi đến trường, trong mọi sinh hoạt và hoạt động của Đội<br>
+          • <strong>Phụ trách</strong> quàng khăn đỏ khi tổ chức sinh hoạt Đội và tham gia các hoạt động của Đội
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ĐỘI CA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--orange-light);color:var(--orange)">🎵</div>
+      <h3 class="section-title" style="color:var(--orange)">Đội Ca</h3>
+    </div>
+    <div class="song-card">
+      <div class="song-title">🎶 Đội Ca</div>
+      <div class="song-sub">Bài hát: "Cùng nhau ta đi lên"</div>
+      <div class="song-author">Nhạc và lời: Phong Nhã</div>
+    </div>
+  </div>
+
+  <!-- KHẨU HIỆU ĐỘI -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--red-light);color:var(--red)">📢</div>
+      <h3 class="section-title" style="color:var(--red)">Khẩu Hiệu Đội</h3>
+    </div>
+    <div class="slogan-card">
+      <div class="slogan-label">Khẩu Hiệu Đội</div>
+      <div class="slogan-text">
+        "Vì Tổ quốc xã hội chủ nghĩa<br>
+        Vì lý tưởng của Bác Hồ vĩ đại<br>
+        <span>Sẵn sàng!</span>"
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Hội Đồng Đội Phường Tân Hòa — Liên Đội Hùng Vương<br>
+    Tập huấn lớp Dự bị Đội viên · Tân Hòa, 10/03/2026
+  </div>
+
+</div>
+</body>
+</html>

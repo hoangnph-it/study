@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Công Thức Nấu Canh Cải Bẹ Xanh — Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0F1923;
+    --card: #162231;
+    --card2: #1E2D3D;
+    --border: #2A3F55;
+    --orange: #FF9900;
+    --orange-dim: #CC7A00;
+    --teal: #00BCD4;
+    --blue: #1A73E8;
+    --green: #4CAF50;
+    --red: #FF5252;
+    --yellow: #FFD54F;
+    --white: #FFFFFF;
+    --light: #B0BEC5;
+    --dim: #8899AA;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .infographic {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+
+  /* Top accent bar */
+  .top-bar { height: 6px; background: var(--orange); }
+
+  /* Header */
+  .header { padding: 48px 0 32px; }
+  .badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-orange { background: var(--orange); color: var(--bg); }
+  .badge-teal { background: var(--teal); color: var(--bg); }
+  .badge-blue { background: var(--blue); color: var(--white); }
+  .badge-green { background: var(--green); color: var(--bg); }
+  .badge-red { background: var(--red); color: var(--white); }
+  .badge-yellow { background: var(--yellow); color: var(--bg); }
+
+  .header h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dim);
+    margin-top: 24px;
+    letter-spacing: 1px;
+  }
+  .header h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 8px;
+  }
+  .header h1 span { color: var(--orange); }
+  .header .author {
+    color: var(--dim);
+    font-size: 15px;
+    margin-top: 16px;
+  }
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* Specs bar */
+  .specs-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card);
+    border: 1.5px solid var(--orange);
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 48px;
+  }
+  .spec {
+    text-align: center;
+    position: relative;
+  }
+  .spec:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: var(--border);
+  }
+  .spec-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--orange);
+    font-family: 'Inter', sans-serif;
+  }
+  .spec-label {
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  /* Section */
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .section-bar {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  /* Reason cards */
+  .reason-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .reason-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .reason-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--orange);
+    min-width: 42px;
+    font-family: 'Inter', sans-serif;
+  }
+  .reason-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .reason-desc {
+    color: var(--light);
+    font-size: 13.5px;
+  }
+
+  /* Challenge box */
+  .challenge-box {
+    background: var(--card);
+    border: 2px solid var(--red);
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+  .challenge-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+  }
+  .challenge-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+  .challenge-text {
+    color: var(--light);
+    font-size: 14px;
+  }
+
+  /* Phase cards */
+  .phase-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .phase-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .phase-desc {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .connector {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 44px;
+    margin: -4px 0;
+  }
+  .connector-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 0;
+  }
+  .connector-dots span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+  }
+
+  /* Tips grid */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .tip-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tip-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .tip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .tip-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--yellow);
+    flex-shrink: 0;
+  }
+  .tip-title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .tip-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    padding-left: 22px;
+  }
+
+  /* Strategy cards */
+  .strategy-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .strategy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .strategy-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .strategy-title { font-weight: 700; font-size: 15px; }
+  .strategy-desc { color: var(--light); font-size: 13px; }
+
+  /* Lesson box */
+  .lesson-box {
+    background: #1A2A3A;
+    border: 2.5px solid var(--orange);
+    border-radius: 16px;
+    padding: 28px 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  .lesson-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .lesson-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+  .lesson-main {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .lesson-sub {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  /* Resource cards */
+  .resource-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    transition: transform 0.2s;
+  }
+  .resource-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+  .resource-badge {
+    min-width: 65px;
+    text-align: center;
+  }
+  .resource-name { font-weight: 700; font-size: 14px; }
+  .resource-detail { color: var(--light); font-size: 12.5px; }
+
+  /* Verdict */
+  .verdict {
+    background: var(--orange);
+    border-radius: 14px;
+    padding: 24px 32px;
+    text-align: center;
+    margin-top: 44px;
+  }
+  .verdict h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .verdict p {
+    color: #4A3000;
+    font-size: 14px;
+  }
+  .verdict .bold-line {
+    font-weight: 700;
+    color: var(--bg);
+    margin-top: 4px;
+  }
+
+  /* Bottom bar */
+  .bottom-bar { height: 6px; background: var(--orange); margin-top: 48px; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 30px; }
+    .specs-bar { grid-template-columns: repeat(2, 1fr); row-gap: 12px; }
+    .spec:nth-child(2)::after { display: none; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .lesson-box { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="badge badge-orange">MÓN ĂN GIA ĐÌNH</span>
+    <h2>HƯỚNG DẪN CÁCH NẤU</h2>
+    <h1>CANH CẢI BẸ XANH <span>SƯỜN NON</span></h1>
+    <p class="author">by Master Of Cooking &middot; Chuyên gia Dinh dưỡng</p>
+    <hr class="divider">
+  </div>
+
+  <!-- EXAM SPECS -->
+  <div class="specs-bar">
+    <div class="spec">
+      <div class="spec-value">35 PHÚT</div>
+      <div class="spec-label">Thời gian nấu</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">3-4</div>
+      <div class="spec-label">Khẩu phần</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">DỄ</div>
+      <div class="spec-label">Độ khó</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">250 Kcal</div>
+      <div class="spec-label">Năng lượng/Phần</div>
+    </div>
+  </div>
+
+  <!-- WHY TAKE THIS EXAM -->
+  <div class="section">
+    <h3 class="section-title">LỢI ÍCH DINH DƯỠNG</h3>
+    <div class="section-bar" style="background: var(--orange);"></div>
+
+    <div class="reason-card">
+      <div class="reason-num">01</div>
+      <div>
+        <div class="reason-title">CÂN BẰNG ÂM DƯƠNG</div>
+        <div class="reason-desc">Cải bẹ xanh có tính hàn, gừng có tính ấm. Sự kết hợp này giúp trung hòa món ăn, cực kỳ êm dạ dày.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">02</div>
+      <div>
+        <div class="reason-title">TĂNG SỨC ĐỀ KHÁNG</div>
+        <div class="reason-desc">Cải bẹ xanh chứa dồi dào Vitamin C và K, giúp cơ thể thanh nhiệt và phòng chống cảm lạnh hiệu quả.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">03</div>
+      <div>
+        <div class="reason-title">CHẮC KHỎE XƯƠNG</div>
+        <div class="reason-desc">Sườn non cung cấp nguồn Canxi và Protein hoàn chỉnh giúp bổ sung năng lượng sau ngày dài làm việc.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT MAKES IT HARD -->
+  <div class="section">
+    <h3 class="section-title">LƯU Ý QUAN TRỌNG KHI NẤU</h3>
+    <div class="section-bar" style="background: var(--red);"></div>
+
+    <div class="challenge-box">
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Tuyệt đối <strong>không đậy nắp vung</strong> khi thả rau vào để giữ trọn màu xanh mướt.</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Bắt buộc phải có <strong>gừng tươi đập dập</strong> để giải tỏa tính hàn của rau.</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Thường xuyên <strong>vớt bọt khi ninh sườn</strong> để nước canh được trong veo.</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Không ninh rau quá lâu làm <strong>nhũn rau và mất đi Vitamin C</strong>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-PHASE STUDY PLAN -->
+  <div class="section">
+    <h3 class="section-title">QUY TRÌNH 3 BƯỚC NẤU</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-teal">BƯỚC 1</span>
+        <span class="phase-title">SƠ CHẾ & KHỬ MÙI</span>
+      </div>
+      <div class="phase-desc">Chặt sườn vừa ăn, chần qua nước sôi 2-3 phút, vớt ra rửa sạch bọt bẩn để khử mùi. Ướp sườn với hành tím băm, 1/2 thìa muối, tiêu trong 10 phút. Rửa kỹ từng bẹ lá cải, cắt khúc 3-4 cm. Gừng cạo sơ vỏ, đập dập.</div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-blue">BƯỚC 2</span>
+        <span class="phase-title">NINH SƯỜN LẤY NƯỚC</span>
+      </div>
+      <div class="phase-desc">Cho sườn đã ướp vào khoảng 1.2 lít nước lọc. Đun sôi nước, sau đó <strong>hạ lửa nhỏ liu riu hầm trong 25-30 phút</strong>. Giai đoạn này sườn sẽ mềm và tiết ra toàn bộ chất ngọt tự nhiên cho nước dùng.</div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-green">BƯỚC 3</span>
+        <span class="phase-title">HOÀN THIỆN MÓN CANH</span>
+      </div>
+      <div class="phase-desc">Vặn lửa lớn cho nước sôi bùng lên. Thả cải bẹ xanh và gừng đập dập vào nồi. Nấu <strong>khoảng 3-4 phút cho rau chín tới</strong>. Nêm nếm thêm nước mắm, hạt nêm cho vừa miệng. Tắt bếp, múc ra tô và rắc tiêu xay.</div>
+    </div>
+  </div>
+
+  <!-- EXAM DAY SURVIVAL GUIDE -->
+  <div class="section">
+    <h3 class="section-title">MẸO CHỌN NGUYÊN LIỆU</h3>
+    <div class="section-bar" style="background: var(--yellow);"></div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Sườn non heo</div>
+        </div>
+        <div class="tip-desc">Nên chọn dẻ sườn có sụn, nhiều nạc, màu hồng tươi tự nhiên.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Cải bẹ xanh</div>
+        </div>
+        <div class="tip-desc">Chọn cải lá non hoặc cải bắp để bớt nhẫn đắng và giòn ngọt hơn.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Gừng tươi</div>
+        </div>
+        <div class="tip-desc">Dùng gừng sẻ (gừng già) sẽ thơm và đậm vị hơn gừng non.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Nước mắm</div>
+        </div>
+        <div class="tip-desc">Chỉ thêm nước mắm vào cuối cùng trước khi tắt bếp để dậy mùi thơm.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY STRATEGIES -->
+  <div class="section">
+    <h3 class="section-title">BÍ QUYẾT TỪ MASTER</h3>
+    <div class="section-bar" style="background: var(--green);"></div>
+
+    <div class="strategy-card">
+      <div class="strategy-num">1</div>
+      <div>
+        <div class="strategy-title">Luôn mở nắp vung khi thả rau</div>
+        <div class="strategy-desc">Axit hữu cơ sẽ bay hơi giúp rau xanh mướt, không bị úa vàng.</div>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-num">2</div>
+      <div>
+        <div class="strategy-title">Chần sườn qua nước sôi</div>
+        <div class="strategy-desc">Bước bắt buộc để loại bỏ tạp chất và mùi hôi của thịt heo.</div>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-num">3</div>
+      <div>
+        <div class="strategy-title">Đập dập gừng, không thái lát</div>
+        <div class="strategy-desc">Đập dập giúp phá vỡ tế bào, tiết ra lượng tinh dầu thơm tối đa.</div>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-num">4</div>
+      <div>
+        <div class="strategy-title">Nước canh ngọt tự nhiên</div>
+        <div class="strategy-desc">Sử dụng độ ngọt từ xương, không lạm dụng hạt nêm hay bột ngọt.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIGGEST LESSON -->
+  <div class="section">
+    <div class="lesson-box">
+      <div class="lesson-icon">!</div>
+      <div>
+        <div class="lesson-title">LƯU Ý CHO BỮA TỐI</div>
+        <div class="lesson-main">Chỉ nên húp 1 chén nước canh nhỏ (Khoảng 150ml).</div>
+        <div class="lesson-sub">Hãy tập trung gắp sườn non và rau cải để no lâu. Hạn chế húp quá nhiều <strong>nước canh xương</strong> vào buổi tối để hệ tiêu hóa không bị quá tải và <strong>tránh tình trạng tiểu đêm</strong> làm ảnh hưởng đến giấc ngủ của bạn.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOMMENDED RESOURCES -->
+  <div class="section">
+    <h3 class="section-title">DANH SÁCH MUA SẮM</h3>
+    <div class="section-bar" style="background: var(--blue);"></div>
+
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-blue">300G</span></div>
+      <div>
+        <div class="resource-name">Sườn non heo</div>
+        <div class="resource-detail">Rửa sạch với nước muối loãng trước khi chế biến</div>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-blue">400G</span></div>
+      <div>
+        <div class="resource-name">Cải bẹ xanh tươi</div>
+        <div class="resource-detail">Rửa thật kỹ phần cuống lá thường hay đọng cát</div>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-blue">1 CỦ</span></div>
+      <div>
+        <div class="resource-name">Gừng tươi & Hành tím</div>
+        <div class="resource-detail">Gừng đập dập, hành tím băm nhuyễn</div>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-blue">GIA VỊ</span></div>
+      <div>
+        <div class="resource-name">Gia vị cơ bản</div>
+        <div class="resource-detail">Muối, hạt nêm, nước mắm ngon và tiêu xay</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>SẴN SÀNG VÀO BẾP CHƯA?</h2>
+    <p>Chỉ với 35 phút, bạn đã có một tô canh thanh mát, cân bằng dinh dưỡng cho cả gia đình.</p>
+    <p class="bold-line">Ngon miệng, đậm đà và đầy tình yêu thương.</p>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>

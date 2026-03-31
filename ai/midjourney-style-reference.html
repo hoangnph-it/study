@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midjourney Style Reference — Complete Guide (Infographic)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0D1117;
+    --card: #161B22;
+    --card2: #1C2128;
+    --border: #30363D;
+    --purple: #A371F7;
+    --purple-dim: #8957E5;
+    --blue: #58A6FF;
+    --green: #3FB950;
+    --orange: #F0883E;
+    --red: #F85149;
+    --yellow: #D29922;
+    --teal: #39D2C0;
+    --pink: #DB61A2;
+    --white: #F0F6FC;
+    --light: #C9D1D9;
+    --dim: #8B949E;
+  }
+
+  body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.5; }
+  .infographic { max-width: 880px; margin: 0 auto; padding: 0 40px 60px; }
+  .top-bar { height: 6px; background: linear-gradient(90deg, var(--purple), var(--pink), var(--orange)); }
+
+  .badge { display: inline-block; padding: 5px 16px; border-radius: 20px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .b-purple { background: var(--purple); color: var(--bg); }
+  .b-blue { background: var(--blue); color: var(--bg); }
+  .b-green { background: var(--green); color: var(--bg); }
+  .b-orange { background: var(--orange); color: var(--bg); }
+  .b-yellow { background: var(--yellow); color: var(--bg); }
+  .b-teal { background: var(--teal); color: var(--bg); }
+  .b-red { background: var(--red); color: var(--white); }
+  .b-pink { background: var(--pink); color: var(--bg); }
+  .b-dim { background: var(--border); color: var(--light); }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div style="padding: 48px 0 28px;">
+    <span class="badge b-purple">MIDJOURNEY</span>
+    <span class="badge b-dim" style="margin-left: 6px;">STYLE REFERENCE</span>
+    <h2 style="font-size: 20px; font-weight: 400; color: var(--dim); margin-top: 22px; letter-spacing: 0.5px;">COMPLETE GUIDE TO</h2>
+    <h1 style="font-size: 42px; font-weight: 800; line-height: 1.1; margin-top: 6px;">SREF CODES, IMAGES <span style="color: var(--purple);">& ADVANCED TECHNIQUES</span></h1>
+    <p style="color: var(--dim); font-size: 15px; margin-top: 14px;">Deep Dive &middot; From Basic to Advanced &middot; V6 / V7 / Niji 6</p>
+    <hr style="border: none; height: 1px; background: var(--border); margin: 24px 0;">
+  </div>
+
+  <!-- WHAT IS A STYLE REFERENCE -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">WHAT IS A STYLE REFERENCE?</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--purple);"></div>
+
+    <div style="background: var(--card); border: 1.5px solid var(--purple); border-radius: 14px; padding: 24px 28px; margin-bottom: 16px;">
+      <p style="font-size: 15px; line-height: 1.7; color: var(--light);">A style reference is a <strong style="color: var(--white);">source for visual aesthetics</strong>. It tells MidJourney to extract elements like <strong style="color: var(--purple);">color palette</strong>, <strong style="color: var(--pink);">medium</strong>, <strong style="color: var(--orange);">texture</strong>, and <strong style="color: var(--teal);">overall style</strong> — then apply them to your results.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <div style="background: var(--card); border-radius: 12px; padding: 18px 20px; text-align: center;">
+        <div style="font-size: 28px; margin-bottom: 8px;">🖼️</div>
+        <div style="font-weight: 700; font-size: 16px; color: var(--purple); margin-bottom: 4px;">Images</div>
+        <div style="color: var(--light); font-size: 13px;">Upload or drag an image into the style reference box</div>
+      </div>
+      <div style="background: var(--card); border-radius: 12px; padding: 18px 20px; text-align: center;">
+        <div style="font-size: 28px; margin-bottom: 8px;">🔢</div>
+        <div style="font-weight: 700; font-size: 16px; color: var(--pink); margin-bottom: 4px;">SREF Codes</div>
+        <div style="color: var(--light); font-size: 13px;">Numbers linked to styles in MidJourney's Style Space (4B+ codes)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USING IMAGES AS STYLE REFERENCES -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">USING IMAGES AS STYLE REFERENCES</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--blue);"></div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; align-items: flex-start; gap: 16px; background: var(--card); border-radius: 10px; padding: 16px 20px; border-left: 4px solid var(--blue);">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: var(--bg); flex-shrink: 0;">1</div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Drag & Drop</div>
+          <div style="color: var(--light); font-size: 13px;">Drag an image to the prompt bar → drop in the style reference box → type prompt → submit</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 16px; background: var(--card); border-radius: 10px; padding: 16px 20px; border-left: 4px solid var(--blue);">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: var(--bg); flex-shrink: 0;">2</div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Image URL</div>
+          <div style="color: var(--light); font-size: 13px;">Type prompt, add <code style="background:var(--card2);padding:2px 6px;border-radius:4px;font-size:12px;">--sref</code>, paste the image URL</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 16px; background: var(--card); border-radius: 10px; padding: 16px 20px; border-left: 4px solid var(--blue);">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: var(--bg); flex-shrink: 0;">3</div>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Uploaded Images</div>
+          <div style="color: var(--light); font-size: 13px;">Access your uploaded images → select "style reference" → click the image</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLE WEIGHT PARAMETER -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">STYLE WEIGHT PARAMETER <code style="color: var(--orange); font-family: 'JetBrains Mono', monospace;">--sw</code></h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--orange);"></div>
+
+    <div style="background: var(--card); border-radius: 14px; padding: 22px 24px; margin-bottom: 12px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; text-align: center; margin-bottom: 16px;">
+        <div>
+          <div style="font-size: 28px; font-weight: 800; color: var(--dim); font-family: 'JetBrains Mono', monospace;">0</div>
+          <div style="font-size: 11px; color: var(--dim); text-transform: uppercase;">Min</div>
+        </div>
+        <div>
+          <div style="font-size: 28px; font-weight: 800; color: var(--orange); font-family: 'JetBrains Mono', monospace;">100</div>
+          <div style="font-size: 11px; color: var(--orange); text-transform: uppercase;">Default</div>
+        </div>
+        <div>
+          <div style="font-size: 28px; font-weight: 800; color: var(--dim); font-family: 'JetBrains Mono', monospace;">1000</div>
+          <div style="font-size: 11px; color: var(--dim); text-transform: uppercase;">Max</div>
+        </div>
+      </div>
+      <div style="height: 8px; background: var(--card2); border-radius: 4px; position: relative; margin: 0 20px;">
+        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 10%; background: linear-gradient(90deg, var(--green), var(--orange)); border-radius: 4px;"></div>
+      </div>
+      <p style="color: var(--light); font-size: 13px; margin-top: 12px; text-align: center;">Scale is <strong style="color: var(--white);">not linear</strong> — biggest changes happen between 0 and 100</p>
+    </div>
+
+    <div style="background: rgba(240, 136, 62, 0.1); border: 1.5px solid var(--orange); border-radius: 10px; padding: 14px 18px;">
+      <p style="font-size: 13px; color: var(--light);">💡 <strong style="color: var(--orange);">Pro tip:</strong> If your SREF is too overpowering, try lowering style weight to <strong style="color: var(--white);">15–50</strong> for a more subtle influence.</p>
+    </div>
+  </div>
+
+  <!-- SREF CODES -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">SREF CODES — THE STYLE UNIVERSE</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--pink);"></div>
+
+    <div style="background: var(--card); border: 1.5px solid var(--pink); border-radius: 14px; padding: 22px 24px; margin-bottom: 12px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div style="text-align: center;">
+          <div style="font-size: 32px; font-weight: 800; color: var(--pink); font-family: 'JetBrains Mono', monospace;">4.2B+</div>
+          <div style="font-size: 12px; color: var(--dim); text-transform: uppercase;">Available Codes</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 32px; font-weight: 800; color: var(--purple); font-family: 'JetBrains Mono', monospace;">∞</div>
+          <div style="font-size: 12px; color: var(--dim); text-transform: uppercase;">Style Possibilities</div>
+        </div>
+      </div>
+      <p style="color: var(--light); font-size: 13px; text-align: center;">SREF codes are <strong style="color: var(--white);">universal</strong> — anyone can use the same code and get results in a similar style</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="background: var(--card); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px;">
+        <span class="badge b-pink" style="font-size: 9px; flex-shrink: 0;">DISCOVER</span>
+        <div>
+          <div style="font-weight: 600; font-size: 13px;">Use <code style="background:var(--card2);padding:2px 6px;border-radius:4px;font-size:12px;">--sref random</code> to explore random styles</div>
+        </div>
+      </div>
+      <div style="background: var(--card); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px;">
+        <span class="badge b-purple" style="font-size: 9px; flex-shrink: 0;">EXPLORE</span>
+        <div>
+          <div style="font-weight: 600; font-size: 13px;">Use MidJourney's Style Explorer — browse random, hot, and top community styles</div>
+        </div>
+      </div>
+      <div style="background: var(--card); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px;">
+        <span class="badge b-blue" style="font-size: 9px; flex-shrink: 0;">COMMUNITY</span>
+        <div>
+          <div style="font-weight: 600; font-size: 13px;">Find curated SREF collections shared by community members online</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLENDING STYLES -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">BLENDING MULTIPLE STYLES</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--teal);"></div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+      <div style="background: var(--card); border-radius: 12px; padding: 18px 20px;">
+        <div style="color: var(--teal); font-weight: 800; font-size: 14px; margin-bottom: 8px;">Multiple Images</div>
+        <div style="color: var(--light); font-size: 12.5px; line-height: 1.6;">Add more images to the style reference box. MidJourney <strong style="color: var(--white);">blends their aesthetics</strong> into one cohesive style.</div>
+      </div>
+      <div style="background: var(--card); border-radius: 12px; padding: 18px 20px;">
+        <div style="color: var(--teal); font-weight: 800; font-size: 14px; margin-bottom: 8px;">Multiple SREF Codes</div>
+        <div style="color: var(--light); font-size: 12.5px; line-height: 1.6;">Separate codes with a space after <code style="background:var(--card2);padding:2px 5px;border-radius:3px;font-size:11px;">--sref</code>. Styles are blended into a new combined style.</div>
+      </div>
+    </div>
+
+    <div style="background: var(--card); border-radius: 10px; padding: 16px 20px;">
+      <div style="font-weight: 700; font-size: 13px; color: var(--teal); margin-bottom: 8px;">WEIGHTING INDIVIDUAL REFERENCES</div>
+      <div style="background: #0D1117; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--light); margin-bottom: 8px;">
+        <span style="color: var(--dim);">--sref</span> <span style="color: var(--purple);">123456</span><span style="color: var(--orange);">::2</span> <span style="color: var(--purple);">789012</span><span style="color: var(--orange);">::1</span>
+      </div>
+      <div style="color: var(--dim); font-size: 12px;">Use <strong style="color: var(--light);">::number</strong> after each code to set relative weight. Image weights only work on Discord.</div>
+    </div>
+  </div>
+
+  <!-- STYLE VERSION PARAMETER -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">⚠️ STYLE VERSION <code style="color: var(--red); font-family: 'JetBrains Mono', monospace;">--sv</code> — CRITICAL TO KNOW</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--red);"></div>
+
+    <div style="background: var(--card); border: 2px solid var(--red); border-radius: 14px; padding: 22px 24px; margin-bottom: 12px;">
+      <p style="font-size: 14px; color: var(--light); margin-bottom: 16px;">The <strong style="color: var(--white);">same SREF code</strong> can produce <strong style="color: var(--red);">completely different styles</strong> depending on which model you use.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div style="background: var(--card2); border-radius: 10px; padding: 16px; text-align: center;">
+          <div style="font-weight: 800; font-size: 18px; color: var(--yellow); margin-bottom: 4px;">SV4</div>
+          <div style="font-size: 12px; color: var(--dim);">Default for V6 models</div>
+          <div style="font-size: 11px; color: var(--dim); margin-top: 4px;">Also used by Niji 6</div>
+        </div>
+        <div style="background: var(--card2); border-radius: 10px; padding: 16px; text-align: center;">
+          <div style="font-weight: 800; font-size: 18px; color: var(--green); margin-bottom: 4px;">SV6</div>
+          <div style="font-size: 12px; color: var(--dim);">Default for V7 models</div>
+          <div style="font-size: 11px; color: var(--dim); margin-top: 4px;">Used by Style Explorer</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: rgba(248, 81, 73, 0.1); border: 1.5px solid var(--red); border-radius: 10px; padding: 14px 18px;">
+      <p style="font-size: 13px; color: var(--light);">🔑 To use old V6 SREF codes in V7 prompts, add <code style="background:var(--card2);padding:2px 6px;border-radius:4px;font-size:12px;">--sv 4</code> to your prompt.</p>
+    </div>
+  </div>
+
+  <!-- ADVANCED TECHNIQUES -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">ADVANCED TECHNIQUES</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--green);"></div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; align-items: flex-start; gap: 16px; background: var(--card); border-radius: 12px; padding: 18px 22px; border-left: 4px solid var(--green);">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: var(--bg); flex-shrink: 0;">1</div>
+        <div>
+          <div style=""weight: 700; font-size: 15px;">Push Beyond Base Style</div>
+          <div style="color: var(--light); font-size: 13px; margin-top: 2px;">Be more direct and specific in your prompt text. Instead of "a man", try "photo of a man" to override an illustration-style SREF.</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 16px; background: var(--card); border-radius: 12px; padding: 18px 22px; border-left: 4px solid var(--blue);">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: var(--bg); flex-shrink: 0;">2</div>
+        <div>
+          <div style="font-weight: 700; font-size: 15px;">Use <code style="font-size: 13px;">--raw</code> for Prompt Adherence</div>
+          <div style="color: var(--light); font-size: 13px; margin-top: 2px;">Improves how closely results match your prompt text. Reduces MidJourney's default aesthetic styling.</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 16px; background: var(--card); border-radius: 12px; padding: 18px 22px; border-left: 4px solid var(--orange);">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: var(--bg); flex-shrink: 0;">3</div>
+        <div>
+          <div style="font-weight: 700; font-size: 15px;">Layer <code style="font-size: 13px;">--exp</code> Parameter</div>
+          <div style="color: var(--light); font-size: 13px; margin-top: 2px;">Introduces more detail and shifts colors. Can create muted, mustardy tones and desaturated palettes.</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 16px; background: var(--card); border-radius: 12px; padding: 18px 22px; border-left: 4px solid var(--purple);">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--purple); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: var(--bg); flex-shrink: 0;">4</div>
+        <div>
+          <div style="font-weight: 700; font-size: 15px;">Add Personalization</div>
+          <div style="color: var(--light); font-size: 13px; margin-top: 2px;">Your personalization profile + SREF creates another customization layer. Lower style weight gives personalization more room.</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 16px; background: var(--card); border-radius: 12px; padding: 18px 22px; border-left: 4px solid var(--pink);">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--pink); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: var(--bg); flex-shrink: 0;">5</div>
+        <div>
+          <div style="font-weight: 700; font-size: 15px;">Mood Boards for Diversity</div>
+          <div style="color: var(--light); font-size: 13px; margin-top: 2px;">Unlike SREFs that blend into one style, mood boards preserve variety across images while maintaining a cohesive look.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NIJI 6 -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">STYLE REFERENCES IN NIJI 6</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--yellow);"></div>
+
+    <div style="background: var(--card); border-radius: 14px; padding: 22px 24px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span class="badge b-yellow">ANIME MODEL</span>
+        <span style="color: var(--dim); font-size: 13px;">Add <code style="background:var(--card2);padding:2px 6px;border-radius:4px;font-size:12px;">--niji</code> to your prompt</span>
+      </div>
+      <div style="color: var(--light); font-size: 13px; line-height: 1.7;">
+        <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); flex-shrink: 0; margin-top: 5px;"></div>
+          <div>V6 SREF codes work with Niji 6 (both use <strong style="color: var(--white);">SV4</strong> system)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); flex-shrink: 0; margin-top: 5px;"></div>
+          <div>Newer V7/Style Explorer codes <strong style="color: var(--red);">won't match</strong> on Niji 6</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 8px;">
+          <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); flex-shrink: 0; margin-top: 5px;"></div>
+          <div><strong style="color: var(--white);">Workaround:</strong> Create an image with the V7 SREF, then use that image as a style reference in Niji</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKFLOW TIPS -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">WORKFLOW & ORGANIZATION TIPS</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--teal);"></div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <div style="background: var(--card); border-radius: 12px; padding: 18px 20px;">
+        <div style="color: var(--teal); font-weight: 800; font-size: 14px; margin-bottom: 8px;">🏷️ Custom Aliases</div>
+        <div style="color: var(--light); font-size: 12.5px; line-height: 1.5;">Create shortcuts on Discord with <code style="background:var(--card2);padding:1px 5px;border-radius:3px;font-size:11px;">/prefer option set</code>. Use <code style="background:var(--card2);padding:1px 5px;border-radius:3px;font-size:11px;">--alias-name</code> in prompts. Works on website too.</div>
+      </div>
+      <div style="background: var(--card); border-radius: 12px; padding: 18px 20px;">
+        <div style="color: var(--teal); font-weight: 800; font-size: 14px; margin-bottom: 8px;">🔍 Search by SREF</div>
+        <div style="color: var(--light); font-size: 12.5px; line-height: 1.5;">On the Organize page, type <code style="background:var(--card2);padding:1px 5px;border-radius:3px;font-size:11px;">--sref</code> in search to filter images by style reference. Hover to preview.</div>
+      </div>
+      <div style="background: var(--card); border-radius: 12px; padding: 18px 20px;">
+        <div style="color: var(--teal); font-weight: 800; font-size: 14px; margin-bottom: 8px;">❤️ Style Explorer Favorites</div>
+        <div style="color: var(--light); font-size: 12.5px; line-height: 1.5;">Heart styles in the explorer to save them. View all favorites by clicking "Likes". Search by keyword.</div>
+      </div>
+      <div style="background: var(--card); border-radius: 12px; padding: 18px 20px;">
+        <div style="color: var(--teal); font-weight: 800; font-size: 14px; margin-bottom: 8px;">📋 List All Shortcuts</div>
+        <div style="color: var(--light); font-size: 12.5px; line-height: 1.5;">Type <code style="background:var(--card2);padding:1px 5px;border-radius:3px;font-size:11px;">/prefer option list</code> on Discord to see all your saved aliases and shortcuts.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROMPT ADHERENCE TROUBLESHOOTING -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">WHEN RESULTS DON'T MATCH YOUR VISION</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--orange);"></div>
+
+    <div style="background: var(--card); border-radius: 14px; padding: 22px 24px;">
+      <p style="color: var(--dim); font-size: 13px; margin-bottom: 16px;">Follow this order to improve prompt adherence:</p>
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--card2); border-radius: 8px;">
+          <span style="font-weight: 800; color: var(--orange); font-family: 'JetBrains Mono', monospace; min-width: 24px;">①</span>
+          <span style="font-size: 13px; color: var(--light);"><strong style="color: var(--white);">Lower style weight</strong> — start here first</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--card2); border-radius: 8px;">
+          <span style="font-weight: 800; color: var(--orange); font-family: 'JetBrains Mono', monospace; min-width: 24px;">②</span>
+          <span style="font-size: 13px; color: var(--light);"><strong style="color: var(--white);">Be more specific</strong> in your prompt text</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--card2); border-radius: 8px;">
+          <span style="font-weight: 800; color: var(--orange); font-family: 'JetBrains Mono', monospace; min-width: 24px;">③</span>
+          <span style="font-size: 13px; color: var(--light);">Add <code style="background:var(--bg);padding:2px 6px;border-radius:4px;font-size:12px;">--raw</code> for better prompt adherence</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--card2); border-radius: 8px;">
+          <span style="font-weight: 800; color: var(--orange); font-family: 'JetBrains Mono', monospace; min-width: 24px;">④</span>
+          <span style="font-size: 13px; color: var(--light);">Lower <strong style="color: var(--white);">stylize</strong> value to reduce default aesthetics</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--card2); border-radius: 8px;">
+          <span style="font-weight: 800; color: var(--orange); font-family: 'JetBrains Mono', monospace; min-width: 24px;">⑤</span>
+          <span style="font-size: 13px; color: var(--light);">Adjust other parameters or modify prompt text</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT'S COMING NEXT -->
+  <div style="margin-bottom: 44px;">
+    <h3 style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px;">WHAT'S COMING NEXT</h3>
+    <div style="width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; background: var(--purple);"></div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="background: var(--card); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px;">
+        <span class="badge b-green" style="font-size: 9px; flex-shrink: 0;">LIVE</span>
+        <div>
+          <div style="font-weight: 600; font-size: 13px; color: var(--white);">Style Explorer</div>
+          <div style="font-size: 12px; color: var(--dim);">Browse, search, and save community styles</div>
+        </div>
+      </div>
+      <div style="background: var(--card); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px;">
+        <span class="badge b-yellow" style="font-size: 9px; flex-shrink: 0;">SOON</span>
+        <div>
+          <div style="font-weight: 600; font-size: 13px; color: var(--white);">Style Creator</div>
+          <div style="font-size: 12px; color: var(--dim);">Find and create custom styles without uploading images</div>
+        </div>
+      </div>
+      <div style="background: var(--card); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px;">
+        <span class="badge b-dim" style="font-size: 9px; flex-shrink: 0;">FUTURE</span>
+        <div>
+          <div style="font-weight: 600; font-size: 13px; color: var(--white);">V8 Model</div>
+          <div style="font-size: 12px; color: var(--dim);">Likely new style reference updates and capabilities</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE -->
+  <div style="background: linear-gradient(135deg, var(--purple), var(--pink)); border-radius: 14px; padding: 28px 32px; margin-top: 44px;">
+    <h2 style="font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 14px; text-align: center;">QUICK PARAMETER REFERENCE</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 10px 14px;">
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--white);">--sref [image/code]</code>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px;">Add a style reference</div>
+      </div>
+      <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 10px 14px;">
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--white);">--sw [0–1000]</code>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px;">Style weight (default: 100)</div>
+      </div>
+      <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 10px 14px;">
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--white);">--sv [4 or 6]</code>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px;">Style version system</div>
+      </div>
+      <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 10px 14px;">
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--white);">--sref random</code>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px;">Discover random styles</div>
+      </div>
+      <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 10px 14px;">
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--white);">--raw</code>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px;">Improve prompt adherence</div>
+      </div>
+      <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 10px 14px;">
+        <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--white);">code::2 code::1</code>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px;">Relative weights for blending</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div style="background: var(--card); border: 2px solid var(--purple); border-radius: 14px; padding: 28px 32px; text-align: center; margin-top: 20px;">
+    <h2 style="font-size: 20px; font-weight: 800; color: var(--purple); margin-bottom: 8px;">STYLE REFERENCES = CONSISTENT VISUAL IDENTITY</h2>
+    <p style="color: var(--light); font-size: 14px;">All parameters work together with your prompt text. There's no perfect formula — it's about finding the right balance between style control and prompt adherence.</p>
+  </div>
+
+  <div style="height: 6px; background: linear-gradient(90deg, var(--purple), var(--pink), var(--orange)); margin-top: 48px;"></div>
+</div>
+
+</body>
+</html>

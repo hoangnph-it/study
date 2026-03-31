@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trầu Bà Vàng — Xử Lý Lá Đen & Bọ An Toàn Cho Bé</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F0F7F0;
+    --card: #FFFFFF;
+    --card2: #E8F5E9;
+    --border: #C8E6C9;
+    --green: #2E7D32;
+    --green-light: #43A047;
+    --green-dark: #1B5E20;
+    --red: #D32F2F;
+    --orange: #EF6C00;
+    --amber: #F9A825;
+    --blue: #1565C0;
+    --purple: #7B1FA2;
+    --brown: #5D4037;
+    --teal: #00897B;
+    --pink: #C2185B;
+    --dark: #1A2E1A;
+    --text: #2E3B2E;
+    --light: #546E54;
+    --dim: #7A947A;
+    --danger-bg: #FFF3F0;
+    --danger-border: #FFCDD2;
+    --safe-bg: #E8F5E9;
+    --safe-border: #A5D6A7;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.55;
+  }
+
+  .infographic { max-width: 880px; margin: 0 auto; padding: 0 40px 60px; }
+
+  .top-bar { height: 8px; background: linear-gradient(90deg, var(--green-dark), var(--green), var(--green-light), var(--teal)); }
+
+  /* Header */
+  .header { padding: 48px 0 24px; text-align: center; }
+  .header-emoji { font-size: 52px; margin-bottom: 8px; }
+  .badge {
+    display: inline-block; padding: 5px 16px; border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .b-green { background: var(--green); color: #fff; }
+  .b-red { background: var(--red); color: #fff; }
+  .b-orange { background: var(--orange); color: #fff; }
+  .b-amber { background: var(--amber); color: var(--dark); }
+  .b-blue { background: var(--blue); color: #fff; }
+  .b-purple { background: var(--purple); color: #fff; }
+  .b-teal { background: var(--teal); color: #fff; }
+  .b-brown { background: var(--brown); color: #fff; }
+  .b-pink { background: var(--pink); color: #fff; }
+  .b-safe { background: var(--safe-bg); color: var(--green-dark); border: 1.5px solid var(--safe-border); }
+
+  .header h1 { font-size: 36px; font-weight: 800; line-height: 1.15; margin-top: 12px; color: var(--dark); }
+  .header h1 span { color: var(--green); }
+  .header .sub { font-size: 16px; color: var(--green); font-weight: 600; margin-top: 6px; }
+  .header .author { color: var(--dim); font-size: 14px; margin-top: 10px; }
+  .divider { border: none; height: 2px; background: var(--border); margin: 28px 0; }
+
+  /* Safety banner */
+  .safety-banner {
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    border: 2px solid var(--green);
+    border-radius: 14px;
+    padding: 18px 24px;
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 36px;
+  }
+  .safety-icon { font-size: 36px; flex-shrink: 0; }
+  .safety-text { font-size: 14px; color: var(--green-dark); font-weight: 600; }
+  .safety-text strong { color: var(--red); }
+
+  /* Section */
+  .section { margin-bottom: 40px; }
+  .section-title { font-size: 20px; font-weight: 800; color: var(--dark); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+  .section-bar { width: 50px; height: 4px; border-radius: 2px; margin-bottom: 18px; }
+
+  /* Diagnosis cards */
+  .diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .diag-card {
+    background: var(--card); border-radius: 16px; padding: 22px;
+    border: 2px solid var(--danger-border);
+    background: var(--danger-bg);
+    transition: transform 0.2s;
+  }
+  .diag-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .diag-emoji { font-size: 32px; margin-bottom: 8px; }
+  .diag-name { font-size: 16px; font-weight: 800; color: var(--red); margin-bottom: 6px; }
+  .diag-sign { font-size: 13px; color: var(--light); margin-bottom: 8px; line-height: 1.5; }
+  .diag-sign strong { color: var(--text); }
+  .diag-why { font-size: 12.5px; color: var(--dim); line-height: 1.5; padding: 10px 14px; background: rgba(255,255,255,0.7); border-radius: 8px; }
+  .diag-why strong { color: var(--text); }
+
+  /* Treatment steps */
+  .treat-card {
+    background: var(--card); border-radius: 16px; padding: 24px;
+    margin-bottom: 12px; border: 2px solid var(--border);
+    border-left: 6px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .treat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .treat-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; flex-wrap: wrap; }
+  .treat-num {
+    width: 42px; height: 42px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 18px; color: #fff; flex-shrink: 0;
+  }
+  .treat-title { font-size: 17px; font-weight: 800; color: var(--dark); }
+  .treat-urgency { font-size: 11px; font-weight: 700; }
+  .treat-body { padding-left: 56px; }
+  .treat-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.04);
+    font-size: 13.5px; color: var(--light); line-height: 1.55;
+  }
+  .treat-item:last-child { border-bottom: none; }
+  .treat-item strong { color: var(--text); }
+  .treat-emoji { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Formula box */
+  .formula-box {
+    background: var(--safe-bg); border: 2px solid var(--green);
+    border-radius: 14px; padding: 20px 24px; margin-top: 12px;
+  }
+  .formula-title { font-size: 15px; font-weight: 800; color: var(--green-dark); margin-bottom: 10px; }
+  .formula-row {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    justify-content: center; margin-bottom: 12px;
+  }
+  .formula-chip {
+    background: var(--card); border: 1.5px solid var(--border);
+    border-radius: 10px; padding: 10px 16px; text-align: center;
+  }
+  .formula-chip .emoji { font-size: 22px; }
+  .formula-chip .name { font-size: 12px; font-weight: 700; color: var(--dark); }
+  .formula-chip .qty { font-size: 11px; color: var(--dim); }
+  .formula-plus { font-size: 20px; font-weight: 800; color: var(--green); }
+  .formula-notes { font-size: 12.5px; color: var(--light); line-height: 1.55; }
+  .formula-notes strong { color: var(--text); }
+
+  /* Neem card */
+  .neem-card {
+    background: linear-gradient(135deg, #E8F5E9, #F1F8E9);
+    border: 2.5px solid var(--teal);
+    border-radius: 16px; padding: 24px;
+    display: flex; gap: 18px; align-items: flex-start;
+  }
+  .neem-icon { font-size: 40px; flex-shrink: 0; }
+  .neem-title { font-size: 18px; font-weight: 800; color: var(--teal); margin-bottom: 4px; }
+  .neem-desc { font-size: 13.5px; color: var(--light); line-height: 1.6; }
+  .neem-desc strong { color: var(--text); }
+  .neem-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+
+  /* Root check */
+  .root-card {
+    background: #FFF8E1; border: 2px solid var(--amber);
+    border-radius: 14px; padding: 20px 24px;
+  }
+  .root-title { font-size: 16px; font-weight: 800; color: var(--orange); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .root-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+  .root-check {
+    background: rgba(255,255,255,0.7); border-radius: 10px; padding: 14px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: var(--light);
+  }
+  .root-check .emoji { font-size: 22px; }
+  .root-rule { font-size: 13px; color: var(--light); padding: 12px 16px; background: rgba(255,255,255,0.5); border-radius: 8px; }
+  .root-rule strong { color: var(--orange); }
+
+  /* Action summary */
+  .action-flow {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; flex-wrap: wrap; margin-top: 8px;
+  }
+  .action-step {
+    background: var(--card); border: 2px solid var(--border);
+    border-radius: 12px; padding: 14px 18px; text-align: center;
+    min-width: 140px;
+    transition: transform 0.2s;
+  }
+  .action-step:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .action-step .emoji { font-size: 26px; margin-bottom: 4px; }
+  .action-step .label { font-size: 12px; font-weight: 700; color: var(--dark); }
+  .action-arrow { font-size: 22px; color: var(--green); font-weight: 800; padding: 0 8px; }
+
+  /* Bottom */
+  .verdict {
+    background: linear-gradient(135deg, var(--green-dark), var(--green));
+    border-radius: 16px; padding: 28px 32px; text-align: center; margin-top: 40px;
+  }
+  .verdict h2 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .verdict p { color: rgba(255,255,255,0.85); font-size: 14px; }
+
+  .bottom-bar { height: 8px; background: linear-gradient(90deg, var(--green-dark), var(--green), var(--green-light), var(--teal)); margin-top: 48px; }
+
+  @media (max-width: 640px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 26px; }
+    .diag-grid, .root-checks { grid-template-columns: 1fr; }
+    .treat-body { padding-left: 0; }
+    .action-flow { flex-direction: column; }
+    .action-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-emoji">&#127793;</div>
+    <span class="badge b-green">PLANT CARE</span>
+    <span class="badge b-safe" style="margin-left: 6px;">&#128118; AN TO&Agrave;N CHO B&Eacute;</span>
+    <h1>TR&#7846;U B&Agrave; V&Agrave;NG <span>(POTHOS)</span></h1>
+    <div class="sub">X&#7917; L&yacute; L&aacute; &#272;en & B&#7885; — An To&agrave;n Cho Gia &#272;&igrave;nh C&oacute; Tr&#7867; Nh&#7887;</div>
+    <p class="author">by Qu&#7843;n Gia &middot; Apartment Plant Care Advisor</p>
+    <hr class="divider">
+  </div>
+
+  <!-- SAFETY BANNER -->
+  <div class="safety-banner">
+    <div class="safety-icon">&#128119;</div>
+    <div class="safety-text"><strong>KH&Ocirc;NG d&ugrave;ng thu&#7889;c tr&#7915; s&acirc;u h&oacute;a h&#7885;c</strong> — ban c&ocirc;ng th&ocirc;ng v&#7899;i ph&ograve;ng kh&aacute;ch, &#7843;nh h&#432;&#7903;ng &#273;&#7871;n b&eacute;. Ch&#7881; d&ugrave;ng bi&#7879;n ph&aacute;p v&#7853;t l&yacute; v&agrave; sinh h&#7885;c an to&agrave;n.</div>
+  </div>
+
+  <!-- DIAGNOSIS -->
+  <div class="section">
+    <div class="section-title">&#128270; "B&#7855;t B&#7879;nh": &#272;&oacute; L&agrave; Con G&igrave;?</div>
+    <div class="section-bar" style="background: var(--red);"></div>
+
+    <div class="diag-grid">
+      <div class="diag-card">
+        <div class="diag-emoji">&#129440;</div>
+        <div class="diag-name">R&#7879;p Mu&#7897;i / R&#7879;p S&aacute;p + N&#7845;m B&#7891; H&oacute;ng</div>
+        <div class="diag-sign"><strong>D&#7845;u hi&#7879;u:</strong> B&#7885; nh&#7887; li ti m&agrave;u &#273;en, xanh ho&#7863;c tr&#7855;ng b&aacute;m chi ch&iacute;t &#7903; <strong>m&#7863;t d&#432;&#7899;i l&aacute;</strong> ho&#7863;c n&aacute;ch l&aacute;.</div>
+        <div class="diag-why"><strong>T&#7841;i sao l&aacute; &#273;en?</strong> R&#7879;p h&uacute;t nh&#7921;a, th&#7843;i ra "m&#7853;t" → n&#7845;m b&#7891; h&oacute;ng (sooty mold) ph&aacute;t tri&#7875;n → l&#7899;p b&#7897;t &#273;en bao ph&#7911; l&aacute;. <em>Qu&#7865;t th&#7917; th&#7845;y &#273;en nh&#432; l&#7885; ngh&#7865; n&#7891;i = ch&iacute;nh n&oacute;!</em></div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-emoji">&#128028;</div>
+        <div class="diag-name">B&#7885; Tr&#297; (Thrips)</div>
+        <div class="diag-sign"><strong>D&#7845;u hi&#7879;u:</strong> B&#7885; r&#7845;t nh&#7887;, m&#7843;nh nh&#432; s&#7907;i ch&#7881;, <strong>di chuy&#7875;n nhanh</strong>.</div>
+        <div class="diag-why"><strong>T&#7841;i sao l&aacute; &#273;en?</strong> B&#7885; tr&#297; c&agrave;o x&#432;&#7899;c b&#7873; m&#7863;t l&aacute; &#273;&#7875; h&uacute;t nh&#7921;a → l&aacute; th&acirc;m &#273;en, qu&#259;n queo v&agrave; kh&ocirc; d&#7847;n.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TREATMENT: 3 STEPS -->
+  <div class="section">
+    <div class="section-title">&#128138; Ph&aacute;c &#272;&#7891; &#272;i&#7873;u Tr&#7883; (3 B&#432;&#7899;c)</div>
+    <div class="section-bar" style="background: var(--green);"></div>
+
+    <!-- Step 1 -->
+    <div class="treat-card" style="border-left-color: var(--red);">
+      <div class="treat-header">
+        <div class="treat-num" style="background: var(--red);">1</div>
+        <div>
+          <div class="treat-title">C&aacute;ch Ly & V&#7879; Sinh C&#417; H&#7885;c</div>
+          <span class="badge b-red" style="font-size:10px;">L&Agrave;M NGAY</span>
+        </div>
+      </div>
+      <div class="treat-body">
+        <div class="treat-item"><span class="treat-emoji">&#128680;</span><div><strong>C&aacute;ch ly:</strong> &#272;&#432;a ch&#7853;u ra g&oacute;c xa nh&#7845;t ban c&ocirc;ng, tr&aacute;nh xa c&aacute;c c&acirc;y kh&aacute;c</div></div>
+        <div class="treat-item"><span class="treat-emoji">&#9986;&#65039;</span><div><strong>C&#7855;t b&#7887;:</strong> C&#7855;t to&agrave;n b&#7897; l&aacute; &#273;en, v&agrave;ng, qu&#259;n queo. <em>&#272;&#7915;ng ti&#7871;c — tr&#7847;u b&agrave; ra l&aacute; m&#7899;i r&#7845;t nhanh!</em> B&#7887; v&agrave;o t&uacute;i r&aacute;c bu&#7897;c k&iacute;n.</div></div>
+        <div class="treat-item"><span class="treat-emoji">&#128703;</span><div><strong>T&#7855;m cho c&acirc;y:</strong> Mang v&agrave;o nh&agrave; t&#7855;m, d&ugrave;ng v&ograve;i hoa sen x&#7883;t r&#7917;a to&agrave;n b&#7897; l&aacute; (&#273;&#7863;c bi&#7879;t <strong>m&#7863;t d&#432;&#7899;i l&aacute;</strong>) &#273;&#7875; tr&ocirc;i b&#7899;t tr&#7913;ng v&agrave; b&#7885;.</div></div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="treat-card" style="border-left-color: var(--green);">
+      <div class="treat-header">
+        <div class="treat-num" style="background: var(--green);">2</div>
+        <div>
+          <div class="treat-title">"Thu&#7889;c Tr&#7915; S&acirc;u" T&#7921; Ch&#7871;</div>
+          <span class="badge b-safe" style="font-size:10px;">AN TO&Agrave;N</span>
+        </div>
+      </div>
+      <div class="treat-body">
+        <div class="formula-box">
+          <div class="formula-title">&#129514; C&ocirc;ng Th&#7913;c Pha</div>
+          <div class="formula-row">
+            <div class="formula-chip">
+              <div class="emoji">&#128167;</div>
+              <div class="name">N&#432;&#7899;c</div>
+              <div class="qty">1 l&iacute;t</div>
+            </div>
+            <div class="formula-plus">+</div>
+            <div class="formula-chip">
+              <div class="emoji">&#129531;</div>
+              <div class="name">N&#432;&#7899;c r&#7917;a ch&eacute;n</div>
+              <div class="qty">1 th&igrave;a c&agrave; ph&ecirc;</div>
+            </div>
+            <div class="formula-plus">+</div>
+            <div class="formula-chip">
+              <div class="emoji">&#129381;</div>
+              <div class="name">D&#7847;u &#259;n</div>
+              <div class="qty">1 th&igrave;a c&agrave; ph&ecirc;</div>
+            </div>
+          </div>
+          <div class="formula-notes">
+            <strong>C&aacute;ch d&ugrave;ng:</strong> L&#7855;c k&#7929;, phun &#273;&#7851;m l&ecirc;n to&agrave;n b&#7897; th&acirc;n l&aacute; (n&aacute;ch l&aacute; + m&#7863;t d&#432;&#7899;i).<br>
+            <strong>T&#7847;n su&#7845;t:</strong> 3 ng&agrave;y/l&#7847;n cho &#273;&#7871;n khi h&#7871;t b&#7885;.<br>
+            <strong>L&#432;u &yacute;:</strong> Phun l&uacute;c <strong>chi&#7873;u t&#7889;i</strong> — tr&aacute;nh n&#7855;ng g&#7855;t l&agrave;m ch&aacute;y l&aacute;.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="treat-card" style="border-left-color: var(--teal);">
+      <div class="treat-header">
+        <div class="treat-num" style="background: var(--teal);">3</div>
+        <div>
+          <div class="treat-title">D&#7847;u Neem — Gi&#7843;i Ph&aacute;p Chuy&ecirc;n Nghi&#7879;p</div>
+          <span class="badge b-teal" style="font-size:10px;">N&Acirc;NG CAO</span>
+        </div>
+      </div>
+      <div class="treat-body">
+        <div class="neem-card">
+          <div class="neem-icon">&#127811;</div>
+          <div>
+            <div class="neem-title">D&#7847;u Neem (Neem Oil)</div>
+            <div class="neem-desc">Chi&#7871;t xu&#7845;t t&#7915; c&acirc;y Neem, <strong>ho&agrave;n to&agrave;n h&#7919;u c&#417;</strong>, an to&agrave;n cho ng&#432;&#7901;i v&agrave; v&#7853;t nu&ocirc;i. L&agrave; "kh&#7855;c tinh" c&#7911;a r&#7879;p v&agrave; b&#7885; tr&#297; — l&agrave;m b&#7885; ch&aacute;n &#259;n, ng&#7915;ng &#273;&#7867; tr&#7913;ng v&agrave; ch&#7871;t. <strong>Hi&#7879;u qu&#7843; r&#7845;t cao v&agrave; b&#7873;n v&#7919;ng.</strong></div>
+            <div class="neem-tags">
+              <span class="badge b-safe" style="font-size:9px;">&#128118; An to&agrave;n cho b&eacute;</span>
+              <span class="badge b-safe" style="font-size:9px;">&#127793; H&#7919;u c&#417;</span>
+              <span class="badge b-safe" style="font-size:9px;">&#128722; Shopee / Lazada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROOT CHECK -->
+  <div class="section">
+    <div class="root-card">
+      <div class="root-title">&#9888;&#65039; Ki&#7875;m Tra G&#7889;c R&#7877; (Quan Tr&#7885;ng)</div>
+      <div class="root-checks">
+        <div class="root-check">
+          <span class="emoji">&#128167;</span>
+          <div>&#272;&#7845;t trong ch&#7853;u c&oacute; b&#7883; <strong>&#432;&#7899;t s&#361;ng</strong> kh&ocirc;ng?</div>
+        </div>
+        <div class="root-check">
+          <span class="emoji">&#129345;</span>
+          <div>&#272;&#297;a l&oacute;t ch&#7853;u c&oacute; <strong>&#273;&#7885;ng n&#432;&#7899;c l&acirc;u ng&agrave;y</strong> kh&ocirc;ng?</div>
+        </div>
+      </div>
+      <div class="root-rule"><strong>Quy t&#7855;c:</strong> Tr&#7847;u b&agrave; v&agrave;ng &#432;a &#7849;m nh&#432;ng <strong>s&#7907; &uacute;ng</strong>. &#272;&#7875; &#273;&#7845;t kh&ocirc; m&#7863;t r&#7891;i m&#7899;i t&#432;&#7899;i ti&#7871;p. M&ocirc;i tr&#432;&#7901;ng &#7849;m &#432;&#7899;t = &#273;i&#7873;u ki&#7879;n l&yacute; t&#432;&#7903;ng cho b&#7885; v&agrave; n&#7845;m sinh s&ocirc;i!</div>
+    </div>
+  </div>
+
+  <!-- ACTION SUMMARY -->
+  <div class="section">
+    <div class="section-title">&#9889; T&oacute;m T&#7855;t H&agrave;nh &#272;&#7897;ng</div>
+    <div class="section-bar" style="background: var(--green);"></div>
+
+    <div class="action-flow">
+      <div class="action-step">
+        <div class="emoji">&#9986;&#65039;</div>
+        <div class="label">C&#7855;t b&#7887; l&aacute; &#273;en</div>
+      </div>
+      <div class="action-arrow">&rarr;</div>
+      <div class="action-step">
+        <div class="emoji">&#128703;</div>
+        <div class="label">X&#7883;t r&#7917;a s&#7841;ch</div>
+      </div>
+      <div class="action-arrow">&rarr;</div>
+      <div class="action-step">
+        <div class="emoji">&#129514;</div>
+        <div class="label">Phun h&#7895;n h&#7907;p</div>
+      </div>
+      <div class="action-arrow">&rarr;</div>
+      <div class="action-step">
+        <div class="emoji">&#127811;</div>
+        <div class="label">Ho&#7863;c D&#7847;u Neem</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>&#127793; TR&#7846;U B&Agrave; R&#7844;T KH&#7886;E — S&#7868; H&#7890;I PH&#7908;C NHANH!</h2>
+    <p>X&#7917; l&yacute; &#273;&uacute;ng c&aacute;ch, an to&agrave;n cho b&eacute;, c&acirc;y s&#7869; ra l&aacute; m&#7899;i xanh t&#432;&#417;i trong v&agrave;i tu&#7847;n.</p>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>
