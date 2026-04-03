@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bò Kho Mềm Ngọt Dành Cho Bé — Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0F1923;
+    --card: #162231;
+    --card2: #1E2D3D;
+    --border: #2A3F55;
+    --orange: #FF9900;
+    --orange-dim: #CC7A00;
+    --teal: #00BCD4;
+    --blue: #1A73E8;
+    --green: #4CAF50;
+    --red: #FF5252;
+    --yellow: #FFD54F;
+    --white: #FFFFFF;
+    --light: #B0BEC5;
+    --dim: #8899AA;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .infographic {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+
+  /* Top accent bar */
+  .top-bar { height: 6px; background: var(--orange); }
+
+  /* Header */
+  .header { padding: 48px 0 32px; }
+  .badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-orange { background: var(--orange); color: var(--bg); }
+  .badge-teal { background: var(--teal); color: var(--bg); }
+  .badge-blue { background: var(--blue); color: var(--white); }
+  .badge-green { background: var(--green); color: var(--bg); }
+  .badge-red { background: var(--red); color: var(--white); }
+  .badge-yellow { background: var(--yellow); color: var(--bg); }
+
+  .header h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dim);
+    margin-top: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .header h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+  .header h1 span { color: var(--orange); }
+  .header .author {
+    color: var(--dim);
+    font-size: 15px;
+    margin-top: 16px;
+  }
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* Specs bar */
+  .specs-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card);
+    border: 1.5px solid var(--orange);
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 48px;
+  }
+  .spec {
+    text-align: center;
+    position: relative;
+  }
+  .spec:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: var(--border);
+  }
+  .spec-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--orange);
+    font-family: 'Inter', sans-serif;
+  }
+  .spec-label {
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  /* Section */
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .section-bar {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  /* Reason cards */
+  .reason-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .reason-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .reason-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--orange);
+    min-width: 42px;
+    font-family: 'Inter', sans-serif;
+  }
+  .reason-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+  .reason-desc {
+    color: var(--light);
+    font-size: 13.5px;
+  }
+
+  /* Challenge box */
+  .challenge-box {
+    background: var(--card);
+    border: 2px solid var(--red);
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+  .challenge-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+  }
+  .challenge-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+  .challenge-text {
+    color: var(--light);
+    font-size: 14px;
+  }
+
+  /* Phase cards */
+  .phase-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .phase-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  .phase-desc {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .connector {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 44px;
+    margin: -4px 0;
+  }
+  .connector-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 0;
+  }
+  .connector-dots span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+  }
+
+  /* Tips grid */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .tip-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tip-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .tip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .tip-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--yellow);
+    flex-shrink: 0;
+  }
+  .tip-title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .tip-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    padding-left: 22px;
+  }
+
+  /* Strategy cards */
+  .strategy-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .strategy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .strategy-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .strategy-title { font-weight: 700; font-size: 15px; }
+  .strategy-desc { color: var(--light); font-size: 13px; }
+
+  /* Lesson box */
+  .lesson-box {
+    background: #1A2A3A;
+    border: 2.5px solid var(--orange);
+    border-radius: 16px;
+    padding: 28px 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  .lesson-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .lesson-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--orange);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .lesson-main {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .lesson-sub {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  /* Resource cards */
+  .resource-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    transition: transform 0.2s;
+  }
+  .resource-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+  .resource-badge {
+    min-width: 65px;
+    text-align: center;
+  }
+  .resource-name { font-weight: 700; font-size: 14px; }
+  .resource-detail { color: var(--light); font-size: 12.5px; }
+
+  /* Verdict */
+  .verdict {
+    background: var(--orange);
+    border-radius: 14px;
+    padding: 24px 32px;
+    text-align: center;
+    margin-top: 44px;
+  }
+  .verdict h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .verdict p {
+    color: #4A3000;
+    font-size: 14px;
+  }
+  .verdict .bold-line {
+    font-weight: 700;
+    color: var(--bg);
+    margin-top: 4px;
+  }
+
+  /* Bottom bar */
+  .bottom-bar { height: 6px; background: var(--orange); margin-top: 48px; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 30px; }
+    .specs-bar { grid-template-columns: repeat(2, 1fr); row-gap: 12px; }
+    .spec:nth-child(2)::after { display: none; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .lesson-box { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="badge badge-orange">MÓN NGON GIA ĐÌNH</span>
+    <h2>HƯỚNG DẪN CÁCH NẤU</h2>
+    <h1>BÒ KHO MỀM NGỌT <span>CHO BÉ</span></h1>
+    <p class="author">by Master Of Cooking &middot; Chuyên gia Dinh dưỡng</p>
+    <hr class="divider">
+  </div>
+
+  <!-- EXAM SPECS -->
+  <div class="specs-bar">
+    <div class="spec">
+      <div class="spec-value">~2 GIỜ</div>
+      <div class="spec-label">THỜI GIAN NẤU</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">4 NGƯỜI</div>
+      <div class="spec-label">2 LỚN + 2 BÉ</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">0% CAY</div>
+      <div class="spec-label">PHÙ HỢP TRẺ NHỎ</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">NGỌT DỊU</div>
+      <div class="spec-label">HƯƠNG VỊ</div>
+    </div>
+  </div>
+
+  <!-- WHY TAKE THIS EXAM -->
+  <div class="section">
+    <h3 class="section-title">LỢI ÍCH DINH DƯỠNG</h3>
+    <div class="section-bar" style="background: var(--orange);"></div>
+
+    <div class="reason-card">
+      <div class="reason-num">01</div>
+      <div>
+        <div class="reason-title">PHÁT TRIỂN THỂ CHẤT</div>
+        <div class="reason-desc">Thịt bò là nguồn cung cấp Sắt và Kẽm tuyệt vời, giúp các bé 6-9 tuổi phát triển toàn diện thể chất và não bộ.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">02</div>
+      <div>
+        <div class="reason-title">TỐT CHO THỊ LỰC</div>
+        <div class="reason-desc">Cà rốt hầm nhừ tiết ra nhiều Beta-carotene, hỗ trợ tăng cường thị lực cho bé.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">03</div>
+      <div>
+        <div class="reason-title">THANH NGỌT TỰ NHIÊN</div>
+        <div class="reason-desc">Việc sử dụng nước dừa tươi tạo vị ngọt sẽ giúp giảm thiểu tối đa lượng đường tinh luyện nạp vào cơ thể.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT MAKES IT HARD -->
+  <div class="section">
+    <h3 class="section-title">LƯU Ý QUAN TRỌNG KHI NẤU CHO BÉ</h3>
+    <div class="section-bar" style="background: var(--red);"></div>
+
+    <div class="challenge-box">
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Thịt bò và phần gân phải hầm <strong>thật mềm rục</strong> để bé 6 tuổi nhai dễ dàng, tránh bị nghẹn.</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Sử dụng <strong>gói gia vị bò kho không cay</strong>, nhớ kiểm tra kỹ thành phần ớt bột trước khi ướp.</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Chọn mua <strong>bắp bò hoa hoặc nạm bò</strong> có pha gân mềm, tránh dùng thịt mông khô xơ bé sẽ lười ăn.</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Trẻ nhỏ ăn buổi tối <strong>không nên húp quá nhiều nước dùng</strong> để tránh đầy bụng khó ngủ.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-PHASE STUDY PLAN -->
+  <div class="section">
+    <h3 class="section-title">QUY TRÌNH 3 BƯỚC NẤU</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-teal">BƯỚC 1</span>
+        <span class="phase-title">SƠ CHẾ & ƯỚP THỊT</span>
+      </div>
+      <div class="phase-desc">Thái thịt bò thành khối vuông 3cm. Chần sơ nước sôi với gừng 2 phút để khử mùi hôi. Vớt ra rửa sạch, ướp cùng: 1 gói bột bò kho, tỏi hành băm, nước tương, đường phèn, hạt nêm, dầu điều. Ướp <strong>ít nhất 30 phút</strong>.</div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-blue">BƯỚC 2</span>
+        <span class="phase-title">XÀO SĂN & HẦM THỊT</span>
+      </div>
+      <div class="phase-desc">Phi thơm sả đập dập, cho bò vào xào săn trên lửa lớn 5-7 phút cùng quế, hồi. Sau đó đổ 1 trái nước dừa tươi vào ngập thịt. Hầm lửa nhỏ liu riu trong <strong>1.5 - 2 tiếng</strong> (hoặc 30 phút nếu dùng nồi áp suất).</div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-green">BƯỚC 3</span>
+        <span class="phase-title">NẤU RAU CỦ & HOÀN THIỆN</span>
+      </div>
+      <div class="phase-desc">Khi xiên đũa thấy thịt bò đã mềm rục, thả cà rốt cắt khúc vào hầm thêm 15 phút. Khi cà rốt mềm, nêm nếm lại gia vị cho vừa miệng. Cho hành tây thái múi cau vào đảo đều khoảng 2 phút rồi tắt bếp.</div>
+    </div>
+  </div>
+
+  <!-- EXAM DAY SURVIVAL GUIDE -->
+  <div class="section">
+    <h3 class="section-title">MẸO VÀO BẾP THÔNG MINH</h3>
+    <div class="section-bar" style="background: var(--yellow);"></div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Sử dụng đường phèn</div>
+        </div>
+        <div class="tip-desc">Kết hợp với nước dừa sẽ cho ra vị ngọt thanh mát, không bị gắt cổ.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Dùng nồi áp suất</div>
+        </div>
+        <div class="tip-desc">Giúp bạn tiết kiệm đến 70% thời gian hầm mềm bò.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Dầu màu điều</div>
+        </div>
+        <div class="tip-desc">Tạo màu cam đỏ vô cùng đẹp mắt, giúp kích thích thị giác bé.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Giải pháp cho Ba Mẹ</div>
+        </div>
+        <div class="tip-desc">Người lớn muốn ăn cay hãy tự pha riêng một chén sa tế sả ớt để nêm thêm.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY STRATEGIES -->
+  <div class="section">
+    <h3 class="section-title">BÍ QUYẾT CHO NƯỚC DÙNG HOÀN HẢO</h3>
+    <div class="section-bar" style="background: var(--green);"></div>
+
+    <div class="strategy-card">
+      <div class="strategy-num">1</div>
+      <div>
+        <div class="strategy-title">Chần thịt với gừng</div>
+        <div class="strategy-desc">Là bước then chốt giúp loại bỏ hoàn toàn bọt bẩn và mùi hôi ngái của bò.</div>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-num">2</div>
+      <div>
+        <div class="strategy-title">Rang quế và hoa hồi</div>
+        <div class="strategy-desc">Chỉ 1 nhánh quế và 2 tai vị rang thơm sẽ đánh thức mùi hương đặc trưng của bò kho.</div>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-num">3</div>
+      <div>
+        <div class="strategy-title">Tuyệt chiêu nước dừa tươi</div>
+        <div class="strategy-desc">Nước dừa tươi là bí mật giúp thịt bò mau mềm và nước hầm ngọt lịm.</div>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-num">4</div>
+      <div>
+        <div class="strategy-title">Vớt bọt thường xuyên</div>
+        <div class="strategy-desc">Trong suốt quá trình hầm, hãy vớt bọt để nước dùng được trong trẻo và thanh hơn.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIGGEST LESSON -->
+  <div class="section">
+    <div class="lesson-box">
+      <div class="lesson-icon">!</div>
+      <div>
+        <div class="lesson-title">LỜI KHUYÊN CHO BỮA TỐI</div>
+        <div class="lesson-main">Hạn chế cho bé húp nước bò kho vào bữa tối.</div>
+        <div class="lesson-sub">Nếu ăn bữa tối, ba mẹ chỉ nên húp khoảng <strong>150ml nước dùng</strong>, các bé húp nửa chén. Khuyến khích bé ăn bánh mì chấm kèm, ăn nhiều cà rốt và thịt mềm. Tránh húp quá nhiều nước nhiều gia vị và mỡ bò sẽ gây đầy bụng, cản trở giấc ngủ của con.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOMMENDED RESOURCES -->
+  <div class="section">
+    <h3 class="section-title">NGUYÊN LIỆU CHÍNH TÓM TẮT</h3>
+    <div class="section-bar" style="background: var(--blue);"></div>
+
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-blue">700G</span></div>
+      <div>
+        <div class="resource-name">Nạm bò hoặc bắp bò</div>
+        <div class="resource-detail">Nên chọn loại có pha chút gân để hầm dẻo, ngon</div>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-blue">1 TRÁI</span></div>
+      <div>
+        <div class="resource-name">Dừa tươi (Lấy nước)</div>
+        <div class="resource-detail">Chọn loại nhiều nước để thay thế một phần nước lọc</div>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-blue">2-3 CỦ</span></div>
+      <div>
+        <div class="resource-name">Cà rốt tươi & 1 củ Hành tây</div>
+        <div class="resource-detail">Cắt khúc vừa ăn, có thể tỉa hoa cho bé thích mắt</div>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-blue">GIA VỊ</span></div>
+      <div>
+        <div class="resource-name">Bộ gia vị bò kho KHÔNG CAY</div>
+        <div class="resource-detail">Kèm theo sả, quế, hồi, hành, tỏi, đường phèn</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>CHÚC GIA ĐÌNH BẠN NGON MIỆNG!</h2>
+    <p>Một bữa ăn đầy đủ dưỡng chất, thơm ngon đậm đà và đặc biệt an toàn cho dạ dày trẻ nhỏ.</p>
+    <p class="bold-line">Ba mẹ ăn ngon, con trẻ thích mê!</p>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>
