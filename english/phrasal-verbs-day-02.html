@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15 Phrasal Verbs to Impress Your IELTS Examiner — Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0F1923;
+    --card: #162231;
+    --card2: #1E2D3D;
+    --border: #2A3F55;
+    --orange: #FF9900;
+    --orange-dim: #CC7A00;
+    --teal: #00BCD4;
+    --blue: #1A73E8;
+    --green: #4CAF50;
+    --red: #FF5252;
+    --yellow: #FFD54F;
+    --white: #FFFFFF;
+    --light: #B0BEC5;
+    --dim: #8899AA;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .infographic {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+
+  .top-bar { height: 6px; background: var(--orange); }
+
+  .header { padding: 48px 0 32px; }
+  .badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-orange { background: var(--orange); color: var(--bg); }
+  .badge-teal { background: var(--teal); color: var(--bg); }
+  .badge-blue { background: var(--blue); color: var(--white); }
+  .badge-green { background: var(--green); color: var(--bg); }
+  .badge-red { background: var(--red); color: var(--white); }
+  .badge-yellow { background: var(--yellow); color: var(--bg); }
+
+  .header h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dim);
+    margin-top: 24px;
+    letter-spacing: 1px;
+  }
+  .header h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 8px;
+  }
+  .header h1 span { color: var(--orange); }
+  .header .author {
+    color: var(--dim);
+    font-size: 15px;
+    margin-top: 16px;
+  }
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  .specs-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card);
+    border: 1.5px solid var(--orange);
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 48px;
+  }
+  .spec {
+    text-align: center;
+    position: relative;
+  }
+  .spec:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: var(--border);
+  }
+  .spec-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--orange);
+  }
+  .spec-label {
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .section-bar {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .reason-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .reason-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .reason-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--orange);
+    min-width: 42px;
+  }
+  .reason-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .reason-desc {
+    color: var(--light);
+    font-size: 13.5px;
+  }
+
+  .challenge-box {
+    background: var(--card);
+    border: 2px solid var(--red);
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+  .challenge-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+  }
+  .challenge-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+  .challenge-text {
+    color: var(--light);
+    font-size: 14px;
+  }
+
+  .phase-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 12px;
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .phase-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .phase-desc {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .connector {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 44px;
+    margin: -4px 0;
+  }
+  .connector-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 0;
+  }
+  .connector-dots span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .tip-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tip-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .tip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .tip-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--yellow);
+    flex-shrink: 0;
+  }
+  .tip-title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .tip-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    padding-left: 22px;
+  }
+
+  .strategy-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .strategy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .strategy-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .strategy-title { font-weight: 700; font-size: 15px; }
+  .strategy-desc { color: var(--light); font-size: 13px; }
+
+  .lesson-box {
+    background: #1A2A3A;
+    border: 2.5px solid var(--orange);
+    border-radius: 16px;
+    padding: 28px 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  .lesson-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .lesson-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+  .lesson-main {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .lesson-sub {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .resource-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    transition: transform 0.2s;
+  }
+  .resource-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+  .resource-badge {
+    min-width: 65px;
+    text-align: center;
+  }
+  .resource-name { font-weight: 700; font-size: 14px; }
+  .resource-detail { color: var(--light); font-size: 12.5px; }
+
+  .verdict {
+    background: var(--orange);
+    border-radius: 14px;
+    padding: 24px 32px;
+    text-align: center;
+    margin-top: 44px;
+  }
+  .verdict h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .verdict p {
+    color: #4A3000;
+    font-size: 14px;
+  }
+  .verdict .bold-line {
+    font-weight: 700;
+    color: var(--bg);
+    margin-top: 4px;
+  }
+
+  .bottom-bar { height: 6px; background: var(--orange); margin-top: 48px; }
+
+  @media (max-width: 640px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 30px; }
+    .specs-bar { grid-template-columns: repeat(2, 1fr); row-gap: 12px; }
+    .spec:nth-child(2)::after { display: none; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .lesson-box { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="badge badge-orange">IELTS SPEAKING</span>
+    <h2>15 PHRASAL VERBS TO</h2>
+    <h1>IMPRESS YOUR <span>IELTS EXAMINER</span></h1>
+    <p class="author">by Keith &middot; Keith Speaking Academy</p>
+    <hr class="divider">
+  </div>
+
+  <!-- SPECS -->
+  <div class="specs-bar">
+    <div class="spec">
+      <div class="spec-value">15</div>
+      <div class="spec-label">Phrasal Verbs</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">5</div>
+      <div class="spec-label">IELTS Topics</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">BAND 7-8</div>
+      <div class="spec-label">Target Score</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">PARTS 1-3</div>
+      <div class="spec-label">Speaking Sections</div>
+    </div>
+  </div>
+
+  <!-- WHAT ARE PHRASAL VERBS -->
+  <div class="section">
+    <h3 class="section-title">WHAT ARE PHRASAL VERBS?</h3>
+    <div class="section-bar" style="background: var(--orange);"></div>
+
+    <div class="reason-card">
+      <div class="reason-num">01</div>
+      <div>
+        <div class="reason-title">VERB + PREPOSITION</div>
+        <div class="reason-desc">A phrasal verb = verb + preposition (in, on, out, up, away). E.g., walk out, sit down, speak up.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">02</div>
+      <div>
+        <div class="reason-title">OFTEN IDIOMATIC</div>
+        <div class="reason-desc">The meaning is different from the individual words. "Speak down" = talk to someone as if they're less intelligent.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">03</div>
+      <div>
+        <div class="reason-title">SPEAKING & WRITING</div>
+        <div class="reason-desc">Usable in both. If you learned it by listening → spoken. If by reading → written. Keep it simple.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEPARABLE vs INSEPARABLE -->
+  <div class="section">
+    <h3 class="section-title">SEPARABLE vs INSEPARABLE</h3>
+    <div class="section-bar" style="background: var(--red);"></div>
+
+    <div class="challenge-box">
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text"><strong>Separable:</strong> Object can go between verb & preposition — "I look <strong>a word</strong> up" or "I look up <strong>a word</strong>"</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text"><strong>Pronouns MUST go in the middle:</strong> "I look <strong>it</strong> up" — NOT "I look up it"</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text"><strong>Inseparable:</strong> Verb & preposition stay together — "I take after my father" (never "I take my father after")</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text"><strong>No rules</strong> to tell which is which — you must learn each one by heart from context & dictionary examples</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BATCH 1: WORK & STUDY -->
+  <div class="section">
+    <h3 class="section-title">BATCH 1 — WORK & STUDY (PART 1)</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-teal">01</span>
+        <span class="phase-title">KNUCKLE DOWN</span>
+      </div>
+      <div class="phase-desc">To start focusing on your work or study. <strong>"Exams are coming, so I really need to knuckle down."</strong></div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-teal">02</span>
+        <span class="phase-title">GET ROUND TO</span>
+      </div>
+      <div class="phase-desc">To finally do something you've been too busy for. <strong>"I'd love to learn cooking but I haven't got round to it."</strong></div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-teal">03</span>
+        <span class="phase-title">WHILE AWAY</span>
+      </div>
+      <div class="phase-desc">To spend time in a relaxed way. Separable. <strong>"I love to while away the afternoon watching movies."</strong></div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-teal">04</span>
+        <span class="phase-title">BRUSH UP ON</span>
+      </div>
+      <div class="phase-desc">To improve a skill you haven't practiced for a while. <strong>"I need to brush up on my guitar playing."</strong></div>
+    </div>
+  </div>
+
+  <!-- BATCH 2: FUTURE -->
+  <div class="section">
+    <h3 class="section-title">BATCH 2 — TALKING ABOUT THE FUTURE (PART 3)</h3>
+    <div class="section-bar" style="background: var(--blue);"></div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-blue">05</span>
+        <span class="phase-title">BANK ON</span>
+      </div>
+      <div class="phase-desc">To expect and hope something will happen. <strong>"Many governments are banking on the economy improving."</strong></div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-blue">06</span>
+        <span class="phase-title">BE IN FOR</span>
+      </div>
+      <div class="phase-desc">About to have or experience something. <strong>"I think we are in for a few surprises in the future."</strong></div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-blue">07</span>
+        <span class="phase-title">PAN OUT</span>
+      </div>
+      <div class="phase-desc">To result or develop in a certain way. <strong>"We'll have to see how things pan out."</strong></div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-blue">08</span>
+        <span class="phase-title">RUN UP AGAINST</span>
+      </div>
+      <div class="phase-desc">To face problems or difficult situations. <strong>"We're going to run up against a lot of problems in this area."</strong></div>
+    </div>
+  </div>
+
+  <!-- BATCH 3: OPINIONS -->
+  <div class="section">
+    <h3 class="section-title">BATCH 3 — GIVING OPINIONS (PART 3)</h3>
+    <div class="section-bar" style="background: var(--yellow);"></div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">09 — MULL OVER</div>
+        </div>
+        <div class="tip-desc">Think carefully about something. Separable. <strong>"I've been mulling over this a lot recently."</strong> — Great trick to buy thinking time!</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">10 — FIGURE OUT</div>
+        </div>
+        <div class="tip-desc">Find the solution to something. <strong>"It's not easy to figure out a solution."</strong> — Then carry on giving your answer.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BATCH 4: GOVERNMENT -->
+  <div class="section">
+    <h3 class="section-title">BATCH 4 — GOVERNMENT QUESTIONS (PART 3)</h3>
+    <div class="section-bar" style="background: var(--green);"></div>
+
+    <div class="strategy-card">
+      <div class="strategy-num">11</div>
+      <div>
+        <div class="strategy-title">GET ON WITH</div>
+        <div class="strategy-desc">Start or continue doing something. "The government just needs to get on with it."</div>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-num">12</div>
+      <div>
+        <div class="strategy-title">BUCKLE DOWN</div>
+        <div class="strategy-desc">Start working hard. "It's time the government buckled down and found a solution."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BATCH 5: DESCRIBING -->
+  <div class="section">
+    <h3 class="section-title">BATCH 5 — DESCRIBING THINGS & PEOPLE (PART 2)</h3>
+    <div class="section-bar" style="background: var(--orange);"></div>
+
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-orange">THINGS</span></div>
+      <div>
+        <div class="resource-name">13 — STUMBLE UPON</div>
+        <div class="resource-detail">Find something by chance. "A great book I stumbled upon recently."</div>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-teal">PEOPLE</span></div>
+      <div>
+        <div class="resource-name">14 — BUMP INTO</div>
+        <div class="resource-detail">Meet someone by chance. "I bumped into an old friend last week."</div>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-badge"><span class="badge badge-green">RESULT</span></div>
+      <div>
+        <div class="resource-name">15 — TURN OUT</div>
+        <div class="resource-detail">End up / result in a certain way. "In the end, everything turned out fine."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRONUNCIATION TIPS -->
+  <div class="section">
+    <h3 class="section-title">PRONUNCIATION POWER TIPS</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot" style="background: var(--teal);"></div>
+          <div class="tip-title">Consonant → Vowel Linking</div>
+        </div>
+        <div class="tip-desc">Many phrasal verbs let you link sounds: look‿up, sit‿up, speak‿up. Show off your control!</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot" style="background: var(--teal);"></div>
+          <div class="tip-title">3rd Person Present</div>
+        </div>
+        <div class="tip-desc">"He looks‿up words all the time" — the /s/ links smoothly into /ʌ/.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot" style="background: var(--teal);"></div>
+          <div class="tip-title">Past Tense Linking</div>
+        </div>
+        <div class="tip-desc">"She looked‿up a lot of words" — the /t/ links into the vowel naturally.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot" style="background: var(--teal);"></div>
+          <div class="tip-title">bumped‿into / turned‿out</div>
+        </div>
+        <div class="tip-desc">Past tense phrasal verbs are perfect for showing smooth connected speech.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIGGEST LESSON -->
+  <div class="section">
+    <div class="lesson-box">
+      <div class="lesson-icon">!</div>
+      <div>
+        <div class="lesson-title">KEITH'S KEY ADVICE</div>
+        <div class="lesson-main">Learn phrasal verbs in context, not from long lists.</div>
+        <div class="lesson-sub">Learn <strong>5 at a time</strong>. Know if each is separable or inseparable. Practice in real conversations until they sound <strong>natural</strong>. Unnatural use has a negative effect — only use ones you're confident with.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>PHRASAL VERBS = BAND 7-8 VOCABULARY</h2>
+    <p>They make you sound natural in both spoken and written English.</p>
+    <p class="bold-line">Build a base of basics, then add less common idiomatic ones to impress your examiner.</p>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>

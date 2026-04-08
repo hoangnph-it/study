@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cẩm Nang Nhổ Răng Khôn — Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0F1923;
+    --card: #162231;
+    --card2: #1E2D3D;
+    --border: #2A3F55;
+    --orange: #FF9900;
+    --orange-dim: #CC7A00;
+    --teal: #00BCD4;
+    --blue: #1A73E8;
+    --green: #4CAF50;
+    --red: #FF5252;
+    --yellow: #FFD54F;
+    --white: #FFFFFF;
+    --light: #B0BEC5;
+    --dim: #8899AA;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .infographic {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+
+  /* Top accent bar */
+  .top-bar { height: 6px; background: var(--orange); }
+
+  /* Header */
+  .header { padding: 48px 0 32px; }
+  .badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-orange { background: var(--orange); color: var(--bg); }
+  .badge-teal { background: var(--teal); color: var(--bg); }
+  .badge-blue { background: var(--blue); color: var(--white); }
+  .badge-green { background: var(--green); color: var(--bg); }
+  .badge-red { background: var(--red); color: var(--white); }
+  .badge-yellow { background: var(--yellow); color: var(--bg); }
+
+  .header h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dim);
+    margin-top: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .header h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 8px;
+  }
+  .header h1 span { color: var(--orange); }
+  .header .author {
+    color: var(--dim);
+    font-size: 15px;
+    margin-top: 16px;
+  }
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* Specs bar */
+  .specs-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card);
+    border: 1.5px solid var(--orange);
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 48px;
+  }
+  .spec {
+    text-align: center;
+    position: relative;
+    padding: 0 10px;
+  }
+  .spec:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: var(--border);
+  }
+  .spec-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--orange);
+    font-family: 'Inter', sans-serif;
+  }
+  .spec-label {
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  /* Section */
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .section-bar {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  /* Reason cards */
+  .reason-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .reason-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .reason-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--orange);
+    min-width: 42px;
+    font-family: 'Inter', sans-serif;
+  }
+  .reason-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+  .reason-desc {
+    color: var(--light);
+    font-size: 13.5px;
+  }
+
+  /* Challenge box */
+  .challenge-box {
+    background: var(--card);
+    border: 2px solid var(--red);
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+  .challenge-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+  }
+  .challenge-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+  .challenge-text {
+    color: var(--light);
+    font-size: 14.5px;
+  }
+
+  /* Phase cards */
+  .phase-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .phase-title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .phase-desc {
+    color: var(--light);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .connector {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 44px;
+    margin: -4px 0;
+  }
+  .connector-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 0;
+  }
+  .connector-dots span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+  }
+
+  /* Tips grid */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .tip-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tip-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .tip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .tip-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--yellow);
+    flex-shrink: 0;
+  }
+  .tip-title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .tip-desc {
+    color: var(--light);
+    font-size: 13px;
+    padding-left: 22px;
+  }
+
+  /* Strategy cards */
+  .strategy-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .strategy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .strategy-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .strategy-title { font-weight: 700; font-size: 15px; }
+  .strategy-desc { color: var(--light); font-size: 13.5px; }
+
+  /* Lesson box */
+  .lesson-box {
+    background: #1A2A3A;
+    border: 2.5px solid var(--orange);
+    border-radius: 16px;
+    padding: 28px 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  .lesson-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .lesson-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+  .lesson-main {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .lesson-sub {
+    color: var(--light);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Verdict */
+  .verdict {
+    background: var(--orange);
+    border-radius: 14px;
+    padding: 24px 32px;
+    text-align: center;
+    margin-top: 44px;
+  }
+  .verdict h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .verdict p {
+    color: #4A3000;
+    font-size: 15px;
+  }
+  .verdict .bold-line {
+    font-weight: 700;
+    color: var(--bg);
+    margin-top: 4px;
+  }
+
+  /* Bottom bar */
+  .bottom-bar { height: 6px; background: var(--orange); margin-top: 48px; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 28px; }
+    .specs-bar { grid-template-columns: repeat(2, 1fr); row-gap: 12px; }
+    .spec:nth-child(2)::after { display: none; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .lesson-box { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="badge badge-orange">CHĂM SÓC RĂNG MIỆNG</span>
+    <h2>CẨM NANG HỒI PHỤC SAU KHI</h2>
+    <h1>NHỔ RĂNG KHÔN <span>(HÀM TRÁI)</span></h1>
+    <p class="author">Thiết kế bởi Quản Gia &middot; Chăm sóc gia đình</p>
+    <hr class="divider">
+  </div>
+
+  <!-- EXAM SPECS -->
+  <div class="specs-bar">
+    <div class="spec">
+      <div class="spec-value">48 - 72h</div>
+      <div class="spec-label">Giờ Vàng Cần Kỹ</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">BÊN PHẢI</div>
+      <div class="spec-label">Bên Được Nhai</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">0 ỐNG HÚT</div>
+      <div class="spec-label">Tuyệt Đối Tránh</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">ĐỒ MỀM</div>
+      <div class="spec-label">Kết Cấu Thức Ăn</div>
+    </div>
+  </div>
+
+  <!-- WHY TAKE THIS EXAM -->
+  <div class="section">
+    <h3 class="section-title">TẠI SAO CẦN CHĂM SÓC KỸ?</h3>
+    <div class="section-bar" style="background: var(--orange);"></div>
+
+    <div class="reason-card">
+      <div class="reason-num">01</div>
+      <div>
+        <div class="reason-title">BẢO VỆ CỤC MÁU ĐÔNG</div>
+        <div class="reason-desc">Cục máu đông là "miếng băng gạc tự nhiên" giúp bảo vệ xương và dây thần kinh hở bên dưới.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">02</div>
+      <div>
+        <div class="reason-title">TRÁNH VIÊM HUYỆT Ổ RĂNG</div>
+        <div class="reason-desc">Nếu cục máu đông trôi mất (dry socket), bạn sẽ phải chịu những cơn đau buốt thấu xương cực kỳ khó chịu.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">03</div>
+      <div>
+        <div class="reason-title">HỒI PHỤC NHANH CHÓNG</div>
+        <div class="reason-desc">Giúp vết thương mau lành để bạn có sức khoẻ vui chơi cùng 2 bé nhỏ và chăm lo gia đình.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT MAKES IT HARD -->
+  <div class="section">
+    <h3 class="section-title">NHỮNG ĐIỀU TUYỆT ĐỐI TRÁNH (KẺ THÙ CỦA VẾT NHỔ)</h3>
+    <div class="section-bar" style="background: var(--red);"></div>
+
+    <div class="challenge-box">
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Tuyệt đối <strong>KHÔNG DÙNG ỐNG HÚT</strong>. Lực mút sẽ hút tuột cục máu đông ra ngoài.</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Tránh thức uống <strong>NÓNG (như Cà phê, Trà nóng)</strong>. Nhiệt độ cao làm tan máu đông và gây chảy máu lại.</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Không uống <strong>NƯỚC CAM / NƯỚC ÉP CHUA</strong>. Tính axit sẽ làm vết thương xót và chậm lành.</div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-dot"></div>
+        <div class="challenge-text">Tránh xa bánh kẹo có <strong>HẠT CỨNG, GIÒN</strong>. Vụn cứng rớt vào hốc răng sẽ gây nhiễm trùng.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-PHASE STUDY PLAN -->
+  <div class="section">
+    <h3 class="section-title">THỰC ĐƠN "VÀNG" CHO GIA ĐÌNH</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-teal">THỨC UỐNG</span>
+        <span class="phase-title">NƯỚC DỪA LÀ CHÂN ÁI</span>
+      </div>
+      <div class="phase-desc">Hãy uống <strong>Nước dừa mát</strong> hoặc nước lọc. Nước dừa không có axit, làm dịu vết thương và bù điện giải cực tốt. Nhớ uống trực tiếp bằng ly!</div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+        <span style="background: var(--teal);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-blue">MÓN CHÍNH</span>
+        <span class="phase-title">SÚP & ĐỒ XAY NHUYỄN</span>
+      </div>
+      <div class="phase-desc"><strong>Trứng khuấy phô mai mềm, Súp bí đỏ để nguội, Macaroni luộc mềm, Khoai tây nghiền.</strong> Đây là các món giàu dinh dưỡng, không cần nhai nhiều và cả hai bé nhà mình đều thích ăn cùng.</div>
+    </div>
+
+    <div class="connector">
+      <div class="connector-dots">
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+        <span style="background: var(--blue);"></span>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-green">ĐỒ NGỌT</span>
+        <span class="phase-title">BƠ NGHIỀN & BÁNH KEM</span>
+      </div>
+      <div class="phase-desc"><strong>Bơ nghiền trộn sữa chua Hy Lạp</strong> hoặc <strong>Bánh kem sinh nhật phần cốt xốp mềm</strong>. Đảm bảo gạt bỏ hết các hạt vụn trang trí cứng trước khi ăn.</div>
+    </div>
+  </div>
+
+  <!-- EXAM DAY SURVIVAL GUIDE -->
+  <div class="section">
+    <h3 class="section-title">MẸO SINH HOẠT HÀNG NGÀY</h3>
+    <div class="section-bar" style="background: var(--yellow);"></div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Chỉ nhai bên Phải</div>
+        </div>
+        <div class="tip-desc">Ý thức đẩy thức ăn sang phải để bảo vệ hàm trái vừa nhổ.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Kê cao đầu khi ngủ</div>
+        </div>
+        <div class="tip-desc">Dùng thêm gối để đầu cao hơn tim, giúp giảm sưng viêm hiệu quả.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Súc miệng nhẹ nhàng</div>
+        </div>
+        <div class="tip-desc">Dùng nước muối ấm, chỉ nghiêng đầu nhẹ qua lại, KHÔNG sục mạnh.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Không khạc nhổ</div>
+        </div>
+        <div class="tip-desc">Cứ nuốt nước bọt bình thường, khạc nhổ tạo áp lực hút làm bong máu đông.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIGGEST LESSON -->
+  <div class="section">
+    <div class="lesson-box">
+      <div class="lesson-icon">💡</div>
+      <div>
+        <div class="lesson-title">NGUYÊN TẮC TỐI THƯỢNG</div>
+        <div class="lesson-main">Không đụng chạm vào "vùng cấm".</div>
+        <div class="lesson-sub">Tuyệt đối <strong>KHÔNG</strong> dùng lưỡi đá, không dùng tăm xỉa, không dùng tay sờ vào vị trí chiếc răng khôn bên trái vừa nhổ. Hãy để cơ thể tự làm công việc chữa lành của nó một cách yên tĩnh nhất.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>HÃY ĐỂ QUẢN GIA LO VIỆC NHÀ!</h2>
+    <p>Việc dọn dẹp căn hộ 69m vuông và sắp xếp đồ đạc cho hai bé cứ để tôi xử lý.</p>
+    <p class="bold-line">Nhiệm vụ duy nhất của bạn bây giờ là nghỉ ngơi và ăn uống đúng cách!</p>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>
