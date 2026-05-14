@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Design by Anthropic Labs — Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0F1923;
+    --card: #162231;
+    --card2: #1E2D3D;
+    --border: #2A3F55;
+    --orange: #FF9900;
+    --orange-dim: #CC7A00;
+    --teal: #00BCD4;
+    --blue: #1A73E8;
+    --green: #4CAF50;
+    --red: #FF5252;
+    --yellow: #FFD54F;
+    --purple: #B388FF;
+    --white: #FFFFFF;
+    --light: #B0BEC5;
+    --dim: #8899AA;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .infographic {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+
+  .top-bar { height: 6px; background: var(--orange); }
+
+  .header { padding: 48px 0 32px; }
+  .badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-orange { background: var(--orange); color: var(--bg); }
+  .badge-teal { background: var(--teal); color: var(--bg); }
+  .badge-blue { background: var(--blue); color: var(--white); }
+  .badge-green { background: var(--green); color: var(--bg); }
+  .badge-red { background: var(--red); color: var(--white); }
+  .badge-yellow { background: var(--yellow); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+
+  .header h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dim);
+    margin-top: 24px;
+    letter-spacing: 1px;
+  }
+  .header h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 8px;
+  }
+  .header h1 span { color: var(--orange); }
+  .header .author {
+    color: var(--dim);
+    font-size: 15px;
+    margin-top: 16px;
+  }
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  .specs-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card);
+    border: 1.5px solid var(--orange);
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 48px;
+  }
+  .spec { text-align: center; position: relative; }
+  .spec:not(:last-child)::after {
+    content: ''; position: absolute; right: 0; top: 15%;
+    height: 70%; width: 1px; background: var(--border);
+  }
+  .spec-value {
+    font-size: 22px; font-weight: 800; color: var(--orange);
+  }
+  .spec-label {
+    font-size: 11px; color: var(--dim);
+    text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;
+  }
+
+  .section { margin-bottom: 44px; }
+  .section-title { font-size: 24px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .section-bar { width: 60px; height: 4px; border-radius: 2px; margin-bottom: 20px; }
+
+  .reason-card {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: var(--card); border-radius: 12px;
+    padding: 18px 20px; margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .reason-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .reason-num {
+    font-size: 28px; font-weight: 800; color: var(--orange);
+    min-width: 42px;
+  }
+  .reason-title { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+  .reason-desc { color: var(--light); font-size: 13.5px; }
+
+  .bench-box {
+    background: var(--card);
+    border: 2px solid var(--teal);
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+  .bench-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 80px 80px;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .bench-row:last-child { border-bottom: none; }
+  .bench-row.header-row {
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+  .bench-label { font-size: 14px; font-weight: 600; }
+  .bench-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; text-align: center; font-size: 14px; }
+  .bench-val.old { color: var(--dim); }
+  .bench-val.new { color: var(--orange); }
+  .bench-val.delta { color: var(--green); }
+
+  .step-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 12px;
+  }
+  .step-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 12px;
+  }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--teal); display: flex;
+    align-items: center; justify-content: center;
+    font-weight: 800; font-size: 16px; color: var(--bg);
+    flex-shrink: 0;
+  }
+  .step-title { font-size: 18px; font-weight: 800; letter-spacing: 0.3px; }
+  .step-desc { color: var(--light); font-size: 13.5px; line-height: 1.6; padding-left: 50px; }
+
+  .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .tip-card {
+    background: var(--card); border-radius: 12px;
+    padding: 18px 20px; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tip-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .tip-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .tip-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--yellow); flex-shrink: 0; }
+  .tip-title { font-weight: 700; font-size: 14px; }
+  .tip-desc { color: var(--light); font-size: 12.5px; padding-left: 22px; }
+
+  .export-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .export-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .export-card:hover { transform: translateY(-2px); border-color: var(--orange); }
+  .export-name { font-weight: 700; font-size: 13px; }
+  .export-sub { color: var(--dim); font-size: 11px; margin-top: 2px; }
+
+  .flow-box {
+    background: #1A2A3A;
+    border: 2.5px solid var(--orange);
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .flow-step {
+    flex: 1;
+    min-width: 140px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .flow-step-title { font-weight: 700; font-size: 13px; color: var(--orange); margin-bottom: 4px; }
+  .flow-step-desc { font-size: 12px; color: var(--light); }
+  .flow-arrow { color: var(--orange); font-size: 20px; font-weight: 800; }
+
+  .lesson-box {
+    background: #1A2A3A;
+    border: 2.5px solid var(--orange);
+    border-radius: 16px;
+    padding: 28px 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  .lesson-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--orange); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 800; color: var(--bg);
+    flex-shrink: 0;
+  }
+  .lesson-title { font-size: 22px; font-weight: 800; color: var(--orange); margin-bottom: 6px; }
+  .lesson-main { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .lesson-sub { color: var(--light); font-size: 13.5px; line-height: 1.5; }
+
+  .verdict {
+    background: var(--orange);
+    border-radius: 14px;
+    padding: 24px 32px;
+    text-align: center;
+    margin-top: 44px;
+  }
+  .verdict h2 { font-size: 26px; font-weight: 800; color: var(--bg); margin-bottom: 8px; }
+  .verdict p { color: #4A3000; font-size: 14px; }
+  .verdict .bold-line { font-weight: 700; color: var(--bg); margin-top: 4px; }
+
+  .bottom-bar { height: 6px; background: var(--orange); margin-top: 48px; }
+
+  @media (max-width: 640px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 30px; }
+    .specs-bar { grid-template-columns: repeat(2, 1fr); row-gap: 12px; }
+    .spec:nth-child(2)::after { display: none; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .lesson-box { flex-direction: column; }
+    .export-grid { grid-template-columns: repeat(2, 1fr); }
+    .bench-row { grid-template-columns: 1fr 60px 60px 60px; gap: 6px; }
+    .flow-row { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="badge badge-orange">ANTHROPIC LABS</span>
+    <h2>MEET</h2>
+    <h1>CLAUDE <span>DESIGN</span></h1>
+    <p class="author">Prototypes, slides, and landing pages — just by talking to Claude</p>
+    <hr class="divider">
+  </div>
+
+  <!-- SPECS -->
+  <div class="specs-bar">
+    <div class="spec">
+      <div class="spec-value">OPUS 4.7</div>
+      <div class="spec-label">Vision Model</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">~15 MIN</div>
+      <div class="spec-label">Design System Gen</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">5+</div>
+      <div class="spec-label">Export Targets</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">PREVIEW</div>
+      <div class="spec-label">Pro / Max / Team</div>
+    </div>
+  </div>
+
+  <!-- WHAT IT IS -->
+  <div class="section">
+    <h3 class="section-title">WHAT IS CLAUDE DESIGN?</h3>
+    <div class="section-bar" style="background: var(--orange);"></div>
+
+    <div class="reason-card">
+      <div class="reason-num">01</div>
+      <div>
+        <div class="reason-title">CONVERSATIONAL DESIGN TOOL</div>
+        <div class="reason-desc">A Lovable/Bolt-style interface for Claude. Chat on the left, live canvas on the right. Lowers the barrier that Claude Code had.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">02</div>
+      <div>
+        <div class="reason-title">THREE PROJECT TYPES</div>
+        <div class="reason-desc">Prototypes (wireframe or high-fidelity), slide decks, and one-pagers — or start from built-in templates.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">03</div>
+      <div>
+        <div class="reason-title">BRAND-AWARE BY DEFAULT</div>
+        <div class="reason-desc">A reusable <strong>design system</strong> (colors, type, components) ingested from a GitHub repo, brand docs, and logos. Teams can maintain multiple systems.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">04</div>
+      <div>
+        <div class="reason-title">POWERED BY OPUS 4.7</div>
+        <div class="reason-desc">Uses Anthropic's newest vision model — the bump that makes layout and visual reasoning viable.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENCHMARKS -->
+  <div class="section">
+    <h3 class="section-title">WHY NOW: OPUS 4.7 VISION JUMP</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+
+    <div class="bench-box">
+      <div class="bench-row header-row">
+        <div>Visual Reasoning Benchmark</div>
+        <div style="text-align:center;">Opus 4.6</div>
+        <div style="text-align:center;">Opus 4.7</div>
+        <div style="text-align:center;">Delta</div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-label">Benchmark A</div>
+        <div class="bench-val old">69%</div>
+        <div class="bench-val new">82%</div>
+        <div class="bench-val delta">+13</div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-label">Benchmark B</div>
+        <div class="bench-val old">84.7%</div>
+        <div class="bench-val new">91%</div>
+        <div class="bench-val delta">+6.3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETUP FLOW -->
+  <div class="section">
+    <h3 class="section-title">THE 3-STEP SETUP FLOW</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">BUILD YOUR DESIGN SYSTEM</div>
+      </div>
+      <div class="step-desc">Provide a company name, blurb, GitHub repo, brand guidelines, and logo. Claude ingests everything and drafts colors, gradients, neutrals, type, buttons, badges, and cards. Review and approve each piece.</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">CREATE A PROJECT WITH CONTEXT</div>
+      </div>
+      <div class="step-desc">Pick prototype, slides, or one-pager. Attach the design system, screenshots, or a codebase. For slides, drop a PDF — Claude invokes a read-PDF skill, plans the deck (e.g. 19 slides), then generates.</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">ITERATE, EXPORT, OR HAND OFF</div>
+      </div>
+      <div class="step-desc">Tweak panel for quick edits, comment on specific elements, draw on the canvas, or edit directly. Present fullscreen in-tab, or export anywhere when ready.</div>
+    </div>
+  </div>
+
+  <!-- EXPORT TARGETS -->
+  <div class="section">
+    <h3 class="section-title">EXPORT ANYWHERE</h3>
+    <div class="section-bar" style="background: var(--green);"></div>
+
+    <div class="export-grid">
+      <div class="export-card">
+        <div class="export-name">ZIP</div>
+        <div class="export-sub">Raw files</div>
+      </div>
+      <div class="export-card">
+        <div class="export-name">PDF</div>
+        <div class="export-sub">Share-ready</div>
+      </div>
+      <div class="export-card">
+        <div class="export-name">POWERPOINT</div>
+        <div class="export-sub">.pptx</div>
+      </div>
+      <div class="export-card">
+        <div class="export-name">CANVA</div>
+        <div class="export-sub">Official partner</div>
+      </div>
+      <div class="export-card">
+        <div class="export-name">HTML</div>
+        <div class="export-sub">Static site</div>
+      </div>
+      <div class="export-card" style="border-color: var(--orange);">
+        <div class="export-name" style="color: var(--orange);">CLAUDE CODE</div>
+        <div class="export-sub">One-click handoff</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEMO HIGHLIGHTS -->
+  <div class="section">
+    <h3 class="section-title">LIVE DEMO HIGHLIGHTS</h3>
+    <div class="section-bar" style="background: var(--yellow);"></div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-header"><div class="tip-dot"></div><div class="tip-title">PDF → SLIDE DECK</div></div>
+        <div class="tip-desc">A trading-bot PDF became a 19-slide branded deck that matched the source website's look and copy tone.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header"><div class="tip-dot"></div><div class="tip-title">BUILT-IN RETRIES</div></div>
+        <div class="tip-desc">Hit an internal error mid-generation; Claude auto-retried twice without user intervention.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header"><div class="tip-dot"></div><div class="tip-title">SKILL.MD MANIFEST</div></div>
+        <div class="tip-desc">Each system ships a machine-readable <code>skill.md</code> so Claude Code can pick up the design later.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header"><div class="tip-dot"></div><div class="tip-title">WORKSHOP LANDING PAGE</div></div>
+        <div class="tip-desc">From vague brief → Q&A → high-fidelity page with countdown, CTA, agenda, and 3-day plan — all on-brand.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header"><div class="tip-dot"></div><div class="tip-title">TWEAK PANEL</div></div>
+        <div class="tip-desc">Toggle countdown, swap accent colors, change dates — structured edits without re-prompting.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header"><div class="tip-dot"></div><div class="tip-title">HANDOFF → LOCALHOST</div></div>
+        <div class="tip-desc">Copy the export command into Claude Code; it fetched the zip, wired the page in, even swapped a placeholder image automatically.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE WORKFLOW -->
+  <div class="section">
+    <h3 class="section-title">THE ANTHROPIC ECOSYSTEM FLOW</h3>
+    <div class="section-bar" style="background: var(--purple);"></div>
+
+    <div class="flow-box">
+      <div class="flow-row">
+        <div class="flow-step">
+          <div class="flow-step-title">DESIGN SYSTEM</div>
+          <div class="flow-step-desc">Brand, logos, GitHub</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-title">CLAUDE DESIGN</div>
+          <div class="flow-step-desc">Prototype & iterate</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-title">CLAUDE CODE</div>
+          <div class="flow-step-desc">Build & deploy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE TAKEAWAY -->
+  <div class="section">
+    <h3 class="section-title">THE TAKEAWAY</h3>
+    <div class="section-bar" style="background: var(--orange);"></div>
+
+    <div class="lesson-box">
+      <div class="lesson-icon">!</div>
+      <div>
+        <div class="lesson-title">CONTEXT IS THE PRODUCT</div>
+        <div class="lesson-main">Anthropic isn't copying Canva or Gamma — it's absorbing them.</div>
+        <div class="lesson-sub">When design, slides, and code all live in the same ecosystem, you stop ferrying context between tools. A "planning phase up front" costs more tokens once, but saves far more by not chasing the wrong path. Claude Design is Co-work, iterated for visuals.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>SHOULD YOU USE IT?</h2>
+    <p>If you're on Pro, Max, Team, or Enterprise — yes.</p>
+    <p class="bold-line">Best for branded decks from raw docs, quick landing pages, and anything you'll eventually push through Claude Code.</p>
+  </div>
+
+</div>
+
+<div class="bottom-bar"></div>
+
+</body>
+</html>

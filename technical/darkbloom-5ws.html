@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darkbloom — 5Ws Infographic</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#0a0a0f;color:#e2e8f0;min-height:100vh;padding:2rem}
+  .container{max-width:1100px;margin:0 auto}
+  h1{text-align:center;font-size:2rem;margin-bottom:.3rem;background:linear-gradient(135deg,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .subtitle{text-align:center;color:#94a3b8;margin-bottom:.5rem;font-size:.9rem}
+  .tagline{text-align:center;color:#64748b;font-size:.8rem;margin-bottom:2rem}
+  .w-section{background:#12121a;border-radius:1rem;padding:1.5rem;border:1px solid #1e1e2e;margin-bottom:1.2rem;position:relative;overflow:hidden}
+  .w-section::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:2px}
+  .w1::before{background:linear-gradient(180deg,#f472b6,#a78bfa)}
+  .w2::before{background:linear-gradient(180deg,#38bdf8,#818cf8)}
+  .w3::before{background:linear-gradient(180deg,#22c55e,#38bdf8)}
+  .w4::before{background:linear-gradient(180deg,#f59e0b,#ef4444)}
+  .w5::before{background:linear-gradient(180deg,#a78bfa,#22c55e)}
+  .w-header{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem}
+  .w-icon{font-size:1.5rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:.6rem;flex-shrink:0}
+  .w-label{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;font-weight:700}
+  .w-title{font-size:1.15rem;font-weight:700}
+  .w-body{font-size:.88rem;color:#cbd5e1;line-height:1.7;padding-left:48px}
+  .w-body b{color:#e2e8f0}
+  .highlight-box{background:#1a1a2e;border-radius:.6rem;padding:.8rem 1rem;margin-top:.8rem;border:1px solid #2a2a3e;font-size:.82rem}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.8rem;margin-top:1rem}
+  .stat{background:#1a1a2e;border-radius:.6rem;padding:.8rem;text-align:center;border:1px solid #2a2a3e}
+  .stat-val{font-size:1.4rem;font-weight:800}
+  .stat-label{font-size:.7rem;color:#94a3b8;margin-top:.2rem}
+  .pink{color:#f472b6}
+  .blue{color:#38bdf8}
+  .green{color:#22c55e}
+  .amber{color:#f59e0b}
+  .purple{color:#a78bfa}
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .flow{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin:.6rem 0;font-size:.82rem}
+  .flow-item{background:#1a1a2e;border:1px solid #2a2a3e;padding:.3rem .7rem;border-radius:2rem;white-space:nowrap}
+  .flow-arrow{color:#64748b}
+  .layers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin-top:.8rem}
+  .layer{background:#1a1a2e;border-radius:.6rem;padding:.8rem;border:1px solid #2a2a3e}
+  .layer-title{font-size:.85rem;font-weight:700;margin-bottom:.3rem}
+  .layer-desc{font-size:.78rem;color:#94a3b8;line-height:1.5}
+  .pricing{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:.8rem}
+  .pricing th,.pricing td{padding:.4rem .5rem;text-align:left;border-bottom:1px solid #1e1e2e}
+  .pricing th{color:#94a3b8;font-weight:600;font-size:.75rem}
+  .code-block{background:#0a0a0f;border:1px solid #1e1e2e;border-radius:.5rem;padding:.8rem;font-family:'SF Mono',monospace;font-size:.78rem;line-height:1.5;overflow-x:auto;margin-top:.6rem;color:#a78bfa}
+  .code-block .comment{color:#64748b}
+  .tag{display:inline-block;background:#1a1a2e;border:1px solid #2a2a3e;padding:.15rem .5rem;border-radius:1rem;font-size:.7rem;margin:.15rem .2rem .15rem 0}
+  .note{text-align:center;color:#64748b;font-size:.72rem;margin-top:1.5rem;line-height:1.6}
+  @media(max-width:700px){.cols2{grid-template-columns:1fr}.w-body{padding-left:0}}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🌸 Darkbloom — 5Ws Research Brief</h1>
+  <p class="subtitle">Private AI Inference on Idle Apple Silicon</p>
+  <p class="tagline">by Eigen Labs · Research Preview · Launched April 15, 2026 · <a href="https://darkbloom.dev" style="color:#a78bfa">darkbloom.dev</a></p>
+
+  <!-- WHAT -->
+  <div class="w-section w1">
+    <div class="w-header">
+      <div class="w-icon" style="background:#2a1a2e"><span class="pink">❓</span></div>
+      <div><div class="w-label pink">What</div><div class="w-title">What is Darkbloom?</div></div>
+    </div>
+    <div class="w-body">
+      A <b>decentralized AI inference network</b> that runs LLM workloads on idle Apple Silicon Macs instead of cloud data centers. It provides an <b>OpenAI-compatible API</b> — just change the base URL and your existing code works (streaming, function calling, all SDKs).
+      <div class="highlight-box">
+        <b>Key idea:</b> 100M+ Apple Silicon Macs sit idle 18+ hours/day. Darkbloom turns them into an AI compute network with <b>end-to-end encryption</b> — operators run your inference but <b>cannot see your data</b>.
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-val pink">~50%</div><div class="stat-label">cheaper than centralized APIs</div></div>
+        <div class="stat"><div class="stat-val green">95-100%</div><div class="stat-label">revenue to operators</div></div>
+        <div class="stat"><div class="stat-val blue">E2E</div><div class="stat-label">encrypted inference</div></div>
+        <div class="stat"><div class="stat-val purple">0%</div><div class="stat-label">platform fee</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO -->
+  <div class="w-section w2">
+    <div class="w-header">
+      <div class="w-icon" style="background:#1a1a2e"><span class="blue">👥</span></div>
+      <div><div class="w-label blue">Who</div><div class="w-title">Who is behind it & who is it for?</div></div>
+    </div>
+    <div class="w-body">
+      <div class="cols2">
+        <div>
+          <b>Built by:</b>
+          <p style="margin-top:.3rem"><b style="color:#38bdf8">Eigen Labs</b> — the team behind <b>EigenLayer</b> (Ethereum restaking protocol) and <b>EigenCloud</b> (verifiable AI platform). Led by <b>Sreeram Kannan</b> (CEO). Project lead: <b>Gajesh Naik</b>.</p>
+          <div style="margin-top:.5rem">
+            <span class="tag">EigenLayer ecosystem</span>
+            <span class="tag">Open source</span>
+            <span class="tag">Research preview</span>
+          </div>
+        </div>
+        <div>
+          <b>For two audiences:</b>
+          <p style="margin-top:.3rem">
+            🧑‍💻 <b>Developers / Users</b> — Anyone who calls LLM APIs. Get ~50% cheaper inference with privacy guarantees via a drop-in OpenAI-compatible endpoint.<br><br>
+            💻 <b>Mac Owners (Operators)</b> — Earn USD from idle Apple Silicon. Install a CLI agent, your Mac serves inference when idle. Keep 100% of revenue.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <div class="w-section w3">
+    <div class="w-header">
+      <div class="w-icon" style="background:#1a2e1a"><span class="green">💡</span></div>
+      <div><div class="w-label green">Why</div><div class="w-title">Why does it exist?</div></div>
+    </div>
+    <div class="w-body">
+      <b>Problem:</b> AI compute has 3 layers of markup that inflate costs:
+      <div class="flow">
+        <span class="flow-item">NVIDIA (GPU maker)</span><span class="flow-arrow">→</span>
+        <span class="flow-item">Hyperscalers (AWS, GCP, Azure)</span><span class="flow-arrow">→</span>
+        <span class="flow-item">API Providers (OpenAI, etc.)</span><span class="flow-arrow">→</span>
+        <span class="flow-item" style="border-color:#ef4444">End Users pay <b>3×+ markup</b></span>
+      </div>
+      <b>Meanwhile:</b> 100M+ Apple Silicon Macs with powerful ML hardware (273–819 GB/s memory bandwidth, Neural Engines, up to 235B param models) sit idle most of the day.
+      <div class="highlight-box">
+        <b>The Airbnb analogy:</b> Airbnb connected idle rooms to travelers. Uber connected idle cars to riders. Darkbloom connects <b>idle Macs to AI demand</b>. Marginal cost ≈ electricity ($0.01–0.03/hr), so prices undercut centralized providers.
+      </div>
+    </div>
+  </div>
+
+  <!-- WHEN / WHERE -->
+  <div class="w-section w4">
+    <div class="w-header">
+      <div class="w-icon" style="background:#2e1a1a"><span class="amber">📅</span></div>
+      <div><div class="w-label amber">When & Where</div><div class="w-title">When was it launched & where does it run?</div></div>
+    </div>
+    <div class="w-body">
+      <div class="cols2">
+        <div>
+          <b>Timeline:</b>
+          <ul style="list-style:none;margin-top:.4rem;font-size:.82rem">
+            <li style="padding:.2rem 0">🔹 <b>Oct 2025</b> — EigenCloud launches EigenAI & EigenCompute (verifiable AI infra)</li>
+            <li style="padding:.2rem 0">🔹 <b>Apr 15, 2026</b> — Darkbloom research preview goes live</li>
+            <li style="padding:.2rem 0">🔹 <b>Now</b> — Open source, paper published, API available</li>
+            <li style="padding:.2rem 0">🔹 <b>Coming soon</b> — Native macOS menu bar app</li>
+          </ul>
+        </div>
+        <div>
+          <b>Where it runs:</b>
+          <ul style="list-style:none;margin-top:.4rem;font-size:.82rem">
+            <li style="padding:.2rem 0">🌍 <b>Globally distributed</b> — any Mac with Apple Silicon</li>
+            <li style="padding:.2rem 0">💻 <b>macOS 14+</b> required for operators</li>
+            <li style="padding:.2rem 0">🔗 <b>API endpoint:</b> api.darkbloom.dev/v1</li>
+            <li style="padding:.2rem 0">📦 <b>GitHub:</b> Layr-Labs/d-inference</li>
+          </ul>
+          <p style="margin-top:.4rem;font-size:.78rem;color:#94a3b8">⚠️ No token announced. Research project status. Coordinator is still centralized (trusted component).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW -->
+  <div class="w-section w5">
+    <div class="w-header">
+      <div class="w-icon" style="background:#1a1a2e"><span class="purple">⚙️</span></div>
+      <div><div class="w-label purple">How</div><div class="w-title">How does it work?</div></div>
+    </div>
+    <div class="w-body">
+      <b>4-layer privacy architecture</b> — each independently verifiable:
+      <div class="layers">
+        <div class="layer">
+          <div class="layer-title pink">🔐 Encryption</div>
+          <div class="layer-desc">Requests encrypted on user's device before transmission. Coordinator routes ciphertext. Only target node's hardware-bound key can decrypt.</div>
+        </div>
+        <div class="layer">
+          <div class="layer-title blue">🛡️ Hardware Verification</div>
+          <div class="layer-desc">Each node holds a key from Apple's Secure Enclave. Attestation chain traces back to Apple's root certificate authority.</div>
+        </div>
+        <div class="layer">
+          <div class="layer-title green">🔒 Hardened Runtime</div>
+          <div class="layer-desc">Inference process locked at OS level. Debugger attachment blocked. Memory inspection blocked. Operator cannot extract data.</div>
+        </div>
+        <div class="layer">
+          <div class="layer-title amber">✍️ Traceable Output</div>
+          <div class="layer-desc">Every response signed by the specific machine. Full attestation chain published. Anyone can verify independently.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem"><b>Available models & pricing:</b></div>
+      <table class="pricing">
+        <tr><th>Model</th><th>Type</th><th>Input $/M tok</th><th>Output $/M tok</th><th>vs OpenRouter</th></tr>
+        <tr><td><b>Gemma 4 26B</b></td><td>Multimodal MoE</td><td>$0.03</td><td>$0.20</td><td class="green">50% cheaper</td></tr>
+        <tr><td><b>Qwen3.5 27B</b></td><td>Dense reasoning</td><td>$0.10</td><td>$0.78</td><td class="green">50% cheaper</td></tr>
+        <tr><td><b>Qwen3.5 122B MoE</b></td><td>Best quality/tok</td><td>$0.13</td><td>$1.04</td><td class="green">50% cheaper</td></tr>
+        <tr><td><b>MiniMax M2.5 239B</b></td><td>SOTA coding</td><td>$0.06</td><td>$0.50</td><td class="green">50% cheaper</td></tr>
+        <tr><td><b>Cohere Transcribe</b></td><td>Speech-to-text</td><td colspan="2">$0.001/min</td><td class="green">50% cheaper</td></tr>
+      </table>
+
+      <div style="margin-top:1rem"><b>Quick start (for developers):</b></div>
+      <div class="code-block">
+        <span class="comment"># Just change the base_url — everything else is standard OpenAI SDK</span><br>
+        client = OpenAI(<br>
+        &nbsp;&nbsp;base_url=<span style="color:#22c55e">"https://api.darkbloom.dev/v1"</span>,<br>
+        &nbsp;&nbsp;api_key=<span style="color:#22c55e">"your-api-key"</span><br>
+        )
+      </div>
+      <div style="margin-top:.8rem"><b>Quick start (for Mac operators):</b></div>
+      <div class="code-block">
+        <span class="comment"># One-line install — runs as launchd service</span><br>
+        $ curl -fsSL https://api.darkbloom.dev/install.sh | bash
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="w-section" style="border-color:#a78bfa">
+    <div class="w-header">
+      <div class="w-icon" style="background:#2a1a2e"><span>⚡</span></div>
+      <div><div class="w-label" style="color:#a78bfa">TL;DR</div><div class="w-title">One-sentence summary</div></div>
+    </div>
+    <div class="w-body" style="font-size:1rem">
+      Darkbloom lets you <b class="pink">use AI APIs at half the price</b> by routing encrypted inference through <b class="blue">idle Apple Silicon Macs</b> instead of data centers — operators <b class="green">earn USD</b> from hardware they already own, and they <b class="purple">can't see your data</b>.
+    </div>
+  </div>
+
+  <p class="note">
+    Sources: darkbloom.dev, blockchain.news, arxiv.org (EigenAI paper), siliconangle.com · Compiled April 17, 2026<br>
+    Darkbloom is a research preview by Eigen Labs. No token announced. Coordinator is a trusted centralized component.<br>
+    Pricing compared against OpenRouter equivalents. Actual costs depend on network demand.
+  </p>
+</div>
+</body>
+</html>

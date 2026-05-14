@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coco Riverside Lodge — Cẩm nang du lịch & So sánh miền Tây</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0B1F1A;
+    --card: #16302A;
+    --card2: #1E4038;
+    --border: #2F5A4F;
+    --green: #66BB6A;
+    --green-dim: #43A047;
+    --amber: #FFB74D;
+    --amber-dim: #FB8C00;
+    --river: #4FC3F7;
+    --coconut: #A1887F;
+    --cream: #FFF8E1;
+    --rose: #EF9A9A;
+    --red: #FF5252;
+    --yellow: #FFD54F;
+    --white: #FFFFFF;
+    --light: #C8E6C9;
+    --dim: #8BAA9C;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .infographic {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+
+  .top-bar { height: 6px; background: linear-gradient(90deg, var(--green), var(--amber)); }
+
+  /* Header */
+  .header { padding: 48px 0 28px; }
+  .badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-green { background: var(--green); color: var(--bg); }
+  .badge-amber { background: var(--amber); color: var(--bg); }
+  .badge-river { background: var(--river); color: var(--bg); }
+  .badge-red { background: var(--red); color: var(--white); }
+  .badge-coconut { background: var(--coconut); color: var(--white); }
+  .badge-rose { background: var(--rose); color: var(--bg); }
+  .badge-cream { background: var(--cream); color: var(--bg); }
+
+  .header h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dim);
+    margin-top: 24px;
+    letter-spacing: 1px;
+  }
+  .header h1 {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 8px;
+  }
+  .header h1 span { color: var(--green); }
+  .header h1 .amber { color: var(--amber); }
+  .header .subtitle {
+    color: var(--light);
+    font-size: 16px;
+    margin-top: 16px;
+    font-style: italic;
+  }
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* Specs bar */
+  .specs-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card);
+    border: 1.5px solid var(--green);
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 44px;
+  }
+  .spec { text-align: center; position: relative; }
+  .spec:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 15%;
+    height: 70%; width: 1px;
+    background: var(--border);
+  }
+  .spec-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--green);
+  }
+  .spec-label {
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  /* Section */
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .section-bar {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+  .section-intro {
+    color: var(--light);
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  /* Reason cards */
+  .reason-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--green);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .reason-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(102,187,106,0.2);
+  }
+  .reason-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--amber);
+    min-width: 42px;
+  }
+  .reason-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: var(--green);
+  }
+  .reason-desc {
+    color: var(--light);
+    font-size: 13.5px;
+  }
+
+  /* Comparison table */
+  .compare-wrap {
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+  }
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .compare-table th {
+    background: var(--card2);
+    color: var(--white);
+    text-align: left;
+    padding: 14px 12px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border);
+    font-size: 12.5px;
+  }
+  .compare-table th.highlight {
+    background: var(--green);
+    color: var(--bg);
+  }
+  .compare-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--light);
+  }
+  .compare-table td.criterion {
+    font-weight: 700;
+    color: var(--white);
+    background: rgba(255,183,77,0.05);
+    width: 18%;
+  }
+  .compare-table td.win {
+    background: rgba(102,187,106,0.10);
+    color: var(--white);
+    font-weight: 600;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  /* Vs cards */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .vs-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border-top: 3px solid var(--amber);
+  }
+  .vs-card.win {
+    border-top-color: var(--green);
+    background: linear-gradient(180deg, rgba(102,187,106,0.12), var(--card));
+  }
+  .vs-name {
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .vs-name .tag {
+    font-size: 10px;
+    background: var(--green);
+    color: var(--bg);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+    font-weight: 700;
+  }
+  .vs-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  /* Food/activity grid */
+  .food-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .food-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .food-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .food-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--amber);
+    margin-bottom: 3px;
+  }
+  .food-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  /* Room types */
+  .room-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .room-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border-top: 3px solid var(--coconut);
+  }
+  .room-name {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--amber);
+    margin-bottom: 4px;
+  }
+  .room-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  /* Tips grid */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .tip-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .tip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .tip-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--amber);
+    flex-shrink: 0;
+  }
+  .tip-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+  }
+  .tip-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    padding-left: 22px;
+  }
+
+  /* People / culture box */
+  .people-box {
+    background: linear-gradient(135deg, var(--card), var(--card2));
+    border-radius: 14px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--coconut);
+  }
+  .people-title {
+    color: var(--coconut);
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .people-desc {
+    color: var(--light);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .people-desc strong { color: var(--white); }
+
+  /* Phase cards */
+  .phase-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .phase-title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .phase-desc {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+  .phase-desc strong { color: var(--amber); }
+
+  /* Route cards */
+  .route-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--river);
+  }
+  .route-card.recommended {
+    border-left-color: var(--green);
+    background: linear-gradient(90deg, rgba(102,187,106,0.10), var(--card));
+  }
+  .route-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--river);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .route-card.recommended .route-num { background: var(--green); }
+  .route-title { font-weight: 700; font-size: 14.5px; }
+  .route-title .star { color: var(--amber); margin-left: 6px; font-size: 12px; }
+  .route-desc { color: var(--light); font-size: 12.5px; margin-top: 2px; }
+
+  /* Warning box */
+  .warn-box {
+    background: var(--card);
+    border: 2px solid var(--red);
+    border-radius: 14px;
+    padding: 22px 26px;
+  }
+  .warn-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 6px 0;
+  }
+  .warn-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .warn-text {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .warn-text strong { color: var(--white); }
+
+  /* Quick contact card */
+  .contact-box {
+    background: linear-gradient(135deg, var(--card2), var(--card));
+    border: 1.5px solid var(--amber);
+    border-radius: 14px;
+    padding: 22px 26px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .contact-item {
+    border-left: 2px solid var(--amber);
+    padding-left: 14px;
+  }
+  .contact-label {
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .contact-value {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  /* Verdict */
+  .verdict {
+    background: linear-gradient(135deg, var(--green), var(--green-dim));
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: center;
+    margin-top: 44px;
+  }
+  .verdict h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .verdict p {
+    color: #0A3D12;
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .verdict .bold-line {
+    font-weight: 700;
+    color: var(--bg);
+    margin-top: 8px;
+    font-size: 15px;
+  }
+
+  .bottom-bar { height: 6px; background: linear-gradient(90deg, var(--amber), var(--green)); margin-top: 48px; }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 30px; }
+    .specs-bar { grid-template-columns: repeat(2, 1fr); row-gap: 12px; }
+    .spec:nth-child(2)::after { display: none; }
+    .tips-grid, .food-grid, .vs-grid, .room-grid { grid-template-columns: 1fr; }
+    .compare-wrap { overflow-x: auto; }
+    .compare-table { min-width: 640px; }
+    .contact-box { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="badge badge-green">CẨM NANG DU LỊCH MIỀN TÂY</span>
+    <h2>KHÁM PHÁ</h2>
+    <h1>COCO <span>RIVERSIDE LODGE</span> <span class="amber">— VIÊN NGỌC</span> GIỮA LÒNG MEKONG</h1>
+    <p class="subtitle">Ấp Phú An, xã Trung Ngãi, huyện Vũng Liêm, Vĩnh Long · Dự kiến đi cuối tháng 4/2026</p>
+    <hr class="divider">
+  </div>
+
+  <!-- KEY SPECS -->
+  <div class="specs-bar">
+    <div class="spec">
+      <div class="spec-value">~150 KM</div>
+      <div class="spec-label">Từ TP.HCM</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">3–3.5 GIỜ</div>
+      <div class="spec-label">Di chuyển</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">8 BUNGALOW</div>
+      <div class="spec-label">Chỉ 4 hạng phòng</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">1.5–2.4tr</div>
+      <div class="spec-label">VND / phòng / đêm</div>
+    </div>
+  </div>
+
+  <!-- WHY COCO RIVERSIDE -->
+  <div class="section">
+    <h3 class="section-title">TẠI SAO CHỌN COCO RIVERSIDE LODGE?</h3>
+    <div class="section-bar" style="background: var(--green);"></div>
+    <p class="section-intro">Homestay <strong>#1 trên TripAdvisor Vĩnh Long</strong> — do một đôi vợ chồng về hưu điều hành, giữ được hồn nguyên bản của miền Tây. Không phải "resort miền Tây công nghiệp" hay homestay check-in sống ảo.</p>
+
+    <div class="reason-card">
+      <div class="reason-num">01</div>
+      <div>
+        <div class="reason-title">VỊ TRÍ BIỆT LẬP — CHỈ VÀO ĐƯỢC BẰNG XUỒNG HOẶC ĐƯỜNG RỪNG</div>
+        <div class="reason-desc">Nằm sâu trong một làng nhỏ của huyện Vũng Liêm, tách biệt hoàn toàn khỏi khách du lịch ồn ào. Không loa phường, không karaoke — chỉ có tiếng sông, chim và lá dừa.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">02</div>
+      <div>
+        <div class="reason-title">QUY MÔ NHỎ — TRẢI NGHIỆM CÁ NHÂN HÓA</div>
+        <div class="reason-desc">Chỉ 8 bungalow / 4 hạng phòng. Chủ nhà trực tiếp đón tiếp, nấu ăn, hướng dẫn — bạn cảm thấy như được mời về nhà chứ không phải khách thuê phòng.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">03</div>
+      <div>
+        <div class="reason-title">TRỌN GÓI — XE ĐẠP, XUỒNG, CÂU CÁ, HỌC NẤU ĂN</div>
+        <div class="reason-desc">Không cần book thêm tour ngoài. Lớp nấu <strong>bánh xèo miền Tây</strong> miễn phí mỗi tối. Đạp xe qua vườn dừa, chèo xuồng, câu cá — tất cả bao gồm.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">04</div>
+      <div>
+        <div class="reason-title">BUNGALOW VEN SÔNG — HAMMOCK & DAYBED RIÊNG</div>
+        <div class="reason-desc">Mỗi bungalow riverfront có terrace riêng với võng, daybed và view thẳng ra sông Mekong. Sáng dậy uống cà phê ngắm ghe bầu chạy qua.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">05</div>
+      <div>
+        <div class="reason-title">DU LỊCH BỀN VỮNG — ECO-FRIENDLY</div>
+        <div class="reason-desc">Xây dựng từ vật liệu địa phương (tre, lá dừa nước, gỗ). Là social enterprise, đóng góp cho cộng đồng Vũng Liêm.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="section">
+    <h3 class="section-title">SO SÁNH VỚI CÁC ĐIỂM MIỀN TÂY KHÁC</h3>
+    <div class="section-bar" style="background: var(--amber);"></div>
+    <p class="section-intro">So sánh trực tiếp Coco Riverside Lodge với 3 lựa chọn phổ biến khi đi Mekong. Ô <strong style="color: var(--green);">xanh lá</strong> = Coco thắng tiêu chí đó.</p>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Tiêu chí</th>
+            <th class="highlight">COCO RIVERSIDE (Vĩnh Long)</th>
+            <th>Homestay Bến Tre</th>
+            <th>Cồn Sơn / Cần Thơ</th>
+            <th>Resort Mỹ Tho / Cái Bè</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="criterion">Khoảng cách từ TP.HCM</td>
+            <td>~150 km · 3–3.5h xe</td>
+            <td class="win">~85 km · 2–2.5h xe</td>
+            <td>~170 km · 4h xe</td>
+            <td>~70–100 km · 1.5–2h xe</td>
+          </tr>
+          <tr>
+            <td class="criterion">Mức độ yên tĩnh / biệt lập</td>
+            <td class="win">Rất biệt lập — vào bằng xuồng/đường rừng</td>
+            <td>Vừa phải, nhiều khách đoàn</td>
+            <td>Khá yên tĩnh (Cồn Sơn)</td>
+            <td>Đông khách tour, ồn</td>
+          </tr>
+          <tr>
+            <td class="criterion">Tính nguyên bản văn hóa</td>
+            <td class="win">Cao — chủ retired couple, dân gốc miền Tây</td>
+            <td>Cao — nhiều gia đình 3 thế hệ</td>
+            <td>Cao — đi chợ nổi Cái Răng, làng nghề</td>
+            <td>Thấp — mang tính dàn dựng cho du khách</td>
+          </tr>
+          <tr>
+            <td class="criterion">Giá / đêm (phòng đôi)</td>
+            <td>1.5–2.4tr (đã kèm hoạt động)</td>
+            <td class="win">500K–1.5tr (rẻ hơn)</td>
+            <td>600K–1.8tr</td>
+            <td>1.5–3.5tr (resort 4–5★)</td>
+          </tr>
+          <tr>
+            <td class="criterion">Chất lượng bungalow</td>
+            <td class="win">Gỗ/tre view sông, hammock riêng, AC, minibar</td>
+            <td>Đơn giản, có loại rất basic</td>
+            <td>Đa dạng, có cao cấp & rẻ</td>
+            <td>Chất lượng cao, đầy đủ tiện nghi</td>
+          </tr>
+          <tr>
+            <td class="criterion">Hoạt động bao gồm</td>
+            <td class="win">Đạp xe + xuồng + câu cá + lớp nấu ăn (trọn gói)</td>
+            <td>Phần lớn tính phí riêng</td>
+            <td>Phần lớn tính phí riêng, đi chợ nổi</td>
+            <td>Spa, bể bơi, tour ngoài trả thêm</td>
+          </tr>
+          <tr>
+            <td class="criterion">Ẩm thực</td>
+            <td class="win">Đặc sản Vĩnh Long tự tay nấu — bánh xèo, cá kho tộ</td>
+            <td>Món dừa Bến Tre — kẹo dừa, tôm dừa</td>
+            <td>Cá lóc nướng trui, bánh xèo, lẩu mắm</td>
+            <td>Buffet khách sạn đa dạng</td>
+          </tr>
+          <tr>
+            <td class="criterion">Chợ nổi</td>
+            <td>Cái Bè gần (~30 phút xe + xuồng)</td>
+            <td>Không có chợ nổi nổi tiếng</td>
+            <td class="win">Cái Răng & Phong Điền (biểu tượng)</td>
+            <td>Cái Bè (~15 phút)</td>
+          </tr>
+          <tr>
+            <td class="criterion">Phù hợp cho</td>
+            <td class="win">Cặp đôi · Gia đình nhỏ · Nhóm bạn thân · Người muốn "chữa lành"</td>
+            <td>Gia đình có trẻ em nhỏ</td>
+            <td>Người thích khám phá văn hóa</td>
+            <td>Khách đoàn công ty, tour gia đình đông</td>
+          </tr>
+          <tr>
+            <td class="criterion">"Instagrammable"</td>
+            <td class="win">Rất cao — view sông, bungalow gỗ, không "đụng hàng"</td>
+            <td>Trung bình</td>
+            <td>Cao — chợ nổi độc đáo</td>
+            <td>Trung bình — quen thuộc</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="vs-grid">
+      <div class="vs-card win">
+        <div class="vs-name">COCO RIVERSIDE <span class="tag">UNIQUE NHẤT</span></div>
+        <div class="vs-desc">Biệt lập, nguyên bản, trọn gói trải nghiệm. <strong>Lý tưởng cho ai muốn thoát thành phố hoàn toàn</strong> — cặp đôi, gia đình 3–6 người, nhóm bạn.</div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-name">Homestay Bến Tre</div>
+        <div class="vs-desc">Gần Sài Gòn nhất, rẻ, "xứ dừa". Nhược: đã bão hòa du khách, chất lượng không đồng đều.</div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-name">Cần Thơ / Cồn Sơn</div>
+        <div class="vs-desc">Có chợ nổi Cái Răng biểu tượng, nhiều lựa chọn lưu trú. Nhược: xa nhất & phải ngắm chợ lúc 5h sáng.</div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-name">Resort Mỹ Tho / Cái Bè</div>
+        <div class="vs-desc">Tiện nghi cao cấp. Nhược: "công nghiệp hóa", thiếu cảm giác miền Tây thật.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEOPLE & CULTURE -->
+  <div class="section">
+    <h3 class="section-title">CON NGƯỜI & VĂN HÓA</h3>
+    <div class="section-bar" style="background: var(--coconut);"></div>
+
+    <div class="people-box">
+      <div class="people-title">CHỦ NHÀ & LÀNG TRUNG NGÃI — NHỊP SỐNG NAM BỘ</div>
+      <div class="people-desc">
+        Coco Riverside Lodge được điều hành bởi <strong>đôi vợ chồng về hưu</strong> gốc miền Tây. Họ đích thân đón tiếp, hướng dẫn và nấu ăn — đem đến cảm giác "được mời về nhà" chứ không phải khách thuê phòng. Nhân viên đều là <strong>người dân địa phương</strong>, nói giọng Nam đặc sệt, hiền hậu, mến khách.
+        <br><br>
+        Ấp Phú An (xã Trung Ngãi) vẫn giữ nguyên nhịp sống <strong>"trên bến dưới thuyền"</strong>: người dân dậy sớm ra sông đánh bắt, trồng dừa, trồng bưởi, làm kẹo dừa. Bạn có thể <strong>đạp xe qua vườn dừa</strong>, thăm lò làm <strong>cốm (pop rice)</strong>, hay ngồi nghe <strong>đờn ca tài tử</strong> — di sản văn hóa phi vật thể UNESCO.
+      </div>
+    </div>
+  </div>
+
+  <!-- ROOM TYPES -->
+  <div class="section">
+    <h3 class="section-title">CÁC LOẠI PHÒNG</h3>
+    <div class="section-bar" style="background: var(--coconut);"></div>
+    <p class="section-intro">Chỉ 8 bungalow, chia 2 khu: <strong>4 Riverfront</strong> (sát sông, có terrace riêng) và <strong>4 Garden</strong> (lùi vào vườn, yên tĩnh hơn). Mỗi phòng có concept riêng: Orchid, Apricot, Bamboo...</p>
+
+    <div class="room-grid">
+      <div class="room-card">
+        <div class="room-name">Standard Room</div>
+        <div class="room-desc">1 giường đôi, view vườn. Phù hợp cặp đôi, ngân sách tiết kiệm. ~1.5tr/đêm.</div>
+      </div>
+      <div class="room-card">
+        <div class="room-name">Double Room (Riverfront)</div>
+        <div class="room-desc">1 giường đôi, terrace ven sông với võng + daybed. ~1.9tr/đêm.</div>
+      </div>
+      <div class="room-card">
+        <div class="room-name">Triple Room</div>
+        <div class="room-desc">Cho 3 người (1 đôi + 1 đơn). Phù hợp nhóm bạn 3 người. ~2.2tr/đêm.</div>
+      </div>
+      <div class="room-card">
+        <div class="room-name">Family Bungalow</div>
+        <div class="room-desc">2 giường đôi hoặc 1 đôi + 2 đơn. Cho 4 người. ~2.4tr/đêm. Trẻ <5 tuổi miễn phí.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES -->
+  <div class="section">
+    <h3 class="section-title">HOẠT ĐỘNG & TRẢI NGHIỆM</h3>
+    <div class="section-bar" style="background: var(--amber);"></div>
+
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--green);">🚴</div>
+        <div>
+          <div class="food-name">Đạp xe qua vườn dừa</div>
+          <div class="food-desc">Đạp xe miễn phí qua các con đường đất đỏ giữa vườn dừa, bưởi, sầu riêng. Cảm nhận trọn vẹn miền Tây.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--river);">🛶</div>
+        <div>
+          <div class="food-name">Chèo xuồng ba lá</div>
+          <div class="food-desc">Chèo xuồng len lỏi giữa các con rạch nhỏ, xuyên qua rừng dừa nước — hoạt động signature của miền Tây.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--coconut);">🎣</div>
+        <div>
+          <div class="food-name">Câu cá sông</div>
+          <div class="food-desc">Câu cá lóc, cá rô, cá trê ngay bờ sông. Cá câu được có thể nhờ bếp nấu ăn luôn — "hái ra ăn".</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--amber);">👨‍🍳</div>
+        <div>
+          <div class="food-name">Lớp nấu ăn (miễn phí)</div>
+          <div class="food-desc">Mỗi tối trước bữa cơm — học đổ bánh xèo miền Tây, gỏi cuốn, chả giò. Vui & ngon.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--rose);">🎶</div>
+        <div>
+          <div class="food-name">Đờn ca tài tử</div>
+          <div class="food-desc">Thưởng thức nghệ thuật truyền thống Nam Bộ — đàn kìm, đàn tranh, vọng cổ bên bờ sông vào buổi tối.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--yellow); color: var(--bg);">🌾</div>
+        <div>
+          <div class="food-name">Thăm lò cốm / kẹo dừa</div>
+          <div class="food-desc">Xem làm cốm (pop rice), kẹo dừa, bánh tráng — có thể tự tay thử làm. Mua quà giá gốc.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--river);">🌅</div>
+        <div>
+          <div class="food-name">Sunrise / sunset bờ sông</div>
+          <div class="food-desc">Ngồi võng trên terrace riêng ngắm bình minh trên sông Mekong — trải nghiệm "chữa lành" kinh điển.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--green);">🏪</div>
+        <div>
+          <div class="food-name">Chợ nổi Cái Bè (tùy chọn)</div>
+          <div class="food-desc">Thuê xuồng đi chợ nổi Cái Bè cách ~30 phút. Nhỏ hơn Cái Răng nhưng mộc mạc, ít khách du lịch.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCAL FOOD -->
+  <div class="section">
+    <h3 class="section-title">ĐẶC SẢN NÊN THỬ</h3>
+    <div class="section-bar" style="background: var(--amber);"></div>
+
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--amber);">🥞</div>
+        <div>
+          <div class="food-name">Bánh xèo miền Tây</div>
+          <div class="food-desc">Vỏ giòn vàng ươm với nước cốt dừa, nhân tôm/thịt/giá — cuốn rau sống chấm nước mắm chua ngọt.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--coconut);">🐟</div>
+        <div>
+          <div class="food-name">Cá kho tộ</div>
+          <div class="food-desc">Cá lóc hoặc cá bông lau kho trong niêu đất với tiêu, nước dừa, nước màu — ăn cơm trắng tuyệt vời.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--green);">🍲</div>
+        <div>
+          <div class="food-name">Lẩu mắm / canh chua cá linh</div>
+          <div class="food-desc">Linh hồn ẩm thực miền Tây — lẩu mắm đậm đà với cá, tôm, rau đồng. Canh chua bông điên điển đúng mùa.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--rose);">🦐</div>
+        <div>
+          <div class="food-name">Tôm đất rang nước cốt dừa</div>
+          <div class="food-desc">Tôm đất sông Cửu Long rang vàng với nước cốt dừa — béo, thơm, đậm vị Nam Bộ.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--yellow); color: var(--bg);">🍚</div>
+        <div>
+          <div class="food-name">Cơm gạo thơm Vũng Liêm</div>
+          <div class="food-desc">Vũng Liêm nổi tiếng về gạo thơm — cơm dẻo, thơm hương lá dứa tự nhiên.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--coconut);">🥥</div>
+        <div>
+          <div class="food-name">Chuối nướng nước cốt dừa</div>
+          <div class="food-desc">Món tráng miệng dân dã — chuối xiêm nướng, rưới nước cốt dừa béo ngậy + đậu phộng rang.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROUTE OPTIONS -->
+  <div class="section">
+    <h3 class="section-title">CÁCH DI CHUYỂN TỪ TP.HCM</h3>
+    <div class="section-bar" style="background: var(--river);"></div>
+
+    <div class="route-card recommended">
+      <div class="route-num">1</div>
+      <div>
+        <div class="route-title">Tự lái / thuê xe riêng<span class="star">★ KHUYẾN NGHỊ</span></div>
+        <div class="route-desc">~3–3.5h qua cao tốc TP.HCM → Trung Lương → Mỹ Thuận → QL53 Vũng Liêm. Linh hoạt giờ giấc, ghé chợ Cái Bè hoặc vườn trái cây dọc đường. Xe 4–7 chỗ ~1.5–2.5tr khứ hồi.</div>
+      </div>
+    </div>
+    <div class="route-card">
+      <div class="route-num">2</div>
+      <div>
+        <div class="route-title">Xe limousine TP.HCM → Vĩnh Long</div>
+        <div class="route-desc">~3h · 180–250K/vé. Các hãng Phương Trang, Futa, Thành Bưởi. Xuống Vĩnh Long → bắt taxi/Grab hoặc liên hệ lodge đón (thêm phí ~300–500K).</div>
+      </div>
+    </div>
+    <div class="route-card">
+      <div class="route-num">3</div>
+      <div>
+        <div class="route-title">Lodge đón từ Sài Gòn (trọn gói)</div>
+        <div class="route-desc">Coco Riverside có gói transfer từ HCMC — liên hệ trực tiếp Mr. Hiếu / Mrs. Khang. Tiện nhất nhưng đắt hơn tự lái.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; background: var(--card2); border-radius: 10px; padding: 14px 18px; border-left: 3px solid var(--amber);">
+      <div style="font-weight: 700; color: var(--amber); font-size: 13.5px; margin-bottom: 4px;">⚠️ Chặng cuối: xuồng hoặc đường đất rừng</div>
+      <div style="color: var(--light); font-size: 12.5px; line-height: 1.6;">Từ đường lớn vào lodge chỉ có thể đi bằng <strong>xuồng nhỏ qua sông</strong> hoặc đường mòn trong vườn. Nhớ liên hệ lodge trước để sắp xếp đón tại điểm gần nhất.</div>
+    </div>
+  </div>
+
+  <!-- ITINERARY -->
+  <div class="section">
+    <h3 class="section-title">LỊCH TRÌNH GỢI Ý — 2 NGÀY 1 ĐÊM</h3>
+    <div class="section-bar" style="background: var(--green);"></div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-green">NGÀY 1</span>
+        <span class="phase-title">KHỞI HÀNH & THƯ GIÃN</span>
+      </div>
+      <div class="phase-desc">
+        <strong>07:30</strong> Rời TP.HCM · <strong>10:30</strong> Ghé chợ / vườn trái cây Cái Bè ăn vặt · <strong>12:00</strong> Đến bến, xuồng đưa vào lodge · <strong>12:30</strong> Check-in + cơm trưa miền Tây · <strong>14:30</strong> Nghỉ ngơi trên võng, đọc sách · <strong>16:00</strong> Đạp xe qua vườn dừa · <strong>18:00</strong> <strong>Học làm bánh xèo</strong> + cơm tối · <strong>20:00</strong> Đờn ca tài tử bên sông.
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-amber">NGÀY 2</span>
+        <span class="phase-title">SÔNG NƯỚC & TẠM BIỆT</span>
+      </div>
+      <div class="phase-desc">
+        <strong>06:00</strong> Bình minh trên sông + cà phê võng · <strong>07:30</strong> Ăn sáng (bánh xèo / hủ tiếu) · <strong>08:30</strong> Chèo xuồng ba lá qua rạch nhỏ · <strong>10:30</strong> Thăm lò kẹo dừa / cốm, mua quà · <strong>12:00</strong> Cơm trưa + nghỉ · <strong>13:30</strong> Check-out, xuồng đưa ra bến · <strong>17:00</strong> Về TP.HCM.
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-river">TÙY CHỌN 3N2Đ</span>
+        <span class="phase-title">CÓ THỂ MỞ RỘNG</span>
+      </div>
+      <div class="phase-desc">
+        Thêm 1 ngày đi <strong>chợ nổi Cái Bè</strong> lúc sáng sớm, hoặc ghé <strong>cù lao An Bình</strong> / vườn trái cây Vĩnh Long. Cặp đôi/nhóm thích "chữa lành" nên ở 3N2Đ để tận hưởng trọn không gian.
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section">
+    <h3 class="section-title">LIÊN HỆ & ĐẶT PHÒNG</h3>
+    <div class="section-bar" style="background: var(--amber);"></div>
+
+    <div class="contact-box">
+      <div class="contact-item">
+        <div class="contact-label">Hotline chính</div>
+        <div class="contact-value">+84 913 93 1193<br><span style="font-weight: 400; color: var(--dim); font-size: 12px;">Mr. Hiếu</span></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Đặt phòng</div>
+        <div class="contact-value">0943 43 9988<br><span style="font-weight: 400; color: var(--dim); font-size: 12px;">Mrs. Khang</span></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Email / Website</div>
+        <div class="contact-value">cocoriverside@gmail.com<br><span style="font-weight: 400; color: var(--dim); font-size: 12px;">cocoriversidelodge.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORTANT NOTES -->
+  <div class="section">
+    <h3 class="section-title">LƯU Ý QUAN TRỌNG</h3>
+    <div class="section-bar" style="background: var(--red);"></div>
+
+    <div class="warn-box">
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Đặt phòng sớm:</strong> Chỉ có 8 bungalow. Cuối tháng 4 (gần 30/4–1/5) rất dễ hết. <strong>Đặt NGAY trong tuần này</strong>, xác nhận qua điện thoại thay vì chỉ email.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Thời tiết cuối T4:</strong> Chuyển giao mùa khô sang mưa. Có thể có mưa rào chiều tối. Mang áo mưa nhẹ & dép không trơn.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Muỗi nhiều</strong> (vùng sông nước vào đầu mùa mưa). Mang kem/xịt chống muỗi, mặc áo dài tay buổi tối. Lodge có mùng nhưng tốt nhất chủ động.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Sóng 4G yếu:</strong> Lodge biệt lập, chỉ có WiFi tại khu chung. Đây là lúc thực sự "digital detox" — coi như ưu điểm, không phải khuyết điểm.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Tiền mặt:</strong> Khu vực Vũng Liêm ít ATM & ít quán nhận chuyển khoản. Rút đủ tiền mặt tại Vĩnh Long trước khi vào lodge.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Xác nhận đón tại bến:</strong> Không tự mò vào được. Gọi trước 1–2 giờ khi đến Vũng Liêm để lodge sắp xếp xuồng đón.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Lễ 30/4–1/5 sắp tới:</strong> Đường cao tốc có thể kẹt xe từ trưa 29/4. Khuyến nghị xuất phát <strong>sáng sớm 30/4 hoặc trước 29/4</strong>.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Không phù hợp với:</strong> Người cần dịch vụ 5 sao, bể bơi lớn, spa. Đây là <strong>authentic homestay</strong>, không phải resort.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKING TIPS -->
+  <div class="section">
+    <h3 class="section-title">CẦN MANG GÌ?</h3>
+    <div class="section-bar" style="background: var(--yellow);"></div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Chống muỗi & côn trùng</div>
+        </div>
+        <div class="tip-desc">Kem/xịt DEET, nhang muỗi nếu cần, quần áo dài tay mỏng cho buổi tối.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Giày dép thoải mái</div>
+        </div>
+        <div class="tip-desc">Dép có đai, giày thể thao nhẹ để đi bộ/đạp xe trên đường đất. Tránh giày cao gót.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Áo mưa & áo khoác mỏng</div>
+        </div>
+        <div class="tip-desc">Mưa chiều tháng 4 ở miền Tây thường ngắn nhưng lớn. Áo khoác cho buổi tối gần sông se lạnh.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Tiền mặt</div>
+        </div>
+        <div class="tip-desc">Ít nhất 1–1.5tr/người tiền mặt cho chi tiêu ngoài (mua quà, tip, ăn dọc đường).</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Camera / pin dự phòng</div>
+        </div>
+        <div class="tip-desc">Cảnh rất đẹp, bình minh/hoàng hôn sông Mekong đáng ghi lại. Mang pin dự phòng vì sạc hạn chế.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Thuốc cá nhân</div>
+        </div>
+        <div class="tip-desc">Thuốc dị ứng, đau bụng, men tiêu hóa, thuốc say xe. Khu vực ít hiệu thuốc.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Sách / kindle</div>
+        </div>
+        <div class="tip-desc">Võng + sách + sông = combo thư giãn. WiFi yếu là cơ hội đọc sách tuyệt vời.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Đồ bơi (tùy chọn)</div>
+        </div>
+        <div class="tip-desc">Lodge không có bể bơi nhưng có thể chèo xuồng — mặc đồ gọn gàng, dễ khô.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>COCO RIVERSIDE = "CHỮA LÀNH" ĐÚNG NGHĨA</h2>
+    <p>Không phải nơi cho du lịch "check-in sống ảo" hay tiệc tùng.</p>
+    <p>Đây là nơi để <strong>ngồi võng, ngắm sông, ăn bánh xèo do mình tự đổ,</strong> và quên đi deadline.</p>
+    <p class="bold-line">★ Đặt phòng ngay tuần này vì chỉ có 8 bungalow — cuối tháng 4 siêu hot ★</p>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>

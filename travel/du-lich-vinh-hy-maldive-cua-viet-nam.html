@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vịnh Vĩnh Hy — Cẩm nang du lịch gia đình & So sánh điểm đến</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0A1929;
+    --card: #102A43;
+    --card2: #18395E;
+    --border: #2C4A6E;
+    --teal: #00BFA6;
+    --teal-dim: #00897B;
+    --gold: #FFB300;
+    --blue: #1E88E5;
+    --green: #4CAF50;
+    --red: #FF5252;
+    --coral: #FF7043;
+    --sand: #F4D35E;
+    --white: #FFFFFF;
+    --light: #B0C4DE;
+    --dim: #7A93B0;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  .infographic {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+
+  /* Top accent bar */
+  .top-bar { height: 6px; background: linear-gradient(90deg, var(--teal), var(--gold)); }
+
+  /* Header */
+  .header { padding: 48px 0 28px; }
+  .badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-teal { background: var(--teal); color: var(--bg); }
+  .badge-gold { background: var(--gold); color: var(--bg); }
+  .badge-blue { background: var(--blue); color: var(--white); }
+  .badge-green { background: var(--green); color: var(--bg); }
+  .badge-red { background: var(--red); color: var(--white); }
+  .badge-coral { background: var(--coral); color: var(--white); }
+  .badge-sand { background: var(--sand); color: var(--bg); }
+
+  .header h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dim);
+    margin-top: 24px;
+    letter-spacing: 1px;
+  }
+  .header h1 {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 8px;
+  }
+  .header h1 span { color: var(--teal); }
+  .header h1 .gold { color: var(--gold); }
+  .header .subtitle {
+    color: var(--light);
+    font-size: 16px;
+    margin-top: 16px;
+    font-style: italic;
+  }
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* Specs bar */
+  .specs-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card);
+    border: 1.5px solid var(--teal);
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 44px;
+  }
+  .spec {
+    text-align: center;
+    position: relative;
+  }
+  .spec:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: var(--border);
+  }
+  .spec-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--teal);
+  }
+  .spec-label {
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  /* Section */
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .section-bar {
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+  .section-intro {
+    color: var(--light);
+    font-size: 14px;
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  /* Reason cards */
+  .reason-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--teal);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .reason-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,191,166,0.2);
+  }
+  .reason-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gold);
+    min-width: 42px;
+  }
+  .reason-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: var(--teal);
+  }
+  .reason-desc {
+    color: var(--light);
+    font-size: 13.5px;
+  }
+
+  /* Comparison table */
+  .compare-wrap {
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+  }
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .compare-table th {
+    background: var(--card2);
+    color: var(--white);
+    text-align: left;
+    padding: 14px 12px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border);
+    font-size: 12.5px;
+  }
+  .compare-table th.highlight {
+    background: var(--teal);
+    color: var(--bg);
+  }
+  .compare-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--light);
+  }
+  .compare-table td.criterion {
+    font-weight: 700;
+    color: var(--white);
+    background: rgba(255,179,0,0.05);
+    width: 18%;
+  }
+  .compare-table td.win {
+    background: rgba(0,191,166,0.08);
+    color: var(--white);
+    font-weight: 600;
+  }
+  .compare-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Vs cards (alternative compact comparison for mobile) */
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .vs-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border-top: 3px solid var(--gold);
+  }
+  .vs-card.win { border-top-color: var(--teal); background: linear-gradient(180deg, rgba(0,191,166,0.12), var(--card)); }
+  .vs-name {
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .vs-name .tag {
+    font-size: 10px;
+    background: var(--teal);
+    color: var(--bg);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+    font-weight: 700;
+  }
+  .vs-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  /* Food grid */
+  .food-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .food-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transition: transform 0.2s;
+  }
+  .food-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .food-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--coral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .food-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--gold);
+    margin-bottom: 3px;
+  }
+  .food-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  /* Tips grid */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .tip-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .tip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .tip-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .tip-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+  }
+  .tip-desc {
+    color: var(--light);
+    font-size: 12.5px;
+    padding-left: 22px;
+  }
+
+  /* People / culture box */
+  .people-box {
+    background: linear-gradient(135deg, var(--card), var(--card2));
+    border-radius: 14px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--coral);
+  }
+  .people-title {
+    color: var(--coral);
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .people-desc {
+    color: var(--light);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .people-desc strong { color: var(--white); }
+
+  /* Itinerary phases */
+  .phase-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .phase-title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .phase-desc {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+  .phase-desc strong { color: var(--gold); }
+
+  /* Route cards */
+  .route-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--blue);
+  }
+  .route-card.recommended {
+    border-left-color: var(--teal);
+    background: linear-gradient(90deg, rgba(0,191,166,0.10), var(--card));
+  }
+  .route-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .route-card.recommended .route-num { background: var(--teal); color: var(--bg); }
+  .route-title { font-weight: 700; font-size: 14.5px; }
+  .route-title .star { color: var(--gold); margin-left: 6px; font-size: 12px; }
+  .route-desc { color: var(--light); font-size: 12.5px; margin-top: 2px; }
+
+  /* Warning / important box */
+  .warn-box {
+    background: var(--card);
+    border: 2px solid var(--red);
+    border-radius: 14px;
+    padding: 22px 26px;
+  }
+  .warn-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 6px 0;
+  }
+  .warn-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .warn-text {
+    color: var(--light);
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .warn-text strong { color: var(--white); }
+
+  /* Verdict */
+  .verdict {
+    background: linear-gradient(135deg, var(--teal), var(--teal-dim));
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: center;
+    margin-top: 44px;
+  }
+  .verdict h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .verdict p {
+    color: #003D33;
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .verdict .bold-line {
+    font-weight: 700;
+    color: var(--bg);
+    margin-top: 8px;
+    font-size: 15px;
+  }
+
+  /* Bottom bar */
+  .bottom-bar { height: 6px; background: linear-gradient(90deg, var(--gold), var(--teal)); margin-top: 48px; }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .infographic { padding: 0 20px 40px; }
+    .header h1 { font-size: 30px; }
+    .specs-bar { grid-template-columns: repeat(2, 1fr); row-gap: 12px; }
+    .spec:nth-child(2)::after { display: none; }
+    .tips-grid, .food-grid, .vs-grid { grid-template-columns: 1fr; }
+    .compare-wrap { overflow-x: auto; }
+    .compare-table { min-width: 640px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="infographic">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="badge badge-teal">CẨM NANG DU LỊCH GIA ĐÌNH</span>
+    <h2>TẠI SAO CHỌN</h2>
+    <h1>VỊNH <span>VĨNH HY</span> <span class="gold">— MALDIVES</span> CỦA VIỆT NAM</h1>
+    <p class="subtitle">Hành trình lý tưởng cho việc giải nhiệt mùa hè · Ninh Thuận</p>
+    <hr class="divider">
+  </div>
+
+  <!-- KEY SPECS -->
+  <div class="specs-bar">
+    <div class="spec">
+      <div class="spec-value">~325 KM</div>
+      <div class="spec-label">Từ TP.HCM</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">4.5 GIỜ</div>
+      <div class="spec-label">Đi xe (cao tốc mới)</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">3N2Đ</div>
+      <div class="spec-label">Lịch trình lý tưởng</div>
+    </div>
+    <div class="spec">
+      <div class="spec-value">T4 – T8</div>
+      <div class="spec-label">Mùa đẹp nhất</div>
+    </div>
+  </div>
+
+  <!-- WHY VINH HY -->
+  <div class="section">
+    <h3 class="section-title">TẠI SAO LẠI LÀ VĨNH HY?</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+    <p class="section-intro">Vịnh Vĩnh Hy là <strong>1 trong 4 vịnh đẹp nhất Việt Nam</strong> — nơi giao thoa hiếm có giữa biển xanh, núi đá và rạn san hô. Khác hẳn cảm giác "chật ních du khách" của Nha Trang hay Phú Quốc.</p>
+
+    <div class="reason-card">
+      <div class="reason-num">01</div>
+      <div>
+        <div class="reason-title">CẢNH QUAN HOANG SƠ — "MALDIVES VIỆT NAM"</div>
+        <div class="reason-desc">Nước biển trong xanh như ngọc, nhìn rõ đáy. Vách đá kỳ vĩ ôm lấy vịnh, kết hợp Vườn Quốc gia Núi Chúa — hệ sinh thái rừng khô hạn duy nhất Đông Nam Á.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">02</div>
+      <div>
+        <div class="reason-title">YÊN TĨNH — KHÔNG ỒN ÀO, KHÔNG KẸT XE</div>
+        <div class="reason-desc">Phù hợp cho gia đình đông người, có người lớn tuổi và trẻ nhỏ. Không có "phố Tây" náo nhiệt, không có hàng rong chèo kéo như Nha Trang.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">03</div>
+      <div>
+        <div class="reason-title">GẦN, TIỆN, TIẾT KIỆM</div>
+        <div class="reason-desc">Chỉ ~4.5 giờ xe từ TP.HCM (cao tốc Cam Lâm – Vĩnh Hảo, mở 2024). Không cần bay, không cần phà như Phú Quốc / Côn Đảo. Chi phí thấp hơn 30–50%.</div>
+      </div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">04</div>
+      <div>
+        <div class="reason-title">TÀU ĐÁY KÍNH — HOÀN HẢO CHO TRẺ EM</div>
+        <div class="reason-desc">Trẻ con <strong>không cần xuống nước</strong> vẫn ngắm được san hô đầy màu sắc. An toàn tuyệt đối, không cần biết bơi.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="section">
+    <h3 class="section-title">SO SÁNH VỚI CÁC ĐIỂM ĐẾN KHÁC</h3>
+    <div class="section-bar" style="background: var(--gold);"></div>
+    <p class="section-intro">So sánh trực tiếp Vĩnh Hy với 3 lựa chọn phổ biến cho gia đình từ TP.HCM. Ô <strong style="color: var(--teal);">xanh ngọc</strong> = Vĩnh Hy thắng tiêu chí đó.</p>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Tiêu chí</th>
+            <th class="highlight">VĨNH HY</th>
+            <th>Nha Trang</th>
+            <th>Phú Quốc</th>
+            <th>Mũi Né</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="criterion">Khoảng cách từ TP.HCM</td>
+            <td class="win">~325 km · 4.5h xe</td>
+            <td>~440 km · 8h xe / 1h bay</td>
+            <td>~400 km · 1h bay + phà</td>
+            <td>~200 km · 4h xe</td>
+          </tr>
+          <tr>
+            <td class="criterion">Chi phí cho gia đình 10 người</td>
+            <td class="win">Thấp (15–25tr / 3N2Đ)</td>
+            <td>Trung bình (25–40tr)</td>
+            <td>Cao (40–70tr, vé máy bay)</td>
+            <td>Thấp (15–25tr)</td>
+          </tr>
+          <tr>
+            <td class="criterion">Cảnh quan biển</td>
+            <td class="win">Hoang sơ, núi & biển hòa quyện, san hô gần bờ</td>
+            <td>Biển đẹp nhưng đông và phát triển</td>
+            <td>Bãi cát trắng dài, đảo nhỏ đa dạng</td>
+            <td>Đồi cát, biển nhiều gió, sóng lớn</td>
+          </tr>
+          <tr>
+            <td class="criterion">Mức độ đông đúc</td>
+            <td class="win">Yên tĩnh, ít du khách</td>
+            <td>Rất đông, ồn ào</td>
+            <td>Đông vào mùa cao điểm</td>
+            <td>Trung bình, đông cuối tuần</td>
+          </tr>
+          <tr>
+            <td class="criterion">Phù hợp trẻ em</td>
+            <td class="win">Tàu đáy kính an toàn, biển êm</td>
+            <td>Vinpearl Land, công viên nước</td>
+            <td>VinWonders, safari (rất phù hợp)</td>
+            <td>Trượt cát, sóng lớn (cần cẩn thận)</td>
+          </tr>
+          <tr>
+            <td class="criterion">Ẩm thực đặc trưng</td>
+            <td class="win">Tôm hùm, nhum, nho, dê cừu, bánh căn</td>
+            <td>Bún cá, nem, hải sản phong phú</td>
+            <td>Nước mắm, gỏi cá trích, hải sản</td>
+            <td>Bánh căn, lẩu thả, hải sản</td>
+          </tr>
+          <tr>
+            <td class="criterion">Văn hóa địa phương</td>
+            <td class="win">Làng chài + văn hóa Chăm độc đáo</td>
+            <td>Tháp Bà Ponagar, Chăm</td>
+            <td>Đảo, ít văn hóa bản địa</td>
+            <td>Làng chài, văn hóa Chăm</td>
+          </tr>
+          <tr>
+            <td class="criterion">Mức độ "instagrammable"</td>
+            <td class="win">Cao — vịnh đẹp như tranh, ít người trong khung hình</td>
+            <td>Cao nhưng "đụng hàng"</td>
+            <td>Rất cao</td>
+            <td>Cao — đồi cát đỏ trắng</td>
+          </tr>
+          <tr>
+            <td class="criterion">Hoạt động về đêm</td>
+            <td>Yên tĩnh (phù hợp gia đình)</td>
+            <td>Sôi động, nhiều bar/club</td>
+            <td>Chợ đêm, nhà hàng</td>
+            <td>Vừa phải</td>
+          </tr>
+          <tr>
+            <td class="criterion">Sự thuận tiện đi lại</td>
+            <td class="win">1 chuyến xe duy nhất từ TP.HCM</td>
+            <td>Bay/xe đều OK</td>
+            <td>Bắt buộc bay (10 người tốn kém)</td>
+            <td>Xe đơn giản</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="vs-grid">
+      <div class="vs-card win">
+        <div class="vs-name">VĨNH HY <span class="tag">PHÙ HỢP NHẤT</span></div>
+        <div class="vs-desc">Yên bình, gần, rẻ, có trải nghiệm độc đáo (tàu đáy kính, vườn nho). <strong>Lý tưởng cho gia đình lớn có trẻ em & người lớn tuổi.</strong></div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-name">Nha Trang</div>
+        <div class="vs-desc">Hợp nếu thích sôi động, có VinWonders. Nhược: đông, ồn, dễ "chặt chém" du khách.</div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-name">Phú Quốc</div>
+        <div class="vs-desc">Cao cấp, nhiều resort 5 sao. Nhược: cần bay, chi phí cao, mất nửa ngày di chuyển.</div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-name">Mũi Né</div>
+        <div class="vs-desc">Gần TP.HCM nhất, có đồi cát thú vị. Nhược: biển nhiều sóng, ít hoạt động đặc sắc.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEOPLE & CULTURE -->
+  <div class="section">
+    <h3 class="section-title">CON NGƯỜI & VĂN HÓA</h3>
+    <div class="section-bar" style="background: var(--coral);"></div>
+
+    <div class="people-box">
+      <div class="people-title">LÀNG CHÀI VĨNH HY — NHỊP SỐNG NGUYÊN BẢN</div>
+      <div class="people-desc">
+        Người dân Vĩnh Hy <strong>thân thiện, mộc mạc</strong> — chủ yếu sống bằng nghề đánh bắt và nuôi tôm hùm lồng. Buổi sáng sớm, cả vịnh thức dậy cùng tiếng tàu cá về bờ và phiên chợ cá nhanh ngay bến. Đây là trải nghiệm <strong>"sống chậm"</strong> mà các điểm du lịch lớn đã đánh mất từ lâu.
+        <br><br>
+        Gần Vĩnh Hy còn có <strong>văn hóa Chăm</strong> độc đáo (Tháp Po Klong Garai, làng gốm Bàu Trúc, làng dệt Mỹ Nghiệp) — cơ hội tuyệt vời để các bé học về đa dạng văn hóa Việt Nam ngay trong chuyến đi.
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCAL FOOD -->
+  <div class="section">
+    <h3 class="section-title">ĐẶC SẢN KHÔNG THỂ BỎ QUA</h3>
+    <div class="section-bar" style="background: var(--gold);"></div>
+    <p class="section-intro">Vĩnh Hy & Ninh Thuận có ẩm thực <strong>không trùng với bất kỳ vùng biển nào khác</strong> ở Việt Nam — kết hợp hải sản tươi sống với đặc sản khô hạn (dê, cừu, nho).</p>
+
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--coral);">🦞</div>
+        <div>
+          <div class="food-name">Tôm hùm Vĩnh Hy</div>
+          <div class="food-desc">Tôm hùm xanh nuôi lồng ngay vịnh — thịt chắc, ngọt tự nhiên. Nướng phô mai, hấp, hoặc cháo. Giá 800K–1.5tr/kg.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--gold);">🥚</div>
+        <div>
+          <div class="food-name">Nhum (cầu gai) nướng mỡ hành</div>
+          <div class="food-desc">Béo ngậy, thơm mùi mỡ hành & đậu phộng rang. Đặc sản hiếm, chỉ có ở vùng đá ngầm.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--blue);">🐟</div>
+        <div>
+          <div class="food-name">Gỏi cá mai</div>
+          <div class="food-desc">Cá mai mỏng tươi rói, cuốn bánh tráng với rau sống và chuối chát. Vị tươi, không tanh.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--teal);">🥞</div>
+        <div>
+          <div class="food-name">Bánh căn hải sản</div>
+          <div class="food-desc">Đổ trong khuôn đất nung, vỏ giòn, nhân tôm/mực/cá tươi. Bé 6–9 tuổi rất thích.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--coral);">🍖</div>
+        <div>
+          <div class="food-name">Dê & cừu nướng Phan Rang</div>
+          <div class="food-desc">Cừu Ninh Thuận là đặc sản hiếm — nướng tảng, lẩu, hoặc xào lăn. Thịt mềm, không hôi.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--sand); color: var(--bg);">🍇</div>
+        <div>
+          <div class="food-name">Nho & rượu nho Ninh Thuận</div>
+          <div class="food-desc">Tự tay hái nho tại vườn — trải nghiệm thú vị cho trẻ em. Rượu nho làm quà tặng.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--green);">🍎</div>
+        <div>
+          <div class="food-name">Táo Phan Rang ("táo gió")</div>
+          <div class="food-desc">Trái nhỏ, giòn, ngọt thanh, mọng nước. Mua làm quà rẻ và nhẹ.</div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-icon" style="background: var(--blue);">🦀</div>
+        <div>
+          <div class="food-name">Ghẹ xanh, ốc, mực một nắng</div>
+          <div class="food-desc">Đánh bắt và chế biến trong ngày tại nhà bè nổi. Rẻ hơn 30% so với Nha Trang.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROUTE OPTIONS -->
+  <div class="section">
+    <h3 class="section-title">CÁCH DI CHUYỂN — 10 NGƯỜI</h3>
+    <div class="section-bar" style="background: var(--blue);"></div>
+
+    <div class="route-card recommended">
+      <div class="route-num">1</div>
+      <div>
+        <div class="route-title">Thuê xe 16 chỗ riêng (Ford Transit / Hyundai Solati)<span class="star">★ KHUYẾN NGHỊ</span></div>
+        <div class="route-desc">~3.5–5tr/ngày · 4.5h từ TP.HCM qua cao tốc CT01 → Cam Lâm → DT702 ven biển. Linh hoạt cho trẻ em & người lớn tuổi, đến tận resort.</div>
+      </div>
+    </div>
+    <div class="route-card">
+      <div class="route-num">2</div>
+      <div>
+        <div class="route-title">Tàu hỏa SE → Tháp Chàm + thuê xe</div>
+        <div class="route-desc">~6.5–7h trên tàu (giường nằm), trẻ em rất thích. Sau đó thuê xe 16 chỗ Phan Rang → Vĩnh Hy (~45 phút, 700K–1tr).</div>
+      </div>
+    </div>
+    <div class="route-card">
+      <div class="route-num">3</div>
+      <div>
+        <div class="route-title">Bay Cam Ranh (CXR) + thuê xe</div>
+        <div class="route-desc">~50 phút bay + 1.5–2h xe (~1tr). Nhanh nhất nhưng tốn kém nhất cho 10 người.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ITINERARY -->
+  <div class="section">
+    <h3 class="section-title">LỊCH TRÌNH GỢI Ý — 3 NGÀY 2 ĐÊM</h3>
+    <div class="section-bar" style="background: var(--teal);"></div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-teal">NGÀY 1</span>
+        <span class="phase-title">DI CHUYỂN & KHÁM PHÁ VỊNH</span>
+      </div>
+      <div class="phase-desc">
+        <strong>06:00</strong> Khởi hành TP.HCM · <strong>11:30</strong> Ăn trưa Phan Thiết (lẩu thả) · <strong>14:30</strong> Đến Vĩnh Hy, nhận phòng · <strong>17:00</strong> Dạo bãi biển, ngắm hoàng hôn · <strong>19:00</strong> Ăn tối nhà bè nổi <strong>(Hải Đăng / Đảo Yến)</strong>: tôm hùm + ghẹ + nhum nướng.
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-gold">NGÀY 2</span>
+        <span class="phase-title">TÀU ĐÁY KÍNH & VƯỜN NHO</span>
+      </div>
+      <div class="phase-desc">
+        <strong>Sáng:</strong> Tour tàu đáy kính ngắm san hô + Hang Rái (~250–350K/người lớn, trẻ em nửa giá). <strong>Chiều:</strong> Bãi Bình Tiên tắm biển HOẶC tham quan vườn nho Ninh Thuận (bé tự hái nho). <strong>Tối:</strong> BBQ hải sản tại resort.
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header">
+        <span class="badge badge-coral">NGÀY 3</span>
+        <span class="phase-title">NÚI CHÚA & ĐƯỜNG VỀ</span>
+      </div>
+      <div class="phase-desc">
+        <strong>Sáng:</strong> Tour ngắn Vườn Quốc gia Núi Chúa (chọn đường mòn dễ, không trekking khó cho bé). <strong>Trưa:</strong> Về Phan Rang ăn dê/cừu nướng + bánh canh Chăm. <strong>Chiều:</strong> Ghé Mũi Dinh / đồi cát rồi về TP.HCM theo cung đường ven biển DT702 cực đẹp.
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORTANT NOTES -->
+  <div class="section">
+    <h3 class="section-title">LƯU Ý QUAN TRỌNG CHO GIA ĐÌNH</h3>
+    <div class="section-bar" style="background: var(--red);"></div>
+
+    <div class="warn-box">
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Mang đủ tiền mặt:</strong> Vĩnh Hy gần như không có ATM. Rút tiền tại Phan Rang trước khi vào vịnh.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Cảnh giác giá hải sản:</strong> Luôn hỏi giá <strong>theo kg & cân tận mắt</strong> trước khi gọi món. "Chặt chém" du khách vẫn xảy ra ở nhà bè.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Nắng Ninh Thuận rất gắt:</strong> Mũ rộng vành, kem chống nắng SPF 50+, áo dài tay chống UV — đặc biệt cho bé 6 tuổi.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Đường DT702 ngoằn ngoèo:</strong> Mang thuốc say xe cho trẻ em & người lớn tuổi. Lái chậm, nhiều khúc cua bên vách đá.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Đặt phòng sớm:</strong> Vĩnh Hy ít phòng, dễ kín vào cuối tuần & lễ. Đặt trước <strong>2–3 tuần</strong>, đặc biệt với 10 người (cần 3 phòng family).</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>San hô có thể cứa chân:</strong> Mua giày lội nước cho trẻ em nếu định bơi gần bờ.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Tránh tháng 9–11:</strong> Mùa mưa & biển động. Hiện tại (tháng 4/2026) là <strong>thời điểm vàng</strong>.</div>
+      </div>
+      <div class="warn-item">
+        <div class="warn-dot"></div>
+        <div class="warn-text"><strong>Sóng điện thoại:</strong> Yếu ở một số vịnh nhỏ. <strong>Viettel</strong> có sóng tốt nhất khu vực này.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKING TIPS -->
+  <div class="section">
+    <h3 class="section-title">CẦN MANG GÌ?</h3>
+    <div class="section-bar" style="background: var(--sand);"></div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Quần áo & phụ kiện</div>
+        </div>
+        <div class="tip-desc">Đồ bơi, áo chống nắng, mũ rộng vành, kính râm, dép & giày lội nước cho cả gia đình.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Thuốc dự phòng</div>
+        </div>
+        <div class="tip-desc">Thuốc say xe, thuốc cảm, đau bụng, dị ứng, men tiêu hóa, bông gạc, thuốc bôi muỗi.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Thiết bị chống nước</div>
+        </div>
+        <div class="tip-desc">Túi khô (dry bag) cho điện thoại, ốp chống nước, GoPro/camera nếu có để quay san hô.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Đồ ăn nhẹ cho trẻ</div>
+        </div>
+        <div class="tip-desc">Sữa hộp, bánh, trái cây để bé ăn vặt trên đường — tránh đói khi xe chạy đường dài.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Sạc dự phòng & sim 4G</div>
+        </div>
+        <div class="tip-desc">Sóng yếu nhiều nơi, mang theo pin sạc & sim Viettel 4G để gọi khi cần.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-header">
+          <div class="tip-dot"></div>
+          <div class="tip-title">Tiền mặt</div>
+        </div>
+        <div class="tip-desc">Tối thiểu 2–3tr/người tiền mặt — quán & nhà bè đa số không nhận chuyển khoản.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <h2>VĨNH HY = LỰA CHỌN HOÀN HẢO CHO GIA ĐÌNH</h2>
+    <p>Gần TP.HCM, chi phí hợp lý, cảnh đẹp hoang sơ, an toàn cho trẻ em & người lớn tuổi.</p>
+    <p>Có trải nghiệm độc đáo (tàu đáy kính, vườn nho, văn hóa Chăm) mà <strong>không một điểm đến nào khác</strong> sánh được.</p>
+    <p class="bold-line">★ Đặt xe 16 chỗ + 3 phòng family resort, khởi hành tháng 4–5 là tối ưu nhất ★</p>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>
